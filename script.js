@@ -48,6 +48,56 @@ am4core.ready(function() {
   bullet.circle.strokeWidth = 2;
   bullet.circle.tooltipText = "{station}";
 }
+createLine(
+  "Canada Line-YVR",
+  am4core.color("#ed6ea7"),[
+    { station:'YVR Airport' , x: 8.75, y: 39 },
+    { station: 'Sea Island Centre', x: 12.30, y: 39 },
+    { station: 'Templeton', x: 16.30, y: 39 },
+    { station: 'Bridgeport', x: 22.75, y: 40.50 },
+]);
+createLine(
+  "Millennium Line",
+  am4core.color("#ed6ea7"),[
+    { station: 'Waterfront', x: 40.75, y: 59 },
+]);
+createLine(
+ "Evergreen Extension Line",
+  am4core.color("#ed6ea7"),[
+    { station: 'Waterfront', x: 40.75, y: 59 },
+]);
+createLine(
+  "Millennium Line",
+  am4core.color("#ed6ea7"),[
+    { station: 'Waterfront', x: 40.75, y: 59 },
+]);
+
+createLine(
+  "West Coast Express",
+  am4core.color("#ed6ea7"),[
+    { station:'Waterfront' , x: 40.75, y: 59 },
+]);
+createLine(
+  "R1 King George Blvd",
+  am4core.color("#ed6ea7"),[
+    { station:'Waterfront' , x: 40.75, y: 59 },
+]);
+createLine(
+  "R2 Marine Dr",
+  am4core.color("#ed6ea7"),[
+    { station:'Waterfront' , x: 40.75, y: 59 },
+]);
+createLine(
+  "R3 Lougheed Hwy",
+  am4core.color("#ed6ea7"),[
+    { station:'Waterfront' , x: 40.75, y: 59 },
+]);
+
+createLine(
+  "R4 41st Ave",
+  am4core.color("#ed6ea7"),[
+    { station:'Waterfront' , x: 40.75, y: 59 },
+]);
 
   chart.legend = new am4charts.Legend();
   chart.legend.position = "right";
