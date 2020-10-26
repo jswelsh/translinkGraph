@@ -23,4 +23,39 @@ am4core.ready(function() {
   axis.renderer.baseGrid.disabled = true;
 }
 
+  createAxis(chart.xAxes);
+  createAxis(chart.yAxes);
+
+  function createLine(name, color, data) {
+
+  var series = chart.series.push(new am4charts.StepLineSeries());
+  series.data = data;
+  series.name = name;
+
+  series.dataFields.valueX = "x";
+  series.dataFields.valueY = "y";
+
+  series.stroke = color;
+  series.strokeWidth = 2;
+  series.connect = false;
+
+  series.propertyFields.strokeDasharray = "dash";
+
+  var bullet = series.bullets.push(new am4charts.CircleBullet());
+  bullet.circle.radius = 6;
+  bullet.circle.fill = am4core.color("#fff");
+  bullet.circle.stroke = am4core.color("#000");
+  bullet.circle.strokeWidth = 2;
+  bullet.circle.tooltipText = "{station}";
+}
+
+  chart.legend = new am4charts.Legend();
+  chart.legend.position = "right";
+
+  var bg = chart.plotContainer.createChild(am4core.Image);
+  bg.width = am4core.percent(100);
+  bg.height = am4core.percent(100);
+
+  bg.href = 'routetemplate.png'
+
 });
