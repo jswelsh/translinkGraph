@@ -48,7 +48,30 @@ am4core.ready(function() {
   bullet.circle.strokeWidth = 2;
   bullet.circle.tooltipText = "{station}";
 }
-createLine(
+
+const lineConstructor = (axis) => {
+  for (let index = 0; index < 100; index++) {
+    let color = (index % 5 === 0 ) ? '#ad7400': '#0023ad'
+    createLine(
+      'indexssssssssssssssssssssssssssssssssss',
+      am4core.color(color),
+      [{
+        station: index,
+        x: (axis === 'x') ? index :0,
+        y: (axis === 'y') ? index :0 
+      }, {
+        station: index,
+        x: (axis === 'x') ? index :100,
+        y: (axis === 'y') ? index :100 
+      }]
+    );
+    
+  }
+}
+  lineConstructor('x')
+  lineConstructor('y') 
+
+/* createLine(
   "Canada Line-YVR",
   am4core.color("#ed6ea7"),[
     { station:'YVR Airport' , x: 8.75, y: 39 },
@@ -62,7 +85,7 @@ createLine(
     { station: 'Waterfront', x: 40.75, y: 59 },
 ]);
 createLine(
- "Evergreen Extension Line",
+  "Evergreen Extension Line",
   am4core.color("#ed6ea7"),[
     { station: 'Waterfront', x: 40.75, y: 59 },
 ]);
@@ -98,7 +121,7 @@ createLine(
   am4core.color("#ed6ea7"),[
     { station:'Waterfront' , x: 40.75, y: 59 },
 ]);
-
+ */
   chart.legend = new am4charts.Legend();
   chart.legend.position = "right";
 
