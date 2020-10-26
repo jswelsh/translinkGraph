@@ -29,3 +29,46 @@ const translink =[
     numberOfCompassTerminals:5
   }
 ]
+
+
+/* 
+const lineConstructor = (payload) => {
+  for (let index = 0; index < 100; index++) {
+    let color = (index % 5 === 0 ) ? '#ad7400': '#0023ad'
+    createLine(
+      index,
+      am4core.color(color),
+      [{
+        station: index,
+        x: 0,
+        y: index
+      }, {
+        station: index,
+        x: 100,
+        y: index
+      }]
+    );
+    
+  }
+}
+const lineConstructor2 = (payload) => {
+  for (let index = 0; index < 100; index++) {
+    let color = (index % 5 === 0 ) ? '#ad7400': '#0023ad'
+    createLine(
+      index,
+      am4core.color(color),
+      [{
+        station: index,
+        x: index,
+        y: 0
+      }, {
+        station: index,
+        x: index,
+        y: 100
+      }]
+    );
+    
+  }
+} */
+/*   lineConstructor()
+  lineConstructor2() */

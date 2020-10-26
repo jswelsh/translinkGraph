@@ -68,11 +68,40 @@ const lineConstructor = (axis) => {
     
   }
 }
-  lineConstructor('x')
-  lineConstructor('y') 
 
-/* createLine(
-  "Canada Line-YVR",
+/*   lineConstructor('x') */
+/*   lineConstructor('y')  */
+
+
+createLine(
+  "Canada Line-YVR 22222222222",
+  am4core.color('#2382be'),[
+    { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
+    { station: 'Lansdowne', x: 22.625, y: 15.865 }, 
+    { station: 'Aberdeen', x: 22.625, y: 22.575 },
+    { station: 'Bridgeport', x: 22.625, y: 29 }, 
+    { station: 'Marine Drive', x: 22.625, y: 35.595},
+    { station: 'Langara–49th Avenue', x: 22.625, y: 42.12},
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.6},
+    { station: 'King Edward', x: 22.625, y: 55.275},
+    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
+    { station: 'Olympic Village', x: 22.625, y: 66.65},
+    { station: 'Yaletown–Roundhouse ', x: 20.25, y: 72.65},
+  
+  ]
+);
+/*     { station: 'Lansdowne', x: 22.75, y: 29 }, 
+    { station: 'Aberdeen', x: 22.75, y: 34.75 },
+    { station: 'Bridgeport', x: 22.75, y: 40.50 }, 
+    { station: 'olympic', x: 22.75, y: 46 }, 
+    { station: 'olympic', x: 22.75, y: 51.5 }, 
+    { station: 'olympic', x: 22.75, y: 57.1 }, 
+    { station: 'olympic', x: 22.75, y: 62.75 }, 
+    { station: 'olympic', x: 22.75, y: 68.5 }, 
+    { station: 'olympic', x: 22.75, y: 72.55 } */
+/* 
+createLine(
+  "Canada Line-YVR 22222222222",
   am4core.color("#ed6ea7"),[
     { station:'YVR Airport' , x: 8.75, y: 39 },
     { station: 'Sea Island Centre', x: 12.30, y: 39 },
