@@ -27,6 +27,59 @@ am4core.ready(function() {
   createAxis(chart.yAxes);
 
   function createLine(name, color, data) {
+    var series = chart.series.push(new am4charts.LineSeries());
+    series.data = data;
+    series.name = name;
+
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+
+    series.stroke = color;
+    series.strokeWidth = 2;
+    series.connect = false;
+    
+    series.propertyFields.strokeDasharray = "dash";
+
+    console.log(data)
+    if(name.station !== 'Olympic Village') {
+      let bullet = series.bullets.push(new am4charts.CircleBullet());
+      bullet.circle.radius = 6;
+      bullet.circle.fill = am4core.color("#fff");
+      bullet.circle.stroke = am4core.color("#000");
+      bullet.circle.strokeWidth = 2;
+      bullet.circle.tooltipText = "{station}";
+    }
+  }
+
+    function createLineBreak(name, color, data) {
+    var series = chart.series.push(new am4charts.LineSeries());
+    series.data = data;
+    series.name = name;
+
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+
+    series.stroke = color;
+    series.strokeWidth = 2;
+    series.connect = false;
+    
+    series.propertyFields.strokeDasharray = "dash";
+
+
+/*       let bullet = series.bullets.push(new am4charts.CircleBullet());
+      bullet.circle.radius = 6;
+      bullet.circle.fill = am4core.color("#fff");
+      bullet.circle.stroke = am4core.color("#000");
+      bullet.circle.strokeWidth = 2;
+      bullet.circle.tooltipText = "{station}"; */
+    
+  }
+
+
+
+
+
+  function createStepLine(name, color, data) {
 
   var series = chart.series.push(new am4charts.StepLineSeries());
   series.data = data;
@@ -69,12 +122,27 @@ const lineConstructor = (axis) => {
   }
 }
 
-/*   lineConstructor('x') */
-/*   lineConstructor('y')  */
+/*   lineConstructor('x')
+  lineConstructor('y')  */
 
-
-createLine(
+  createLine(
   "Canada Line-YVR 22222222222",
+  am4core.color('#2382be'),[
+  ]
+);
+createLineBreak(
+ // "Canada Line-YVR 22222222222",
+  am4core.color('#2382be'),[
+    { x: 22.625, y: 66.65}, //'Olympic Village'
+    { x: 22.625, y: 69.40}, //bend in route
+    { x: 20.25, y: 72.645}, //Yaletown–Roundhouse 
+    { x: 17.75, y: 76.1}, //Yaletown–Roundhouse 
+    { x: 19.35, y: 78.25}, //bend in route
+
+  ]
+  )
+createLine(
+  "Canada Line-YVR",
   am4core.color('#2382be'),[
     { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
     { station: 'Lansdowne', x: 22.625, y: 15.865 }, 
@@ -86,10 +154,46 @@ createLine(
     { station: 'King Edward', x: 22.625, y: 55.275},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
     { station: 'Olympic Village', x: 22.625, y: 66.65},
-    { station: 'Yaletown–Roundhouse ', x: 20.25, y: 72.65},
-  
+    { station: 'bend in route'},
+    { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645},
+    { station: 'bend in route'},
+    { station: 'Vancouver City Centre', x: 19.35, y: 78.25},
+    { station: 'Waterfront', x: 23.75, y: 84.25}
+    /*  { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645},
+    { station: 'Vancouver City Centre', x: 19.25, y: 78.25},
+    { station: 'Waterfront', x: 23.9, y: 84.25}, */
   ]
 );
+createLine(
+  "Canada Line-YVR",
+  am4core.color('#2382be'),[
+    { station:'YVR Airport' , x: 8.75, y: 26.8 },
+    { station: 'Sea Island Centre', x: 12.30, y: 26.8 },
+    { station: 'Templeton', x: 16.30, y: 26.8 },
+
+]);
+createLineBreak(
+  //"Canada Line-YVR",
+  am4core.color('#2382be'),[
+    { station: 'Templeton', x: 16.30, y: 26.8 },
+    { station: 'Bridgeport', x: 22.65, y: 26.8 },
+  ]
+  )
+
+  createLine(
+  "Canada Line-YVR",
+  am4core.color('#2382be'),[
+    { station: 'Granville', x: 24, y: 78 }, 
+    { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
+    { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
+    { station: 'bend in route'},
+    { station: 'Nanaimo', x: 30, y: 70 }, 
+
+
+  ]
+  )
+/*   [{ station: 'Lonsdale Quay', x: 30, y: 92.5}] */
+
 /*     { station: 'Lansdowne', x: 22.75, y: 29 }, 
     { station: 'Aberdeen', x: 22.75, y: 34.75 },
     { station: 'Bridgeport', x: 22.75, y: 40.50 }, 
