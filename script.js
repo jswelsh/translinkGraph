@@ -35,7 +35,7 @@ am4core.ready(function() {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 2;
+    series.strokeWidth = 6;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
@@ -59,7 +59,7 @@ am4core.ready(function() {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 2;
+    series.strokeWidth = 6;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
@@ -124,14 +124,94 @@ const lineConstructor = (axis) => {
 /*   lineConstructor('x')
   lineConstructor('y')  */
 
-  createLine(
+createLine(
+  "Expo Line",
+  am4core.color('#1c59ae'),[
+    { station: 'Scott Road', x: 69.025, y:42.3},
+    {},
+    { station: 'Gateway', x: 71.95, y: 36.2 },
+    { station: 'Surrey Central', x: 71.95, y: 30 },
+    { station: 'King George', x: 71.95, y: 23.25 }
+  ]
+  )
+
+createLineBreak(
+  //'Expo',s
+  am4core.color('#red'),[
+    /* { station: 'Granville', x: 21.5, y: 84.66667 },  */
+    { x: 23.75, y: 84.25},//Waterfront 
+    { x: 22.65, y: 85.8255 }, 
+    { x: 22.65, y: 85.8255 }, 
+    { x: 21.46833, y: 84.25 },
+    { x: 20.45, y: 82.73333 },
+    { x: 24, y: 78 },//Granville
+    {},
+    { x: 28.5, y: 72 },//Main Street–Science World
+    { x: 32.4, y: 66.8 },
+    { x: 32.4, y: 58.46667 }, 
+    { x: 34.25, y: 56 },//Nanaimo
+    {},
+    { x: 49.6625, y: 35.45 },
+    { x: 50.4125, y: 34.45 },
+    //22nd street
+    { x: 54.75, y: 34.45 },
+    { x: 58.91235, y:40 },//New Westminster
+    {},
+    { x: 68.13735, y: 52.3 },//Sapperton
+    { x: 70.7, y: 55.716866667 },
+    { x: 70.7, y: 57.15 },
+    { x: 70.7, y: 61 },
+    { x: 69.05, y: 63.2 },
+    { x: 67, y: 63.2 },//Lougheed Town Centre
+    {}, //diverge at Columbia
+    { x: 63.63735, y: 46.3 },
+    { x: 66.2, y: 46.3 },
+    { x: 71.95, y: 38.4 },//bend after scottcRoad
+    { x: 71.95, y: 36.2 },//Gateway 
+
+  ]
+  )
+createLine(
+  "Canada Line",
+  am4core.color('#1c59ae'),[
+    { station: 'Waterfront', x: 23.75, y: 84.25},
+    { station: 'bend in route'},
+    { station: 'Burrard', x: 21.46833, y: 84.25 },
+    { station: 'bend in route'},
+    { station: 'Granville', x: 24, y: 78 }, 
+    { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
+    { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
+    { station: 'bend in route'},
+    { station: 'Commercial-Broadway', x: 32.4, y: 62},
+    { station: 'bend in route'},
+    { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
+    { station: '29th Avenue', x: 36.65, y: 52.8}, 
+    { station: 'Joyce–Collingwood', x: 39.875, y: 48.5 }, /*  x: 39.425, y: 58.7 */
+    { station: 'Patterson', x: 42.35, y: 45.2 }, 
+    { station: 'Metrotown', x: 44.75,  y: 42 }, 
+    { station: 'Royal Oak', x: 47.1875, y: 38.75 }, 
+    { station: 'Edmonds', x: 49.6625, y: 35.45 }, 
+    { station: 'bend in route'},
+    { station: '22nd Street', x: 52.6625, y: 34.45 },
+    { station: 'bend in route'}, 
+    { station: 'New Westminster', x: 58.91235 , y:40  }, 
+    { station: 'Columbia', x: 62.66235, y: 45 }, 
+    { station: 'Sapperton', x: 68.13735, y: 52.3 }, 
+    { station: 'bend in route'},
+    { station: 'Braid', x: 70.7 ,y: 57.15 },
+    { station: 'bend in route'},
+    { station: 'Lougheed Town Centre', x: 63, y: 63.2 }, 
+    { station: 'Lougheed Town Centre', x: 67, y: 63.2 }, 
+  ]
+  )
+createLine(
   "Canada Line-YVR 22222222222",
   am4core.color('#2382be'),[
   ]
 );
 createLineBreak(
  // "Canada Line-YVR 22222222222",
-  am4core.color('#2382be'),[
+  am4core.color('#0097c7'),[
     { x: 22.625, y: 66.65}, //'Olympic Village'
     { x: 22.625, y: 69.40}, //bend in route
     { x: 20.25, y: 72.645}, //Yaletown–Roundhouse 
@@ -142,7 +222,7 @@ createLineBreak(
   )
 createLine(
   "Canada Line-YVR",
-  am4core.color('#2382be'),[
+  am4core.color('#0097c7'),[
     { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
     { station: 'Lansdowne', x: 22.625, y: 15.865 }, 
     { station: 'Aberdeen', x: 22.625, y: 22.575 },
@@ -165,7 +245,7 @@ createLine(
 );
 createLine(
   "Canada Line-YVR",
-  am4core.color('#2382be'),[
+  am4core.color('#0097c7'),[
     { station:'YVR Airport' , x: 8.75, y: 26.8 },
     { station: 'Sea Island Centre', x: 12.30, y: 26.8 },
     { station: 'Templeton', x: 16.30, y: 26.8 },
@@ -173,86 +253,15 @@ createLine(
 ]);
 createLineBreak(
   //"Canada Line-YVR",
-  am4core.color('#2382be'),[
+  am4core.color('#0097c7'),[
     { station: 'Templeton', x: 16.30, y: 26.8 },
     { station: 'Bridgeport', x: 22.65, y: 26.8 },
   ]
-  )
+)
 
-  createLine(
-  "Canada Line",
-  am4core.color('#2382be'),[
-    { station: 'Granville', x: 24, y: 78 }, 
-    { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
-    { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
-    { station: 'bend in route'},//slope 2.2
-    { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
-    { station: '29th Avenue', x: 36.65, y: 52.8}, 
-    { station: 'Joyce–Collingwood', x: 39.875, y: 48.5 }, /*  x: 39.425, y: 58.7 */
-    { station: 'Patterson', x: 42.35, y: 45.2 }, 
-    { station: 'Metrotown', x: 44.75,  y: 42 }, 
-    { station: 'Royal Oak', x: 47.1875, y: 38.75 }, 
-    { station: 'Edmonds', x: 49.6625, y: 35.45 }, 
-    {},
-    { station: '22nd Street', x: 52.6625, y: 34.45 },
-    {}, 
-    { station: 'New Westminster', x: 58.91235 , y:40  }, 
-    { station: 'Columbia', x: 62.66235, y: 45 }, 
-    { station: 'Sapperton', x: 68.13735, y: 52.3 }, 
-    {},
-    { station: 'Braid', x: 70.7 ,y: 57.15 },
-    {},
-    { station: 'Lougheed Town Centre', x: 63, y: 63.2 }, 
-    { station: 'Lougheed Town Centre', x: 67, y: 63.2 }, 
-  ]
-  )
-    createLine(
-  "Canada Line",
-  am4core.color('#2382be'),[
-    { station: 'Scott Road', x: 69.025, y:42.3},
-    {},
-    { station: 'Gateway', x: 71.95, y: 36.2 },
-    { station: 'Surrey Central', x: 71.95, y: 30 },
-    { station: 'King George', x: 71.95, y: 23 }
-  ]
-  )
-
-createLineBreak(
-  //'Expo',s
-  am4core.color('#2382be'),[
-    { x: 49.6625, y: 35.45 },
-    { x: 50.4125, y: 34.45 },
-    { x: 54.75, y: 34.45 },
-    { x: 58.91235, y:40 },//New Westminster
-    {},
-    { x: 68.13735, y: 52.3 },//Sapperton
-    { x: 70.7, y: 55.716866667 },
-    { x: 70.7, y: 57.15 },
-    { x: 70.7, y: 61 },
-    { x: 69.05, y: 63.2 },
-    { x: 67, y: 63.2 },//Lougheed Town Centre
-    {}, //diverge at Columbia
-    { x: 63.63735, y: 46.3 },
-    { x: 66.2, y: 46.3 },
-    { x: 71.95, y: 38.4 },
-
-
-    { x: 71.95, y: 23 }
-
-
-  ]
-  )
 /*   [{ station: 'Lonsdale Quay', x: 30, y: 92.5}] */
 
-/*     { station: 'Lansdowne', x: 22.75, y: 29 }, 
-    { station: 'Aberdeen', x: 22.75, y: 34.75 },
-    { station: 'Bridgeport', x: 22.75, y: 40.50 }, 
-    { station: 'olympic', x: 22.75, y: 46 }, 
-    { station: 'olympic', x: 22.75, y: 51.5 }, 
-    { station: 'olympic', x: 22.75, y: 57.1 }, 
-    { station: 'olympic', x: 22.75, y: 62.75 }, 
-    { station: 'olympic', x: 22.75, y: 68.5 }, 
-    { station: 'olympic', x: 22.75, y: 72.55 } */
+
 /* 
 createLine(
   "Canada Line-YVR 22222222222",
@@ -313,5 +322,6 @@ createLine(
   bg.height = am4core.percent(100);
 
   bg.href = 'routetemplate.png'
+/*   bg.href = 'map.png' */
 
 });
