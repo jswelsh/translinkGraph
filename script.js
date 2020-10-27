@@ -186,8 +186,22 @@ createLineBreak(
     { station: 'Granville', x: 24, y: 78 }, 
     { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
     { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
-    { station: 'bend in route'},
-    { station: 'Nanaimo', x: 30, y: 70 }, 
+    { station: 'bend in route'},//slope 2.2
+    { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
+    { station: '29th Avenue', x: 36.65, y: 52.8}, 
+    { station: 'Joyce–Collingwood', x:42.35, y: 45.2 }, /*  x: 39.425, y: 58.7 */
+    { station: 'Patterson', x:42.35, y: 45.2 }, 
+    { station: 'Metrotown', x: 36.65, y: 52.8 }, 
+    { station: 'Royal Oak', x: 36.65, y: 52.8 }, 
+    { station: 'Edmonds', x: 36.65, y: 52.8 }, 
+    {},
+    { station: 'Nanaimo', x: 50, y: 35 }, 
+   /*  { station: '22nd Street', x: 36.65, y: 52.8} */, 
+    
+    
+    
+
+
 
 
   ]
