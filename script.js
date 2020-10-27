@@ -48,6 +48,28 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
   }
+function createStepLine(name, color, data) {
+    var series = chart.series.push(new am4charts.StepLineSeries());
+    series.data = data;
+    series.name = name;
+
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+
+    series.stroke = color;
+    series.strokeWidth = 2;
+    series.connect = false;
+    
+    series.propertyFields.strokeDasharray = "dash";
+
+
+    let bullet = series.bullets.push(new am4charts.CircleBullet());
+    bullet.circle.radius = 2;
+    bullet.circle.fill = am4core.color("#fff");
+    bullet.circle.stroke = am4core.color("#000");
+    bullet.circle.strokeWidth = 2;
+    bullet.circle.tooltipText = "{station}";
+  }
 
     function createLineBreak(name, color, data) {
     var series = chart.series.push(new am4charts.LineSeries());
@@ -190,9 +212,22 @@ createLine(
     { station: 'Fraser St–E Broadway', x: 27.95, y: 61.8},
     { station: 'Clark Dr–E Broadway', x: 30.6, y: 61.8},
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8},
-    {},
-
-
+  ])
+  createStepLine(
+  "Expo Line",
+  am4core.color('#f689ae'),[
+    { station: '', x: 88.35, y: 30.95 },
+    { station: '', x: 85.35, y: 30.95 },
+    { station: '', x: 82.4, y: 30.95 },
+    { station: '', x: 79.45, y: 30.95 },
+    { station: '', x: 76.45, y: 30.95 },
+    { station: 'Surrey Central', x: 72.9, y: 29.9 },
+    { station: 'King George', x: 72.9, y: 23.15 },
+    { station: '96th Ave–King George Blvd', x: 72.9, y: 18.35 },
+    { station: '88th Ave–King George Blvd', x: 72.9, y: 14.35 },
+    { station: '80th Ave–King George Blvd', x: 72.9, y: 10.4 },
+    { station: '76th Ave–King George Blvd', x: 72.9, y: 6.45 },
+    { station: 'Newton Exchange', x: 72.9, y: 2.45 },
   ])
 createLine(
   "Expo Line",
