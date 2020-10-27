@@ -174,6 +174,26 @@ createLine(
 
 
   ])
+  createLine(
+  "99 B-Line",
+  am4core.color('#f36617ff'),[
+    { station: 'UBC Exchange', x: 2.75, y: 61.8},
+    { station: 'Allison Rd–University Blvd', x: 5.1, y: 61.8},
+    { station: 'Sasamat St–W 10th Ave', x: 7.5, y: 61.8},
+    { station: 'Alma St–W Broadway', x: 9.85, y: 61.8},
+    { station: 'Macdonald St–W Broadway', x: 12.6, y: 61.8},
+    { station: 'Arbutus St–W Broadway', x: 15.3, y: 61.8},
+    { station: 'Granville St–W Broadway', x: 17.7, y: 61.8},
+    { station: 'Willow St–W Broadway', x: 20.7, y: 61.8},
+    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
+    { station: 'Main St–E Broadway', x: 25.175, y: 61.8},
+    { station: 'Fraser St–E Broadway', x: 27.95, y: 61.8},
+    { station: 'Clark Dr–E Broadway', x: 30.6, y: 61.8},
+    { station: 'Commercial–Broadway', x: 32.4, y: 61.8},
+    {},
+
+
+  ])
 createLine(
   "Expo Line",
   am4core.color('#1c59ae'),[
@@ -185,7 +205,7 @@ createLine(
     { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
     { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
     { station: 'bend in route'},
-    { station: 'Commercial-Broadway', x: 32.4, y: 62},
+    { station: 'Commercial-Broadway', x: 32.4, y: 61.8},
     { station: 'bend in route'},
     { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
     { station: '29th Avenue', x: 36.65, y: 52.8}, 
