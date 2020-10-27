@@ -35,42 +35,41 @@ am4core.ready(function() {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 6;
+    series.strokeWidth = 2;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
 
-    console.log(data)
-    if(name.station !== 'Olympic Village') {
-      let bullet = series.bullets.push(new am4charts.CircleBullet());
-      bullet.circle.radius = 6;
-      bullet.circle.fill = am4core.color("#fff");
-      bullet.circle.stroke = am4core.color("#000");
-      bullet.circle.strokeWidth = 2;
-      bullet.circle.tooltipText = "{station}";
-    }
+
+    let bullet = series.bullets.push(new am4charts.CircleBullet());
+    bullet.circle.radius = 2;
+    bullet.circle.fill = am4core.color("#fff");
+    bullet.circle.stroke = am4core.color("#000");
+    bullet.circle.strokeWidth = 2;
+    bullet.circle.tooltipText = "{station}";
   }
 
-    function createLineBreak(color, data) {
+    function createLineBreak(name, color, data) {
     var series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
+    series.name = name;
 
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 6;
+    series.strokeWidth = 2;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
 
 
-/*       let bullet = series.bullets.push(new am4charts.CircleBullet());
-      bullet.circle.radius = 6;
-      bullet.circle.fill = am4core.color("#fff");
-      bullet.circle.stroke = am4core.color("#000");
-      bullet.circle.strokeWidth = 2;
-      bullet.circle.tooltipText = "{station}"; */
+    let bullet = series.bullets.push(new am4charts.CircleBullet());
+    bullet.circle.radius = 3;
+    bullet.circle.fill = am4core.color("#fff");
+    bullet.circle.stroke = am4core.color("#000");
+    bullet.circle.strokeWidth = 2;
+    bullet.circle.tooltipText = "{station}";
     
   }
 
@@ -94,7 +93,7 @@ am4core.ready(function() {
   series.propertyFields.strokeDasharray = "dash";
 
   var bullet = series.bullets.push(new am4charts.CircleBullet());
-  bullet.circle.radius = 6;
+  bullet.circle.radius = 1;
   bullet.circle.fill = am4core.color("#fff");
   bullet.circle.stroke = am4core.color("#000");
   bullet.circle.strokeWidth = 2;
@@ -120,59 +119,38 @@ const lineConstructor = (axis) => {
     
   }
 }
+/*   
+lineConstructor('x')
+lineConstructor('y')  */
 
-/*   lineConstructor('x')
-  lineConstructor('y')  */
+createLine(
+  "Millennium Line",
+  am4core.color("#536"),[
+  { station: 'VCC–Clark', x: 29.85, y: 66.55 },
+  {},
+  { station: 'Commercial–Broadway', x: 33.8, y: 63.83 },
+  { station: 'Renfrew', x: 37.5, y: 63.83 },
+  { station: 'Rupert', x: 41.15, y: 63.83 },
+  { station: 'Gilmore', x: 44.75, y: 63.83 },
+  { station: 'Brentwood Town Centre', x: 48.2, y: 63.83 },
+  { station: 'Holdom', x: 51.9, y: 63.83 },
+  { station: 'Sperling–Burnaby Lake', x: 55.65, y: 63.83 },
+  { station: 'Lake City Way', x: 59.4, y: 63.83 },
+  { station: 'Production Way–University', x: 63.2, y: 63.83 },
+  { station: 'Lougheed Town Centre', x: 66.85, y: 63.83 },
+/*   { station: 'Waterfront', x: 40.75, y: 63.7 } */,
+]);
+  createLineBreak(
+  'Expo Line',
+  am4core.color('#4fe'),[
+    { station: '1', x: 29.85, y: 66.55 },
+    { station: '2', x: 30.96, y: 66.55 },
+    { station: '3', x: 33, y: 63.83 },
+    { station: '4', x: 33.8, y: 63.83 },
 
+  ])
 createLine(
   "Expo Line",
-  am4core.color('#1c59ae'),[
-    { station: 'Scott Road', x: 69.025, y:42.3},
-    {},
-    { station: 'Gateway', x: 71.95, y: 36.2 },
-    { station: 'Surrey Central', x: 71.95, y: 30 },
-    { station: 'King George', x: 71.95, y: 23.25 }
-  ]
-  )
-
-createLineBreak(
-  //'Expo',s
-  am4core.color('#red'),[
-    /* { station: 'Granville', x: 21.5, y: 84.66667 },  */
-    { x: 23.75, y: 84.25},//Waterfront 
-    { x: 22.65, y: 85.8255 }, 
-    { x: 22.65, y: 85.8255 }, 
-    { x: 21.46833, y: 84.25 },
-    { x: 20.45, y: 82.73333 },
-    { x: 24, y: 78 },//Granville
-    {},
-    { x: 28.5, y: 72 },//Main Street–Science World
-    { x: 32.4, y: 66.8 },
-    { x: 32.4, y: 58.46667 }, 
-    { x: 34.25, y: 56 },//Nanaimo
-    {},
-    { x: 49.6625, y: 35.45 },
-    { x: 50.4125, y: 34.45 },
-    //22nd street
-    { x: 54.75, y: 34.45 },
-    { x: 58.91235, y:40 },//New Westminster
-    {},
-    { x: 68.13735, y: 52.3 },//Sapperton
-    { x: 70.7, y: 55.716866667 },
-    { x: 70.7, y: 57.15 },
-    { x: 70.7, y: 61 },
-    { x: 69.05, y: 63.2 },
-    { x: 67, y: 63.2 },//Lougheed Town Centre
-    {}, //diverge at Columbia
-    { x: 63.63735, y: 46.3 },
-    { x: 66.2, y: 46.3 },
-    { x: 71.95, y: 38.4 },//bend after scottcRoad
-    { x: 71.95, y: 36.2 },//Gateway 
-
-  ]
-  )
-createLine(
-  "Canada Line",
   am4core.color('#1c59ae'),[
     { station: 'Waterfront', x: 23.75, y: 84.25},
     { station: 'bend in route'},
@@ -200,8 +178,50 @@ createLine(
     { station: 'bend in route'},
     { station: 'Braid', x: 70.7 ,y: 57.15 },
     { station: 'bend in route'},
-    { station: 'Lougheed Town Centre', x: 63, y: 63.2 }, 
-    { station: 'Lougheed Town Centre', x: 67, y: 63.2 }, 
+    { station: 'Production Way–University', x: 63.2, y: 63.2 }, 
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2 }, 
+    {},
+    { station: 'Scott Road', x: 69.025, y:42.3},
+    {},
+    { station: 'Gateway', x: 71.95, y: 36.2 },
+    { station: 'Surrey Central', x: 71.95, y: 30 },
+    { station: 'King George', x: 71.95, y: 23.25 }
+  ]
+  )
+  createLineBreak(
+  'Expo Line',
+  am4core.color('#4fe'),[
+    /* { station: 'Granville', x: 21.5, y: 84.66667 },  */
+    {station: '1', x: 23.75, y: 84.25},//Waterfront 
+    {station: '2', x: 22.65, y: 85.8255 }, 
+    {station: '3', x: 22.65, y: 85.8255 }, 
+    {station: '4', x: 21.46833, y: 84.25 },
+    {station: '5', x: 20.45, y: 82.73333 },
+    {station: '6', x: 24, y: 78 },//Granville
+    {station: '7',},
+    {station: '8', x: 28.5, y: 72 },//Main Street–Science World
+    {station: '9', x: 32.4, y: 66.8 },
+    {station: '10', x: 32.4, y: 58.46667 }, 
+    {station: '11', x: 34.25, y: 56 },//Nanaimo
+    {station: '12',},
+    {station: '13', x: 49.6625, y: 35.45 },
+    {station: '14', x: 50.4125, y: 34.45 },
+    //22nd street
+    {station: '15', x: 54.75, y: 34.45 },
+    {station: '16', x: 58.91235, y:40 },//New Westminster
+    {station: '17',},
+    {station: '18', x: 68.13735, y: 52.3 },//Sapperton
+    {station: '19', x: 70.7, y: 55.716866667 },
+    {station: '20', x: 70.7, y: 57.15 },
+    {station: '21', x: 70.7, y: 61 },
+    {station: '22', x: 69.05, y: 63.2 },
+    {station: '23', x: 66.85, y: 63.2 },//Lougheed Town Centre
+    {station: '24',}, //diverge at Columbia
+    {station: '25', x: 63.63735, y: 46.3 },
+    {station: '26', x: 66.2, y: 46.3 },
+    {station: '27', x: 71.95, y: 38.4 },//bend after scottcRoad
+    {station: '28', x: 71.95, y: 36.2 },//Gateway 
+
   ]
   )
 createLine(
@@ -210,18 +230,18 @@ createLine(
   ]
 );
 createLineBreak(
- // "Canada Line-YVR 22222222222",
-  am4core.color('#0097c7'),[
-    { x: 22.625, y: 66.65}, //'Olympic Village'
-    { x: 22.625, y: 69.40}, //bend in route
-    { x: 20.25, y: 72.645}, //Yaletown–Roundhouse 
-    { x: 17.75, y: 76.1}, //Yaletown–Roundhouse 
-    { x: 19.35, y: 78.25}, //bend in route
+  "Canada Line",
+  am4core.color('#e37'),[
+    { station: '1', x: 22.625, y: 66.65}, //'Olympic Village'
+    { station: '2', x: 22.625, y: 69.40}, //bend in route
+    { station: '3', x: 20.25, y: 72.645}, //Yaletown–Roundhouse 
+    { station: '4', x: 17.75, y: 76.1}, //Yaletown–Roundhouse 
+    { station: '5', x: 19.35, y: 78.25}, //bend in route
 
   ]
   )
 createLine(
-  "Canada Line-YVR",
+  "Canada Line",
   am4core.color('#0097c7'),[
     { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
     { station: 'Lansdowne', x: 22.625, y: 15.865 }, 
@@ -245,44 +265,27 @@ createLine(
 );
 createLine(
   "Canada Line-YVR",
-  am4core.color('#0097c7'),[
+  am4core.color('#e2f'),[
     { station:'YVR Airport' , x: 8.75, y: 26.8 },
     { station: 'Sea Island Centre', x: 12.30, y: 26.8 },
     { station: 'Templeton', x: 16.30, y: 26.8 },
 
 ]);
 createLineBreak(
-  //"Canada Line-YVR",
-  am4core.color('#0097c7'),[
+  "Canada Line-YVR",
+  am4core.color('#ee3'),[
     { station: 'Templeton', x: 16.30, y: 26.8 },
     { station: 'Bridgeport', x: 22.65, y: 26.8 },
   ]
 )
 
+
 /*   [{ station: 'Lonsdale Quay', x: 30, y: 92.5}] */
-
-
 /* 
-createLine(
-  "Canada Line-YVR 22222222222",
-  am4core.color("#ed6ea7"),[
-    { station:'YVR Airport' , x: 8.75, y: 39 },
-    { station: 'Sea Island Centre', x: 12.30, y: 39 },
-    { station: 'Templeton', x: 16.30, y: 39 },
-    { station: 'Bridgeport', x: 22.75, y: 40.50 },
-]);
-createLine(
-  "Millennium Line",
-  am4core.color("#ed6ea7"),[
-    { station: 'Waterfront', x: 40.75, y: 59 },
-]);
+
+
 createLine(
   "Evergreen Extension Line",
-  am4core.color("#ed6ea7"),[
-    { station: 'Waterfront', x: 40.75, y: 59 },
-]);
-createLine(
-  "Millennium Line",
   am4core.color("#ed6ea7"),[
     { station: 'Waterfront', x: 40.75, y: 59 },
 ]);
