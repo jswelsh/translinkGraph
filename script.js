@@ -65,7 +65,7 @@ am4core.ready(function() {
 
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 3;
+    bullet.circle.radius = 2;
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#000");
     bullet.circle.strokeWidth = 2;
@@ -124,7 +124,7 @@ lineConstructor('x')
 lineConstructor('y')  */
 
 createLine(
-  "Millennium Line",
+  'Millennium Line',
   am4core.color("#536"),[
   { station: 'VCC–Clark', x: 29.85, y: 66.55 },
   {},
@@ -138,15 +138,40 @@ createLine(
   { station: 'Lake City Way', x: 59.4, y: 63.83 },
   { station: 'Production Way–University', x: 63.2, y: 63.83 },
   { station: 'Lougheed Town Centre', x: 66.85, y: 63.83 },
-/*   { station: 'Waterfront', x: 40.75, y: 63.7 } */,
+  {},
+  { station: 'Burquitlam', x: 70.75, y: 70.55 },
+  {},
+  { station: 'Moody Centre', x: 73.64, y: 77.05},
+  { station: 'Inlet Centre', x: 77.15, y: 77.05},
+  {},
+  { station: 'Coquitlam Central', x: 80.5, y: 78},
+  {},
+  { station: 'Lincoln', x: 81, y: 83.65},
+  { station: 'Lafarge Lake–Douglas', x: 81, y: 90.3},
+
+  
 ]);
   createLineBreak(
-  'Expo Line',
+  'Millennium Line',
   am4core.color('#4fe'),[
     { station: '1', x: 29.85, y: 66.55 },
     { station: '2', x: 30.96, y: 66.55 },
     { station: '3', x: 33, y: 63.83 },
     { station: '4', x: 33.8, y: 63.83 },
+    {},
+    { station: '5', x: 66.85, y: 63.83 },
+    { station: '6', x: 69, y: 63.83 },
+    { station: '7', x: 70.75, y: 66.1633333 },
+    { station: '8', x: 70.75, y: 70.55 },
+    { station: '9', x: 70.75, y: 75 },
+    { station: '10', x: 72.2, y: 77.05},
+    { station: '11', x: 73.64, y: 77.05},
+    { station: '12', x: 77.15, y: 77.05},
+    { station: '13', x: 79.5, y: 77.05},
+    { station: '14', x: 80.5, y: 78.05},
+    { station: '14', x: 81, y: 78.55},
+    { station: '14', x: 81, y: 83.65},
+
 
   ])
 createLine(
@@ -176,16 +201,16 @@ createLine(
     { station: 'Columbia', x: 62.66235, y: 45 }, 
     { station: 'Sapperton', x: 68.13735, y: 52.3 }, 
     { station: 'bend in route'},
-    { station: 'Braid', x: 70.7 ,y: 57.15 },
+    { station: 'Braid', x: 70.7 ,y: 57.2 },
     { station: 'bend in route'},
     { station: 'Production Way–University', x: 63.2, y: 63.2 }, 
     { station: 'Lougheed Town Centre', x: 66.85, y: 63.2 }, 
     {},
     { station: 'Scott Road', x: 69.025, y:42.3},
     {},
-    { station: 'Gateway', x: 71.95, y: 36.2 },
-    { station: 'Surrey Central', x: 71.95, y: 30 },
-    { station: 'King George', x: 71.95, y: 23.25 }
+    { station: 'Gateway', x: 71.95, y: 36.15 },
+    { station: 'Surrey Central', x: 71.95, y: 29.9 },
+    { station: 'King George', x: 71.95, y: 23.15 },
   ]
   )
   createLineBreak(
@@ -212,7 +237,7 @@ createLine(
     {station: '17',},
     {station: '18', x: 68.13735, y: 52.3 },//Sapperton
     {station: '19', x: 70.7, y: 55.716866667 },
-    {station: '20', x: 70.7, y: 57.15 },
+    {station: '20', x: 70.7, y: 57.2 },
     {station: '21', x: 70.7, y: 61 },
     {station: '22', x: 69.05, y: 63.2 },
     {station: '23', x: 66.85, y: 63.2 },//Lougheed Town Centre
@@ -220,7 +245,7 @@ createLine(
     {station: '25', x: 63.63735, y: 46.3 },
     {station: '26', x: 66.2, y: 46.3 },
     {station: '27', x: 71.95, y: 38.4 },//bend after scottcRoad
-    {station: '28', x: 71.95, y: 36.2 },//Gateway 
+    {station: '28', x: 71.95, y: 36.15 },//Gateway 
 
   ]
   )
@@ -232,7 +257,7 @@ createLine(
 createLineBreak(
   "Canada Line",
   am4core.color('#e37'),[
-    { station: '1', x: 22.625, y: 66.65}, //'Olympic Village'
+    { station: '1', x: 22.625, y: 66.5}, //'Olympic Village'
     { station: '2', x: 22.625, y: 69.40}, //bend in route
     { station: '3', x: 20.25, y: 72.645}, //Yaletown–Roundhouse 
     { station: '4', x: 17.75, y: 76.1}, //Yaletown–Roundhouse 
@@ -244,15 +269,15 @@ createLine(
   "Canada Line",
   am4core.color('#0097c7'),[
     { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
-    { station: 'Lansdowne', x: 22.625, y: 15.865 }, 
-    { station: 'Aberdeen', x: 22.625, y: 22.575 },
-    { station: 'Bridgeport', x: 22.625, y: 29 }, 
-    { station: 'Marine Drive', x: 22.625, y: 35.595},
-    { station: 'Langara–49th Avenue', x: 22.625, y: 42.12},
+    { station: 'Lansdowne', x: 22.625, y: 15.75 }, 
+    { station: 'Aberdeen', x: 22.625, y: 22.3 },
+    { station: 'Bridgeport', x: 22.625, y: 28.9 }, 
+    { station: 'Marine Drive', x: 22.625, y: 35.45},
+    { station: 'Langara–49th Avenue', x: 22.625, y: 42.},
     { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.6},
-    { station: 'King Edward', x: 22.625, y: 55.275},
+    { station: 'King Edward', x: 22.625, y: 55.2},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
-    { station: 'Olympic Village', x: 22.625, y: 66.65},
+    { station: 'Olympic Village', x: 22.625, y: 66.5},
     { station: 'bend in route'},
     { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645},
     { station: 'bend in route'},
@@ -266,16 +291,16 @@ createLine(
 createLine(
   "Canada Line-YVR",
   am4core.color('#e2f'),[
-    { station:'YVR Airport' , x: 8.75, y: 26.8 },
-    { station: 'Sea Island Centre', x: 12.30, y: 26.8 },
-    { station: 'Templeton', x: 16.30, y: 26.8 },
+    { station:'YVR Airport' , x: 8.7, y: 26.8 },
+    { station: 'Sea Island Centre', x: 12.4, y: 26.8 },
+    { station: 'Templeton', x: 16.15, y: 26.8 },
 
 ]);
 createLineBreak(
   "Canada Line-YVR",
   am4core.color('#ee3'),[
-    { station: 'Templeton', x: 16.30, y: 26.8 },
-    { station: 'Bridgeport', x: 22.65, y: 26.8 },
+    { station: '1', x: 16.15, y: 26.8 },
+    { station: '2', x: 22.65, y: 26.8 },
   ]
 )
 
