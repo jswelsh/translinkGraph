@@ -213,14 +213,34 @@ createLine(
     { station: 'Clark Dr–E Broadway', x: 30.6, y: 61.8},
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8},
   ])
+  createLine(
+  "99 B-Line",
+  am4core.color('#f36617ff'),[
+    { station: 'Burrard', x: 21.6, y: 84.35 },
+    { station: 'Granville St–W Hastings St', x: 23.55, y: 81.75 }, 
+    { station: 'Abbott St–W Hastings St', x: 26.65, y: 81.75 }, 
+    { station: 'Main St–E Hastings St', x: 29.45, y: 81.75 }, 
+    { station: 'Commercial Dr–E Hastings St', x: 32.3, y: 81.75 }, 
+    { station: 'Nanaimo St–E Hastings St', x: 35.15, y: 81.75 }, 
+    { station: 'Renfrew St–E Hastings St', x: 38, y: 81.75 }, 
+    { station: 'KootenayLoop', x: 40.65, y: 81.75 }, 
+    { station: 'Gilmore Ave–Hastings St', x: 43.65, y: 81.75 }, 
+    { station: 'Willingdon Ave–Hastings St', x: 46.4, y: 81.75 }, 
+    { station: 'Hythe Ave–Hastings St', x: 49.15, y: 81.75 }, 
+    { station: 'Holdom Ave–Hastings St', x: 52, y: 81.75 }, 
+    { station: 'Kensington Ave–Hastings St', x: 54.85, y: 81.75 }, 
+    { station: 'Duthie Ave–Hastings St', x: 57.7, y: 81.75 }, 
+    { station: 'SFUTransportationCentre', x: 60.9, y: 81.75 }, 
+    { station: 'SFUExchange', x: 63.2, y: 81.75 }, 
+  ])
   createStepLine(
-  "Expo Line",
-  am4core.color('#f689ae'),[
-    { station: '', x: 88.35, y: 30.95 },
-    { station: '', x: 85.35, y: 30.95 },
-    { station: '', x: 82.4, y: 30.95 },
-    { station: '', x: 79.45, y: 30.95 },
-    { station: '', x: 76.45, y: 30.95 },
+  'R1 King George Blvd',
+  am4core.color('#149e42ff'),[
+    { station: 'Guildford Exchange', x: 88.35, y: 30.95 },
+    { station: '148th St–104th Ave', x: 85.35, y: 30.95 },
+    { station: '144th St–104th Ave', x: 82.4, y: 30.95 },
+    { station: '140th St–104th Ave', x: 79.45, y: 30.95 },
+    { station: 'Whalley Blvd–104th Ave', x: 76.45, y: 30.95 },
     { station: 'Surrey Central', x: 72.9, y: 29.9 },
     { station: 'King George', x: 72.9, y: 23.15 },
     { station: '96th Ave–King George Blvd', x: 72.9, y: 18.35 },
@@ -229,7 +249,7 @@ createLine(
     { station: '76th Ave–King George Blvd', x: 72.9, y: 6.45 },
     { station: 'Newton Exchange', x: 72.9, y: 2.45 },
   ])
-createLine(
+/* createLine(
   "Expo Line",
   am4core.color('#1c59ae'),[
     { station: 'Waterfront', x: 23.75, y: 84.25},
@@ -244,7 +264,7 @@ createLine(
     { station: 'bend in route'},
     { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
     { station: '29th Avenue', x: 36.65, y: 52.8}, 
-    { station: 'Joyce–Collingwood', x: 39.875, y: 48.5 }, /*  x: 39.425, y: 58.7 */
+    { station: 'Joyce–Collingwood', x: 39.875, y: 48.5 }, 
     { station: 'Patterson', x: 42.35, y: 45.2 }, 
     { station: 'Metrotown', x: 44.75,  y: 42 }, 
     { station: 'Royal Oak', x: 47.1875, y: 38.75 }, 
@@ -267,7 +287,7 @@ createLine(
     { station: 'Surrey Central', x: 71.95, y: 29.9 },
     { station: 'King George', x: 71.95, y: 23.15 },
   ]
-  )
+  ) */
   createLineBreak(
   'Expo Line',
   am4core.color('#4fe'),[
@@ -275,7 +295,7 @@ createLine(
     {station: '1', x: 23.75, y: 84.25},//Waterfront 
     {station: '2', x: 22.65, y: 85.8255 }, 
     {station: '3', x: 22.65, y: 85.8255 }, 
-    {station: '4', x: 21.46833, y: 84.25 },
+   // {station: '4', x: 21.46833, y: 84.25 },
     {station: '5', x: 20.45, y: 82.73333 },
     {station: '6', x: 24, y: 78 },//Granville
     {station: '7',},
