@@ -35,14 +35,14 @@ am4core.ready(function() {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 2;
+    series.strokeWidth = 6;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
 
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 2;
+    bullet.circle.radius = 4;
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#000");
     bullet.circle.strokeWidth = 2;
@@ -57,14 +57,14 @@ function createStepLine(name, color, data) {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 2;
+    series.strokeWidth = 6;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
 
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 2;
+    bullet.circle.radius = 4;
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#000");
     bullet.circle.strokeWidth = 2;
@@ -80,19 +80,19 @@ function createStepLine(name, color, data) {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 2;
+    series.strokeWidth = 6;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
 
-
+/* 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
     bullet.circle.radius = 2;
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#000");
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
-    
+     */
   }
 
 
@@ -109,13 +109,13 @@ function createStepLine(name, color, data) {
   series.dataFields.valueY = "y";
 
   series.stroke = color;
-  series.strokeWidth = 2;
+  series.strokeWidth = 6;
   series.connect = false;
 
   series.propertyFields.strokeDasharray = "dash";
 
   var bullet = series.bullets.push(new am4charts.CircleBullet());
-  bullet.circle.radius = 1;
+  bullet.circle.radius = 4;
   bullet.circle.fill = am4core.color("#fff");
   bullet.circle.stroke = am4core.color("#000");
   bullet.circle.strokeWidth = 2;
@@ -147,7 +147,7 @@ lineConstructor('y')  */
 
 createLine(
   'Millennium Line',
-  am4core.color("#536"),[
+  am4core.color("#facf05ff"),[
   { station: 'VCC–Clark', x: 29.85, y: 66.55 },
   {},
   { station: 'Commercial–Broadway', x: 33.8, y: 63.83 },
@@ -175,7 +175,7 @@ createLine(
 ]);
   createLineBreak(
   'Millennium Line',
-  am4core.color('#4fe'),[
+  am4core.color('#facf05ff'),[
     { station: '1', x: 29.85, y: 66.55 },
     { station: '2', x: 30.96, y: 66.55 },
     { station: '3', x: 33, y: 63.83 },
@@ -235,8 +235,8 @@ createLine(
   ])
 
   createLine(
-  "R5 Hastings St",
-  am4core.color('#255'),[
+  "R4 41st Ave",
+  am4core.color('#149e42ff'),[
 
     { station: 'UBCExchange', x: 2.75, y: 61.8},
     {},
@@ -258,8 +258,8 @@ createLine(
     { station: 'Kingsway–Joyce St', x: 38.1, y: 48.625 },
     { station: 'Joyce–Collingwood', x: 39.9, y: 48.625 },
   ])
-/*   createLine(
-  "R5 Hastings St",
+  createLine(
+  'R4 41st Ave',
   am4core.color('#149e42ff'),[
 
     { station: '1', x: 2.75, y: 61.8},
@@ -270,7 +270,7 @@ createLine(
     { station: '6', x: 6.9, y: 48.625 },
     { station: '7', x: 9.85, y: 48.625 },
 
-  ]) */
+  ])
   createStepLine(
   'R1 King George Blvd',
   am4core.color('#149e42ff'),[
@@ -287,7 +287,7 @@ createLine(
     { station: '76th Ave–King George Blvd', x: 72.9, y: 6.45 },
     { station: 'Newton Exchange', x: 72.9, y: 2.45 },
   ])
-/* createLine(
+ createLine(
   "Expo Line",
   am4core.color('#1c59ae'),[
     { station: 'Waterfront', x: 23.75, y: 84.25},
@@ -325,10 +325,10 @@ createLine(
     { station: 'Surrey Central', x: 71.95, y: 29.9 },
     { station: 'King George', x: 71.95, y: 23.15 },
   ]
-  ) */
+  ) 
   createLineBreak(
   'Expo Line',
-  am4core.color('#4fe'),[
+  am4core.color('#1c59ae'),[
     /* { station: 'Granville', x: 21.5, y: 84.66667 },  */
     {station: '1', x: 23.75, y: 84.25},//Waterfront 
     {station: '2', x: 22.65, y: 85.8255 }, 
@@ -369,7 +369,7 @@ createLine(
 );
 createLineBreak(
   "Canada Line",
-  am4core.color('#e37'),[
+  am4core.color('#0097c7'),[
     { station: '1', x: 22.625, y: 66.5}, //'Olympic Village'
     { station: '2', x: 22.625, y: 69.40}, //bend in route
     { station: '3', x: 20.25, y: 72.645}, //Yaletown–Roundhouse 
@@ -403,7 +403,7 @@ createLine(
 );
 createLine(
   "Canada Line-YVR",
-  am4core.color('#e2f'),[
+  am4core.color('#0097c7'),[
     { station:'YVR Airport' , x: 8.7, y: 26.8 },
     { station: 'Sea Island Centre', x: 12.4, y: 26.8 },
     { station: 'Templeton', x: 16.15, y: 26.8 },
@@ -411,7 +411,7 @@ createLine(
 ]);
 createLineBreak(
   "Canada Line-YVR",
-  am4core.color('#ee3'),[
+  am4core.color('#0097c7'),[
     { station: '1', x: 16.15, y: 26.8 },
     { station: '2', x: 22.65, y: 26.8 },
   ]
@@ -462,7 +462,7 @@ createLine(
   bg.width = am4core.percent(100);
   bg.height = am4core.percent(100);
 
-  bg.href = 'routetemplate.png'
-/*   bg.href = 'map.png' */
+/*   bg.href = 'routetemplate.png' */
+  bg.href = 'transitMap.png'
 
 });
