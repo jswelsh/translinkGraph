@@ -85,13 +85,13 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
   }
-  function createIconPin(icons) {
+  function createIconPin(type, color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
-    series.data = icons;
+    series.data = data;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
 
-    series.stroke = am4core.color("#1c59ae");
+    series.stroke = color
     series.strokeWidth = 1;
     series.connect = false;
 
@@ -99,7 +99,7 @@ am4core.ready(function() {
     let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
     icon.locationX = 1;
     icon.stroke = am4core.color("#fff");
-    icon.background.fill =  am4core.color("#1c59ae");
+    icon.background.fill = color
     icon.background.radius=10
     icon.background.pointerBaseWidth=10
     icon.background.pointerLength=10
@@ -119,8 +119,11 @@ const buildRoutes = (routes) => {
     createPathingLine(route.name, route.color, route.pathing)
     route.main && createLine(route.name, route.color, route.main)
   });
+  icons.forEach(icon => {
+      createIconPin(icon.type, icon.color, icon.data)
+  })
   createConnector(connectors)
-  createIconPin(icons)
+
 }
 buildRoutes(routes)
 

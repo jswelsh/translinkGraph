@@ -313,15 +313,34 @@ const connectors = [
   { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
   { station: 'Phibbs Exchange', x: 41.53, y: 92.55 }
 ]
+const icons = [{
+  type: 'ferryIcon',
+  color: am4core.color("#1c59ae"),
+  data: [
+    { icon: 'ferry.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 }, {},
+    { icon: 'ferry.png', angle: 45, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
+    { icon: 'ferry.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }, {},
+    { icon: 'ferry.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },{},
+    { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}]
+  },{
+  type: 'planeIcon',
+  color: am4core.color('#709abd'),
+  data: [
+    { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.35, y:  27.25 }],
+  },{
+  type: 'walkingIcon',
+  color: am4core.color('#999'),
+  data: [
+    { icon: 'walking.png', angle: -90, station: 'Vancouver City Centre/Granville ', x: 21.625, y: 77.75}],
+  },{
+  type: 'trainIcon',
+  color: am4core.color("#701c8aff"),
+  data: [
+    { icon: 'train.png', angle: 180, station: 'Waterfront', x: 24.5, y: 84.25},{},
+    { icon: 'train.png', angle: 90, station: 'Moody Centre', x: 73.64, y: 78.05},{},
+    { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. },{},
 
-const icons = [
-  { icon: 'walking.png', angle: -90, station: 'Vancouver City Centre/Granville ', x: 21.625, y: 77.75}, {},
-  { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.35, y:  27.25 }, {},
-  { icon: 'seaBus.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 }, {},
-  { icon: 'seaBus.png', angle: 45, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
-  { icon: 'seaBus.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }, {},
-  { icon: 'seaBus.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },{},
-  { icon: 'seaBus.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {},
-]
+  ]
+}]
 
-export { routes, connectors, icons }
+export { routes, connectors, icons  }
