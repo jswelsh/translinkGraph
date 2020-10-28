@@ -95,10 +95,6 @@ function createStepLine(name, color, data) {
      */
   }
 
-
-
-
-
   function createStepLine(name, color, data) {
 
   var series = chart.series.push(new am4charts.StepLineSeries());
@@ -122,6 +118,34 @@ function createStepLine(name, color, data) {
   bullet.circle.tooltipText = "{station}";
 }
 
+function createConnector(data) {
+  // Create series
+  var series = chart.series.push(new am4charts.LineSeries());
+  series.data = data;
+  series.hiddenInLegend = true;
+
+  // Set up binding to data
+  series.dataFields.valueX = "x";
+  series.dataFields.valueY = "y";
+
+  // Set up appearance
+  series.stroke = am4core.color("#999");
+  series.strokeWidth = 12;
+  series.connect = false;
+
+  // Add bullets (stations)
+  var bullet = series.bullets.push(new am4charts.CircleBullet());
+  bullet.circle.radius = 8;
+  bullet.circle.fill = am4core.color("#fff");
+  bullet.circle.stroke = am4core.color("#999");
+  bullet.circle.strokeWidth = 2;
+    bullet.circle.tooltipText = "{station}";
+
+ /*  bullet.zIndex = -10; */
+
+}
+
+
 const lineConstructor = (axis) => {
   for (let index = 0; index < 100; index++) {
     let color = (index % 5 === 0 ) ? '#ad7400': '#0023ad'
@@ -144,13 +168,17 @@ const lineConstructor = (axis) => {
 /*   
 lineConstructor('x')
 lineConstructor('y')  */
+/* createConnector([
+  { x: 33.8, y: 63.83}, 
+  { x: 32.4, y: 61.8 }]
+); */
 
 createLine(
   'Millennium Line',
   am4core.color("#facf05ff"),[
   { station: 'VCC–Clark', x: 29.85, y: 66.55 },
   {},
-  { station: 'Commercial–Broadway', x: 33.8, y: 63.83 },
+/*   { station: 'Commercial–Broadway', x: 33.8, y: 63.83 }, */
   { station: 'Renfrew', x: 37.5, y: 63.83 },
   { station: 'Rupert', x: 41.15, y: 63.83 },
   { station: 'Gilmore', x: 44.75, y: 63.83 },
@@ -180,7 +208,7 @@ createLine(
     { station: '2', x: 30.96, y: 66.55 },
     { station: '3', x: 33, y: 63.83 },
     { station: '4', x: 33.8, y: 63.83 },
-    {},
+{ station: 'Commercial–Broadway', x: 33.8, y: 63.83 },
     { station: '5', x: 66.85, y: 63.83 },
     { station: '6', x: 69, y: 63.83 },
     { station: '7', x: 70.75, y: 66.1633333 },
@@ -207,7 +235,7 @@ createLine(
     { station: 'Arbutus St–W Broadway', x: 15.3, y: 61.8},
     { station: 'Granville St–W Broadway', x: 17.7, y: 61.8},
     { station: 'Willow St–W Broadway', x: 20.7, y: 61.8},
-    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
+/*     { station: 'Broadway–City Hall', x: 22.625, y: 61.755}, */
     { station: 'Main St–E Broadway', x: 25.175, y: 61.8},
     { station: 'Fraser St–E Broadway', x: 27.95, y: 61.8},
     { station: 'Clark Dr–E Broadway', x: 30.6, y: 61.8},
@@ -216,39 +244,39 @@ createLine(
   createLine(
   "R5 Hastings St",
   am4core.color('#f36617ff'),[
-    { station: 'Burrard', x: 21.6, y: 84.35 },
+    { station: 'Burrard', x: 21.46833, y: 84.25 },
     { station: 'Granville St–W Hastings St', x: 23.55, y: 81.75 }, 
     { station: 'Abbott St–W Hastings St', x: 26.65, y: 81.75 }, 
     { station: 'Main St–E Hastings St', x: 29.45, y: 81.75 }, 
     { station: 'Commercial Dr–E Hastings St', x: 32.3, y: 81.75 }, 
     { station: 'Nanaimo St–E Hastings St', x: 35.15, y: 81.75 }, 
     { station: 'Renfrew St–E Hastings St', x: 38, y: 81.75 }, 
-    { station: 'KootenayLoop', x: 40.65, y: 81.75 }, 
+    { station: 'Kootenay Loop', x: 40.65, y: 81.75 }, 
     { station: 'Gilmore Ave–Hastings St', x: 43.65, y: 81.75 }, 
     { station: 'Willingdon Ave–Hastings St', x: 46.4, y: 81.75 }, 
     { station: 'Hythe Ave–Hastings St', x: 49.15, y: 81.75 }, 
     { station: 'Holdom Ave–Hastings St', x: 52, y: 81.75 }, 
     { station: 'Kensington Ave–Hastings St', x: 54.85, y: 81.75 }, 
     { station: 'Duthie Ave–Hastings St', x: 57.7, y: 81.75 }, 
-    { station: 'SFUTransportationCentre', x: 60.9, y: 81.75 }, 
-    { station: 'SFUExchange', x: 63.2, y: 81.75 }, 
+    { station: 'SFU Transportation Centre', x: 60.9, y: 81.75 }, 
+    { station: 'SFU Exchange', x: 63.2, y: 81.75 }, 
   ])
 
   createLine(
   "R4 41st Ave",
   am4core.color('#149e42ff'),[
 
-    { station: 'UBCExchange', x: 2.75, y: 61.8},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8},
     {},
     { station: 'Agronomy Rd–Wesbrook Mall', x: 4.1, y: 58.519},
     { station: 'W 16th Ave–Wesbrook Mall', x: 5.6, y: 56.5 },
     {},
-    { station: 'DunbarLoop', x: 9.85, y: 48.625 },
+    { station: 'Dunbar Loop', x: 9.85, y: 48.625 },
     { station: 'Carnarvon St–W 41st Ave', x: 12.56, y: 48.625 },
     { station: 'East Blvd–W 41st Ave', x: 15.3, y: 48.625 },
     { station: 'Granville St–W 41st Ave', x: 17.7, y: 48.625 },
     { station: 'Oak St–W 41st Ave', x: 20.7, y: 48.625 },
-    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},
+/*     { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625}, */
     { station: 'Main St–E 41st Ave', x: 25.2, y: 48.625 },
     { station: 'Fraser St–E 41st Ave', x: 27.2, y: 48.625 },
     { station: 'Knight St–E 41st Ave', x: 29.35, y: 48.625 },
@@ -258,7 +286,7 @@ createLine(
     { station: 'Kingsway–Joyce St', x: 38.1, y: 48.625 },
     { station: 'Joyce–Collingwood', x: 39.9, y: 48.625 },
   ])
-  createLine(
+  createLineBreak(
   'R4 41st Ave',
   am4core.color('#149e42ff'),[
 
@@ -279,13 +307,13 @@ createLine(
     { station: '144th St–104th Ave', x: 82.4, y: 30.95 },
     { station: '140th St–104th Ave', x: 79.45, y: 30.95 },
     { station: 'Whalley Blvd–104th Ave', x: 76.45, y: 30.95 },
-    { station: 'Surrey Central', x: 72.9, y: 29.9 },
-    { station: 'King George', x: 72.9, y: 23.15 },
-    { station: '96th Ave–King George Blvd', x: 72.9, y: 18.35 },
-    { station: '88th Ave–King George Blvd', x: 72.9, y: 14.35 },
-    { station: '80th Ave–King George Blvd', x: 72.9, y: 10.4 },
-    { station: '76th Ave–King George Blvd', x: 72.9, y: 6.45 },
-    { station: 'Newton Exchange', x: 72.9, y: 2.45 },
+/*     { station: 'Surrey Central', x: 72.5, y: 29.9 },
+    { station: 'King George', x: 72.5, y: 23.15 }, */
+    { station: '96th Ave–King George Blvd', x: 72.5, y: 18.35 },
+    { station: '88th Ave–King George Blvd', x: 72.5, y: 14.35 },
+    { station: '80th Ave–King George Blvd', x: 72.5, y: 10.4 },
+    { station: '76th Ave–King George Blvd', x: 72.5, y: 6.45 },
+    { station: 'Newton Exchange', x: 72.5, y: 2.45 },
   ])
  createLine(
   "Expo Line",
@@ -298,7 +326,7 @@ createLine(
     { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
     { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
     { station: 'bend in route'},
-    { station: 'Commercial-Broadway', x: 32.4, y: 61.8},
+/*     { station: 'Commercial-Broadway', x: 32.4, y: 61.8}, */
     { station: 'bend in route'},
     { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
     { station: '29th Avenue', x: 36.65, y: 52.8}, 
@@ -387,7 +415,7 @@ createLine(
     { station: 'Bridgeport', x: 22.625, y: 28.9 }, 
     { station: 'Marine Drive', x: 22.625, y: 35.45},
     { station: 'Langara–49th Avenue', x: 22.625, y: 42.},
-    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},
+/*     { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625}, */
     { station: 'King Edward', x: 22.625, y: 55.2},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
     { station: 'Olympic Village', x: 22.625, y: 66.5},
@@ -416,8 +444,49 @@ createLineBreak(
     { station: '2', x: 22.65, y: 26.8 },
   ]
 )
+/* 
+  { station: 'Production Way–University', x: 63.2, y: 63.83 },
+  { station: 'Lougheed Town Centre', x: 66.85, y: 63.83 },
+*/
+createConnector([
+  { station: 'Commercial–Broadway', x: 33.8, y: 63.83}, 
+  { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },
+  {},
+  { station: 'Production Way–University', x: 63.2, y: 63.515 },
+  {},
+  { station: 'Lougheed Town Centre', x: 66.85, y: 63.515 },
+  {},
+  { station: 'King George', x: 72.225, y: 23.15 },
+  {},
+  { station: 'Surrey Central', x: 72.225, y: 29.9 },
+  {},
+  { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},
+  {},
+  { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
+  {},
+  { station: 'UBC Exchange', x: 2.75, y: 61.8},
+  {},
+  { station: 'Waterfront', x: 23.75, y: 84.25},
+  {},
+  { station: 'Burrard', x: 21.46833, y: 84.25 },
+  {},
+  { station: 'Dunbar Loop', x: 9.85, y: 48.625 },
+  {},
+  { station: 'Kootenay Loop', x: 40.65, y: 81.75 },
+  {},
+  { station: 'VCC–Clark', x: 29.85, y: 66.55 },
+  {},
+  { station: 'Moody Centre', x: 73.64, y: 77.05},
+  {},
+  { station: 'SFU Exchange', x: 63.2, y: 81.75 },
+  {}, 
+  { station: 'Bridgeport', x: 22.625, y: 28.9 },
+  {}, 
+  { station: 'Newton Exchange', x: 72.5, y: 2.45 },
 
 
+]
+);
 /*   [{ station: 'Lonsdale Quay', x: 30, y: 92.5}] */
 /* 
 
