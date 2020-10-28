@@ -314,13 +314,17 @@ const connectors = [
   { station: 'Phibbs Exchange', x: 41.53, y: 92.55 }
 ]
 const icons = [{
-  type: 'ferryIcon',
-  color: am4core.color("#1c59ae"),
+  type: 'horseshoeFerry',
+  color: am4core.color("#C562E3"),
   data: [
     { icon: 'ferry.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 }, {},
     { icon: 'ferry.png', angle: 45, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
     { icon: 'ferry.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }, {},
-    { icon: 'ferry.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },{},
+    { icon: 'ferry.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },{}]
+  },{
+  type: 'Tsawwassen Ferry',
+  color: am4core.color("#7556E3"),
+  data: [
     { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}]
   },{
   type: 'planeIcon',
