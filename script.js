@@ -121,7 +121,6 @@ const buildRoutes = (routes) => {
   });
   createConnector(connectors)
   createIconPin(icons)
-  createLine(dashes)
 }
 buildRoutes(routes)
 
