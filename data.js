@@ -1,5 +1,5 @@
 const routes = [{
-  name: 'R1 King George Blvd',
+  name: 'R1 King George Blvd.....',
   color: am4core.color('#149e42ff'),
   main:[
     { station: 'Guildford Exchange', x: 88.35, y: 30.95 },
@@ -50,9 +50,9 @@ const routes = [{
     { station: 'Ottawa St–Lougheed Hwy', x: 85.45, y: 71.375 },
     { station: 'Harris Rd–Lougheed Hwy', x: 89.925, y: 65.4 },
     {},
-    { station: '203 St–Lougheed Hwy', x: 93.7, y: 62.925 },
-    { station: 'Laity St–Lougheed Hwy', x: 96.1, y: 62.925 },
-    { station: 'Haney Place', x: 98.525, y: 62.925 }],
+    { station: '203 St–Lougheed Hwy', x: 93.2, y: 62.925 },
+    { station: 'Laity St–Lougheed Hwy', x: 95.3, y: 62.925 },
+    { station: 'Haney Place', x: 97.525, y: 62.925 }],
   pathing: [
     { station: '1', x: 89.925, y: 65.4 },
     { station: '2', x: 91.82, y: 62.925 },
@@ -142,9 +142,9 @@ const routes = [{
     { station: 'bend in route'},
     { station: 'Burrard', x: 21.46833, y: 84.25 },
     { station: 'bend in route'},
-    { dash: "3,3", station: 'Granville', x: 24, y: 78 },
+    { dash: "3,3", station: 'Granville', x: 23.8125, y: 78.25 },
     { station: 'Vancouver City Centre', x: 19.35, y: 78.25},{},
-    { station: 'Granville', x: 24, y: 78 }, 
+    { station: 'Granville', x: 23.8125, y: 78.25 }, 
     { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
     { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
     { station: 'bend in route'},
@@ -307,7 +307,7 @@ const connectors = [
   { station: 'Newton Exchange', x: 72.5, y: 2.45 },{},
   { station: 'Guildford Exchange', x: 88.35, y: 30.95 },{},
   { station: 'Coquitlam Central', x: 80.5, y: 78 },{},
-  { station: 'Haney Place', x: 98.525, y: 62.925 },{},
+  { station: 'Haney Place', x: 97.525, y: 62.925 },{},
   { station: 'Park Royal', x: 14.4, y: 94.65 },{},
   { station: 'Lonsdale Quay', x: 30, y: 92.55 },
   { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
@@ -318,9 +318,9 @@ const icons = [{
   color: am4core.color("#C562E3"),
   data: [
     { icon: 'ferry.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 }, {},
-    { icon: 'ferry.png', angle: 45, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
+    { icon: 'ferry.png', angle: 0, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
     { icon: 'ferry.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }, {},
-    { icon: 'ferry.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },{}]
+    { icon: 'ferry.png', angle: 180, station: 'Granville',  x: 24.25, y: 78.5 },{}]
   },{
   type: 'Tsawwassen Ferry',
   color: am4core.color("#7556E3"),

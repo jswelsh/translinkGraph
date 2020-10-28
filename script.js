@@ -100,7 +100,7 @@ am4core.ready(function() {
     icon.locationX = 1;
     icon.stroke = am4core.color("#fff");
     icon.background.fill = color
-    icon.background.radius=10
+    icon.background.radius=12
     icon.background.pointerBaseWidth=10
     icon.background.pointerLength=10
     icon.background.propertyFields.pointerAngle='angle'
@@ -134,6 +134,6 @@ buildRoutes(routes)
   bg.width = am4core.percent(100);
   bg.height = am4core.percent(100);
 
-/*   bg.href = 'routetemplate.png' */
-  bg.href = 'transitMap.png'
+  bg.href = 'routetemplate2.png'
+ /*  bg.href = 'transitMap.png' */
 });
