@@ -118,21 +118,21 @@ function createStepLine(name, color, data) {
   bullet.circle.tooltipText = "{station}";
 }
 
-function createIconPin(data) {
+function createIconPin(/* mode */ data) {
   let series = chart.series.push(new am4charts.LineSeries());
   series.data = data;
   series.dataFields.valueX = "x";
   series.dataFields.valueY = "y";
 
-  series.stroke = am4core.color("#e5f");
+  series.stroke = am4core.color("#1c59ae");
   series.strokeWidth = 1;
   series.connect = false;
 
   series.propertyFields.strokeDasharray = "dash";
   let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
   icon.locationX = 1;
-  icon.stroke = am4core.color("#e5f");
-  icon.background.fill =  am4core.color("#e5f");
+  icon.stroke = am4core.color("#fff");
+  icon.background.fill =  am4core.color("#1c59ae");
   icon.background.radius=10
   icon.background.pointerBaseWidth=10
   icon.background.pointerLength=10
@@ -141,8 +141,12 @@ function createIconPin(data) {
   icon.image = new am4core.Image();
   icon.image.propertyFields.href = 'icon'
   icon.image.scale = .7;
-  icon.circle.radius = am4core.percent(100);;
-  icon.dy = -6;
+  icon.circle.radius = am4core.percent(100);
+/*   if(mode === 'y'){
+    icon.dy = -5
+  } else if(mode === 'x'){
+    icon.dx = - 5
+  } */
 }
 
 function createConnector(data) {
@@ -199,12 +203,17 @@ lineConstructor('y')  */
   { x: 33.8, y: 63.83}, 
   { x: 32.4, y: 61.8 }]
 ); */
+
 createIconPin([
-    { icon: 'seaBus1.png', angle: 90, station: 'Park Royal', x: 14.4, y: 94.65 },
+    { icon: 'seaBus1.png', angle: 45, offset: 'x', station: 'Vancouver City Centre', x: 19, y: 78.5},
     {},
-    { icon: 'plane.png', angle: 90,  station:'YVR Airport' , x: 8.7, y: 26.8 },
+    { icon: 'seaBus1.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 },
     {},
-    { icon: 'seaBus1.png', angle: 90, station: 'Burrard', x: 21.46833, y: 84.25 },
+    { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.7, y: 26.8 },
+    {},
+    { icon: 'seaBus1.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 },
+    {},
+    { icon: 'seaBus1.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },
 
 ])
 createLine(
@@ -436,7 +445,6 @@ createLineBreak(
     /* { station: 'Granville', x: 21.5, y: 84.66667 },  */
     {station: '1', x: 23.75, y: 84.25},//Waterfront 
     {station: '2', x: 22.65, y: 85.8255 }, 
-    {station: '3', x: 22.65, y: 85.8255 }, 
    // {station: '4', x: 21.46833, y: 84.25 },
     {station: '5', x: 20.45, y: 82.73333 },
     {station: '6', x: 24, y: 78 },//Granville
