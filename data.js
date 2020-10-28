@@ -142,6 +142,8 @@ const routes = [{
     { station: 'bend in route'},
     { station: 'Burrard', x: 21.46833, y: 84.25 },
     { station: 'bend in route'},
+    { dash: "3,3", station: 'Granville', x: 24, y: 78 },
+    { station: 'Vancouver City Centre', x: 19.35, y: 78.25},{},
     { station: 'Granville', x: 24, y: 78 }, 
     { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
     { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
@@ -310,7 +312,16 @@ const connectors = [
   { station: 'Lonsdale Quay', x: 30, y: 92.55 },
   { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
   { station: 'Phibbs Exchange', x: 41.53, y: 92.55 }
-
 ]
 
-export { routes, connectors }
+const icons = [
+  { icon: 'walking.png', angle: -90, station: 'Vancouver City Centre/Granville ', x: 21.625, y: 77.75}, {},
+  { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.35, y:  27.25 }, {},
+  { icon: 'seaBus.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 }, {},
+  { icon: 'seaBus.png', angle: 45, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
+  { icon: 'seaBus.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }, {},
+  { icon: 'seaBus.png', angle: 135, station: 'Granville',  x: 24.25, y: 78.5 },{},
+  { icon: 'seaBus.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {},
+]
+
+export { routes, connectors, icons }

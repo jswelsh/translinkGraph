@@ -1,4 +1,4 @@
-import { routes, connectors } from './data.js'
+import { routes, connectors, icons  } from './data.js'
 
 am4core.ready(function() {
   /*   am4core.useTheme(am4themes_animated);
@@ -85,6 +85,31 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
   }
+  function createIconPin(icons) {
+    let series = chart.series.push(new am4charts.LineSeries());
+    series.data = icons;
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+
+    series.stroke = am4core.color("#1c59ae");
+    series.strokeWidth = 1;
+    series.connect = false;
+
+    series.propertyFields.strokeDasharray = "dash";
+    let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
+    icon.locationX = 1;
+    icon.stroke = am4core.color("#fff");
+    icon.background.fill =  am4core.color("#1c59ae");
+    icon.background.radius=10
+    icon.background.pointerBaseWidth=10
+    icon.background.pointerLength=10
+    icon.background.propertyFields.pointerAngle='angle'
+
+    icon.image = new am4core.Image();
+    icon.image.propertyFields.href = 'icon'
+    icon.image.scale = .7;
+    icon.circle.radius = am4core.percent(100);
+  }
 
 const buildRoutes = (routes) => {
   routes.forEach(route => {
@@ -93,8 +118,10 @@ const buildRoutes = (routes) => {
     line is the main route with bullets for stations */
     createPathingLine(route.name, route.color, route.pathing)
     route.main && createLine(route.name, route.color, route.main)
-    createConnector(connectors)
   });
+  createConnector(connectors)
+  createIconPin(icons)
+  createLine(dashes)
 }
 buildRoutes(routes)
 
