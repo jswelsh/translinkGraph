@@ -283,5 +283,34 @@ const routes = [{
     { station: '14', x: 81, y: 83.65}]
   },
 ]
+const connectors = [
+  { station: 'Commercial–Broadway', x: 33.8, y: 63.83}, 
+  { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },{},
+  { station: 'Production Way–University', x: 63.2, y: 63.515 },{},
+  { station: 'Lougheed Town Centre', x: 66.85, y: 63.515 },{},
+  { station: 'King George', x: 72.225, y: 23.15 },{},
+  { station: 'Surrey Central', x: 72.225, y: 29.9 },{},
+  { station: 'Joyce–Collingwood', x: 39.9, y: 48.625 },{},
+  { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},{},
+  { station: 'Broadway–City Hall', x: 22.625, y: 61.755},{},
+  { station: 'UBC Exchange', x: 2.75, y: 61.8},{},
+  { station: 'Waterfront', x: 23.75, y: 84.25},{},
+  { station: 'Burrard', x: 21.46833, y: 84.25 },{},
+  { station: 'Dunbar Loop', x: 9.85, y: 48.625 },{},
+  { station: 'Kootenay Loop', x: 40.65, y: 81.75 },{},
+  { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
+  { station: 'Moody Centre', x: 73.64, y: 77.05},{},
+  { station: 'SFU Exchange', x: 63.2, y: 81.75 },{}, 
+  { station: 'Bridgeport', x: 22.625, y: 28.9 },{}, 
+  { station: 'Newton Exchange', x: 72.5, y: 2.45 },{},
+  { station: 'Guildford Exchange', x: 88.35, y: 30.95 },{},
+  { station: 'Coquitlam Central', x: 80.5, y: 78 },{},
+  { station: 'Haney Place', x: 98.525, y: 62.925 },{},
+  { station: 'Park Royal', x: 14.4, y: 94.65 },{},
+  { station: 'Lonsdale Quay', x: 30, y: 92.55 },
+  { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
+  { station: 'Phibbs Exchange', x: 41.53, y: 92.55 }
 
-export default routes 
+]
+
+export { routes, connectors }

@@ -1,4 +1,4 @@
-import routes from './data.js'
+import { routes, connectors } from './data.js'
 
 am4core.ready(function() {
   /*   am4core.useTheme(am4themes_animated);
@@ -48,7 +48,6 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
   }
-
   function createPathingLine(name, color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -63,6 +62,29 @@ am4core.ready(function() {
     
     series.propertyFields.strokeDasharray = "dash";
   }
+  function createConnector(data) {
+    // Create series
+    var series = chart.series.push(new am4charts.LineSeries());
+    series.data = data;
+    series.hiddenInLegend = true;
+
+    // Set up binding to data
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+
+    // Set up appearance
+    series.stroke = am4core.color("#999");
+    series.strokeWidth = 12;
+    series.connect = false;
+
+    // Add bullets (stations)
+    var bullet = series.bullets.push(new am4charts.CircleBullet());
+    bullet.circle.radius = 8;
+    bullet.circle.fill = am4core.color("#fff");
+    bullet.circle.stroke = am4core.color("#999");
+    bullet.circle.strokeWidth = 2;
+    bullet.circle.tooltipText = "{station}";
+  }
 
 const buildRoutes = (routes) => {
   routes.forEach(route => {
@@ -70,7 +92,8 @@ const buildRoutes = (routes) => {
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
     createPathingLine(route.name, route.color, route.pathing)
-     route.main && createLine(route.name, route.color, route.main)
+    route.main && createLine(route.name, route.color, route.main)
+    createConnector(connectors)
   });
 }
 buildRoutes(routes)
