@@ -214,7 +214,7 @@ createLine(
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8},
   ])
   createLine(
-  "99 B-Line",
+  "R5 Hastings St",
   am4core.color('#f36617ff'),[
     { station: 'Burrard', x: 21.6, y: 84.35 },
     { station: 'Granville St–W Hastings St', x: 23.55, y: 81.75 }, 
@@ -233,6 +233,44 @@ createLine(
     { station: 'SFUTransportationCentre', x: 60.9, y: 81.75 }, 
     { station: 'SFUExchange', x: 63.2, y: 81.75 }, 
   ])
+
+  createLine(
+  "R5 Hastings St",
+  am4core.color('#255'),[
+
+    { station: 'UBCExchange', x: 2.75, y: 61.8},
+    {},
+    { station: 'Agronomy Rd–Wesbrook Mall', x: 4.1, y: 58.519},
+    { station: 'W 16th Ave–Wesbrook Mall', x: 5.6, y: 56.5 },
+    {},
+    { station: 'DunbarLoop', x: 9.85, y: 48.625 },
+    { station: 'Carnarvon St–W 41st Ave', x: 12.56, y: 48.625 },
+    { station: 'East Blvd–W 41st Ave', x: 15.3, y: 48.625 },
+    { station: 'Granville St–W 41st Ave', x: 17.7, y: 48.625 },
+    { station: 'Oak St–W 41st Ave', x: 20.7, y: 48.625 },
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},
+    { station: 'Main St–E 41st Ave', x: 25.2, y: 48.625 },
+    { station: 'Fraser St–E 41st Ave', x: 27.2, y: 48.625 },
+    { station: 'Knight St–E 41st Ave', x: 29.35, y: 48.625 },
+    { station: 'Victoria Dr–E 41st Ave', x: 31.6, y: 48.625 },
+    { station: 'Clarendon St–E 41st Ave', x: 33.7, y: 48.625 },
+    { station: 'Rupert St–E 41st Ave', x: 35.9, y: 48.625 },
+    { station: 'Kingsway–Joyce St', x: 38.1, y: 48.625 },
+    { station: 'Joyce–Collingwood', x: 39.9, y: 48.625 },
+  ])
+/*   createLine(
+  "R5 Hastings St",
+  am4core.color('#149e42ff'),[
+
+    { station: '1', x: 2.75, y: 61.8},
+    { station: '2', x: 2.75, y: 60.3361},
+    { station: '3', x: 4.1, y: 58.519},
+    { station: '4', x: 5.6, y: 56.5 },
+    { station: '5', x: 6.9, y: 54.75 },
+    { station: '6', x: 6.9, y: 48.625 },
+    { station: '7', x: 9.85, y: 48.625 },
+
+  ]) */
   createStepLine(
   'R1 King George Blvd',
   am4core.color('#149e42ff'),[
@@ -349,7 +387,7 @@ createLine(
     { station: 'Bridgeport', x: 22.625, y: 28.9 }, 
     { station: 'Marine Drive', x: 22.625, y: 35.45},
     { station: 'Langara–49th Avenue', x: 22.625, y: 42.},
-    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.6},
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},
     { station: 'King Edward', x: 22.625, y: 55.2},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
     { station: 'Olympic Village', x: 22.625, y: 66.5},
