@@ -35,7 +35,7 @@ am4core.ready(function() {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth = 6;
+    series.strokeWidth = 0;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
@@ -254,6 +254,31 @@ createStepLine(
     { station: 'Newton Exchange', x: 72.5, y: 2.45 },]
 )
 createLine(
+  'R2 Marine Dr',
+  am4core.color('#149e42ff'),[
+    { station: 'Park Royal', x: 14.4, y: 94.65 },
+    { station: 'Capilano Rd–Marine Dr', x: 17.25, y: 94.65 },
+    { station: 'Pemberton Ave–Marine Dr', x: 20.1, y: 94.65 },
+    { station: 'Hamilton Ave–Marine Dr', x: 22.94, y: 94.65 },
+    { station: 'Bewicke Ave–Marine Dr', x: 25.75, y: 94.65 },
+    {},
+    { station: 'Lonsdale Quay', x: 30, y: 92.55 },
+    { station: '3rd St–Lonsdale Ave', x: 32.63, y: 92.55 },
+    { station: 'Ridgeway Ave–E 3rd St', x: 35.47, y: 92.55 },
+    { station: 'Brooksbank Ave–Main St', x: 38.3, y: 92.55 },
+    { station: 'Phibbs Exchange', x: 41.53, y: 92.55 },
+
+
+  ])
+/* createLine(
+  'R2 Marine Dr',
+  am4core.color('#149e42ff'),[
+    { station: '1', x: 25.75, y: 94.65 },
+    { station: '2', x: 27.4, y: 94.65 },
+    { station: '3', x: 29, y: 92.55 },
+    { station: '4', x: 32.63, y: 92.55 },
+  ]) */
+createLine(
   'R3 Lougheed Hwy',
   am4core.color('#149e42ff'),[
     { station: 'Coquitlam Central', x: 80.5, y: 78 },
@@ -326,6 +351,12 @@ createLine(
     { station: 'Duthie Ave–Hastings St', x: 57.7, y: 81.75 }, 
     { station: 'SFU Transportation Centre', x: 60.9, y: 81.75 }, 
     { station: 'SFU Exchange', x: 63.2, y: 81.75 }, ]
+)
+createLine(
+  "Expo Line",
+  am4core.color('#000'),[
+  { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },
+  { station: 'Waterfront', x: 23.75, y: 84.25},]
 )
 createLine(
   "Expo Line",
@@ -493,9 +524,19 @@ createConnector([
   {}, 
   { station: 'Newton Exchange', x: 72.5, y: 2.45 },
   {},
+  { station: 'Guildford Exchange', x: 88.35, y: 30.95 },
+  {},
   { station: 'Coquitlam Central', x: 80.5, y: 78 },
   {},
   { station: 'Haney Place', x: 98.525, y: 62.925 },
+  {},
+  { station: 'Park Royal', x: 14.4, y: 94.65 },
+  {},
+  { station: 'Lonsdale Quay', x: 30, y: 92.55 },
+  { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },
+
+  {},
+  { station: 'Phibbs Exchange', x: 41.53, y: 92.55 },
 ]
 );
 /*   [{ station: 'Lonsdale Quay', x: 30, y: 92.5}] */
