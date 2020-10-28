@@ -27,7 +27,7 @@ am4core.ready(function() {
   createAxis(chart.yAxes);
 
   function createLine(name, color, data) {
-    var series = chart.series.push(new am4charts.LineSeries());
+    let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
     series.name = name;
 
@@ -49,7 +49,7 @@ am4core.ready(function() {
     bullet.circle.tooltipText = "{station}";
   }
 function createStepLine(name, color, data) {
-    var series = chart.series.push(new am4charts.StepLineSeries());
+    let series = chart.series.push(new am4charts.StepLineSeries());
     series.data = data;
     series.name = name;
 
@@ -71,8 +71,8 @@ function createStepLine(name, color, data) {
     bullet.circle.tooltipText = "{station}";
   }
 
-    function createLineBreak(name, color, data) {
-    var series = chart.series.push(new am4charts.LineSeries());
+function createLineBreak(name, color, data) {
+    let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
     series.name = name;
 
@@ -95,9 +95,9 @@ function createStepLine(name, color, data) {
      */
   }
 
-  function createStepLine(name, color, data) {
+function createStepLine(name, color, data) {
 
-  var series = chart.series.push(new am4charts.StepLineSeries());
+  let series = chart.series.push(new am4charts.StepLineSeries());
   series.data = data;
   series.name = name;
 
@@ -110,12 +110,39 @@ function createStepLine(name, color, data) {
 
   series.propertyFields.strokeDasharray = "dash";
 
-  var bullet = series.bullets.push(new am4charts.CircleBullet());
+  let bullet = series.bullets.push(new am4charts.CircleBullet());
   bullet.circle.radius = 4;
   bullet.circle.fill = am4core.color("#fff");
   bullet.circle.stroke = am4core.color("#000");
   bullet.circle.strokeWidth = 2;
   bullet.circle.tooltipText = "{station}";
+}
+
+function createIconPin(data) {
+  let series = chart.series.push(new am4charts.LineSeries());
+  series.data = data;
+  series.dataFields.valueX = "x";
+  series.dataFields.valueY = "y";
+
+  series.stroke = am4core.color("#e5f");
+  series.strokeWidth = 1;
+  series.connect = false;
+
+  series.propertyFields.strokeDasharray = "dash";
+  let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
+  icon.locationX = 1;
+  icon.stroke = am4core.color("#e5f");
+  icon.background.fill =  am4core.color("#e5f");
+  icon.background.radius=10
+  icon.background.pointerBaseWidth=10
+  icon.background.pointerLength=10
+  icon.background.propertyFields.pointerAngle='angle'
+
+  icon.image = new am4core.Image();
+  icon.image.propertyFields.href = 'icon'
+  icon.image.scale = .7;
+  icon.circle.radius = am4core.percent(100);;
+  icon.dy = -6;
 }
 
 function createConnector(data) {
@@ -139,7 +166,7 @@ function createConnector(data) {
   bullet.circle.fill = am4core.color("#fff");
   bullet.circle.stroke = am4core.color("#999");
   bullet.circle.strokeWidth = 2;
-    bullet.circle.tooltipText = "{station}";
+  bullet.circle.tooltipText = "{station}";
 
  /*  bullet.zIndex = -10; */
 
@@ -172,7 +199,14 @@ lineConstructor('y')  */
   { x: 33.8, y: 63.83}, 
   { x: 32.4, y: 61.8 }]
 ); */
+createIconPin([
+    { icon: 'seaBus1.png', angle: 90, station: 'Park Royal', x: 14.4, y: 94.65 },
+    {},
+    { icon: 'plane.png', angle: 90,  station:'YVR Airport' , x: 8.7, y: 26.8 },
+    {},
+    { icon: 'seaBus1.png', angle: 90, station: 'Burrard', x: 21.46833, y: 84.25 },
 
+])
 createLine(
   'Millennium Line',
   am4core.color("#facf05ff"),[
