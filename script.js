@@ -43,20 +43,21 @@ am4core.ready(function() {
     series.tooltip.fontFamily = 'Arial '
     series.tooltip.fontWeight = 'bold'
     series.tooltip.dy = -7.5
-/*     series.tooltip.background.stroke = am4core.color("#052e51ff");
-    series.tooltip.label.fill = am4core.color("#052e51ff");
- */
+    series.tooltip.getFillFromObject = false;
+    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
+    series.tooltip.label.fill = am4core.color("#fff");//text
+
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 2;
-    bullet.circle.fill = am4core.color("#fff");
-    bullet.circle.stroke = am4core.color("#052e51ff");
-
+    bullet.circle.radius = 4;
     bullet.circle.fill = am4core.color("#052e51ff");
     bullet.circle.stroke = am4core.color("#fff");
     bullet.circle.strokeWidth = 1;
     bullet.circle.tooltipText = "{station}";
+
+
   }
   function createPathingLine(name, color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
@@ -107,6 +108,17 @@ am4core.ready(function() {
     bullet.circle.stroke = am4core.color("#999");
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
+
+    series.tooltip.pointerOrientation = "vertical";
+    series.tooltip.autoTextColor = false;
+    series.tooltip.fontFamily = 'Arial '
+    series.tooltip.fontWeight = 'bold'
+    series.tooltip.dy = -7.5
+    series.tooltip.getFillFromObject = false;
+    series.tooltip.background.fill = am4core.color("#052e51ff")
+    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
+    series.tooltip.label.fill = am4core.color("#fff");//text
+
   }
   function createIconPin(type, color, data, radius) {
     let series = chart.series.push(new am4charts.LineSeries());
