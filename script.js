@@ -52,12 +52,12 @@ am4core.ready(function() {
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
     bullet.circle.radius = 4;
-    bullet.circle.fill = am4core.color("#052e51ff");
+    bullet.circle.fill = color
+    /* bullet.circle.fill = am4core.color("#052e51ff"); */
     bullet.circle.stroke = am4core.color("#fff");
-    bullet.circle.strokeWidth = 1;
+    bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
-
-
+    bullet.circle.strokeOpacity = .8;
   }
   function createPathingLine(name, color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
@@ -171,6 +171,7 @@ buildRoutes(routes)
 
   chart.legend = new am4charts.Legend();
   chart.legend.position = "right";
+ /*  chart.legend.useDefaultMarker = true; */
 
   var bg = chart.plotContainer.createChild(am4core.Image);
   bg.width = am4core.percent(100);
