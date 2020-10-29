@@ -7,7 +7,7 @@ am4core.ready(function() {
   chart.padding(0, 0, 0, 0);
 
   let title = chart.tooltipContainer.createChild(am4core.Label);
-  /* title.text = "TransLink"; */
+/*   title.text = "TransLink"; */
   title.fill = am4core.color("#00254b");
   title.fontSize = 25;
   title.width = am4core.percent(100);
@@ -31,7 +31,7 @@ am4core.ready(function() {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
     series.name = name;
-
+    series.color = color;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
 
@@ -159,6 +159,7 @@ const buildRoutes = (routes) => {
     /* pathing line is needed for any bend  in the 
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
+    console.log(route.icon)
     createPathingLine(route.name, route.color, route.pathing)
     route.main && createLine(route.name, route.color, route.main, route.icon)
   });
@@ -169,32 +170,33 @@ const buildRoutes = (routes) => {
     createZoneLine(zone.color, zone.data)
   })
   createConnector(connectors)
-
 }
 buildRoutes(routes)
 
   chart.legend = new am4charts.Legend();
   chart.legend.position = "right";
-  let marker = chart.legend.markers.template;
   chart.legend.useDefaultMarker = true;
+  chart.legend.labels.template.text = "[bold ]{name}[/]";//{color}
+  let marker = chart.legend.markers.template;
   marker.disposeChildren();
-  /*  chart.legend.useDefaultMarker = true; */
-  let seaBus = marker.createChild(am4core.Image);
-  seaBus.width = 20;
-  seaBus.height = 20;
-  seaBus.verticalCenter = "top";
-  seaBus.horizontalCenter = "left";
-/*   seaBus.href = 'seaBus.png'; */
+  marker.width = 20;
+  marker.height = 20;
   
-  seaBus.adapter.add("href", function(href, target) {
-  if (target.dataItem && target.dataItem.dataContext && target.dataItem.dataContext.dummyData) {
-    return target.dataItem.dataContext.dummyData.icon;
+  let icon = marker.createChild(am4core.Image);
+  icon.width = 20;
+  icon.height = 20;
+
+  icon.adapter.add("href", function(href, target) {
+  if (
+    target.dataItem && 
+    target.dataItem.dataContext && 
+    target.dataItem.dataContext.dummyData) {
+      return target.dataItem.dataContext.dummyData.icon;
   }
   else {
     return href;
   }
 });
-
 
   let bg = chart.plotContainer.createChild(am4core.Image);
   bg.width = am4core.percent(100);
@@ -202,4 +204,4 @@ buildRoutes(routes)
 
   bg.href = 'routetemplate2.png'
  /*  bg.href = 'transitMap.png' */
-});
+}); 
