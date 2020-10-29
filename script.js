@@ -42,9 +42,9 @@ am4core.ready(function() {
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 1;
+    bullet.circle.radius = 2;
     bullet.circle.fill = am4core.color("#fff");
-    bullet.circle.stroke = am4core.color("#000");
+    bullet.circle.stroke = am4core.color("#999");
     bullet.circle.strokeWidth = 1;
     bullet.circle.tooltipText = "{station}";
   }
@@ -98,7 +98,7 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
   }
-  function createIconPin(type, color, data) {
+  function createIconPin(type, color, data, radius) {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
     series.dataFields.valueX = "x";
@@ -114,9 +114,9 @@ am4core.ready(function() {
     icon.stroke = am4core.color("#fff");
     icon.stroke = am4core.color("#00000000");
     icon.background.fill = color
-    icon.background.radius=12
-    icon.background.pointerBaseWidth=10
-    icon.background.pointerLength=10
+    icon.background.radius = radius
+    icon.background.pointerBaseWidth = 10
+    icon.background.pointerLength = 10
     icon.background.propertyFields.pointerAngle='angle'
 
     icon.image = new am4core.Image();

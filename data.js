@@ -314,29 +314,34 @@ const icons = [{
     { icon: 'ferry.png', angle: 0, station: 'Burrard',  x: 20.1, y: 82.73333 }, {},
     { icon: 'ferry.png', angle: 0, station: 'Vancouver City Centre', x: 19, y: 78.5}, {},
     { icon: 'ferry.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }, {},
-    { icon: 'ferry.png', angle: 180, station: 'Granville',  x: 24.25, y: 78.5 },{}]
+    { icon: 'ferry.png', angle: 180, station: 'Granville',  x: 24.25, y: 78.5 },{}],
+  radius: 12
   },{
   type: 'Tsawwassen Ferry',
   color: am4core.color("#7556E3"),
   data: [
-    { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}]
+    { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}],
+  radius: 12
   },{
   type: 'planeIcon',
   color: am4core.color('#709abd'),
   data: [
     { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.35, y:  27.25 }],
+  radius: 12
   },{
   type: 'walkingIcon',
   color: am4core.color('#999'),
   data: [
     { icon: 'walking.png', angle: -90, station: 'Vancouver City Centre/Granville ', x: 21.625, y: 77.75}],
+  radius: 12
   },{
   type: 'trainIcon',
   color: am4core.color("#701c8aff"),
   data: [
     { icon: 'train.png', angle: 180, station: 'Waterfront', x: 24.5, y: 84.25},{},
     { icon: 'train.png', angle: 90, station: 'Moody Centre', x: 73.64, y: 78.05},{},
-    { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. },{}]
+    { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. },{}],
+  radius: 12
   },{
   type: 'zoneIcon',
   color: am4core.color('#00000000'),
@@ -347,7 +352,8 @@ const icons = [{
     { icon: 'zoneBridgeport.png', angle: 0, x: 20.26, y: 33.65 }, {},
     { icon: 'zoneJoyce.png', angle: 135, x: 42.45, y: 48.55}, {},
     { icon: 'zoneRupert.png', angle: 90, x: 43.1, y: 66/* .83 */}
-  ]
+  ],
+  radius: 20
   }
 ]
 const zones = [{
