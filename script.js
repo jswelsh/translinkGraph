@@ -38,13 +38,23 @@ am4core.ready(function() {
     series.stroke = color;
     series.strokeWidth =6;
     series.connect = false;
-    
+    series.tooltip.pointerOrientation = "vertical";
+    series.tooltip.autoTextColor = false;
+    series.tooltip.fontFamily = 'Arial '
+    series.tooltip.fontWeight = 'bold'
+    series.tooltip.dy = -7.5
+/*     series.tooltip.background.stroke = am4core.color("#052e51ff");
+    series.tooltip.label.fill = am4core.color("#052e51ff");
+ */
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
     bullet.circle.radius = 2;
     bullet.circle.fill = am4core.color("#fff");
-    bullet.circle.stroke = am4core.color("#999");
+    bullet.circle.stroke = am4core.color("#052e51ff");
+
+    bullet.circle.fill = am4core.color("#052e51ff");
+    bullet.circle.stroke = am4core.color("#fff");
     bullet.circle.strokeWidth = 1;
     bullet.circle.tooltipText = "{station}";
   }
@@ -134,7 +144,7 @@ const buildRoutes = (routes) => {
     route.main && createLine(route.name, route.color, route.main)
   });
   icons.forEach(icon => {
-      createIconPin(icon.type, icon.color, icon.data)
+      createIconPin(icon.type, icon.color, icon.data, icon.radius)
   })
   zones.forEach(zone => {
     createZoneLine(zone.color, zone.data)

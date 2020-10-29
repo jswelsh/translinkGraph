@@ -327,7 +327,7 @@ const icons = [{
   color: am4core.color('#709abd'),
   data: [
     { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.35, y:  27.25 }],
-  radius: 12
+  radius: 20
   },{
   type: 'walkingIcon',
   color: am4core.color('#999'),
@@ -349,11 +349,11 @@ const icons = [{
     { icon: 'zoneQuay.png', angle: 0, x: 24.5, y: 88.4},{},
     { icon: 'zoneLougheed.png', angle: 45, x: 68.2, y: 66.75 }, {},
     { icon: 'zoneColumbia.png', angle: 135, x: 67.5, y: 48.05 }, {},
-    { icon: 'zoneBridgeport.png', angle: 0, x: 20.26, y: 33.65 }, {},
+    { icon: 'zoneBridgeport.png', angle: 0, x: 20.26, y: 33.6 }, {},
     { icon: 'zoneJoyce.png', angle: 135, x: 42.45, y: 48.55}, {},
     { icon: 'zoneRupert.png', angle: 90, x: 43.1, y: 66/* .83 */}
   ],
-  radius: 20
+  radius: 21
   }
 ]
 const zones = [{
