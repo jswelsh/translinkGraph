@@ -204,6 +204,6 @@ buildRoutes(routes)
   bg.width = am4core.percent(100);
   bg.height = am4core.percent(100);
 
-  bg.href = 'routetemplate2.png'
+  bg.href = 'transitMapCleaned2.svg'
  /*  bg.href = 'transitMap.png' */
 }); 
