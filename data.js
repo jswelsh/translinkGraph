@@ -167,10 +167,8 @@ const routes = [{
     { station: 'Braid', x: 70.7 ,y: 57.2 },
     { station: 'bend in route'},
     { station: 'Production Way–University', x: 63.2, y: 63.2 }, 
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2 }, 
-    {},
-    { station: 'Scott Road', x: 69.025, y:42.3},
-    {},
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2 }, {},
+    { station: 'Scott Road', x: 69.025, y:42.3},{},
     { station: 'Gateway', x: 71.95, y: 36.15 },
     { station: 'Surrey Central', x: 71.95, y: 29.9 },
     { station: 'King George', x: 71.95, y: 23.15 },],
@@ -243,8 +241,7 @@ const routes = [{
   name: 'Millennium Line',
   color: am4core.color("#facf05ff"), 
   main: [
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },
-    {},
+    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
     { station: 'Commercial–Broadway', x: 33.8, y: 63.83 },
     { station: 'Renfrew', x: 37.5, y: 63.83 },
     { station: 'Rupert', x: 41.15, y: 63.83 },
@@ -254,17 +251,14 @@ const routes = [{
     { station: 'Sperling–Burnaby Lake', x: 55.65, y: 63.83 },
     { station: 'Lake City Way', x: 59.4, y: 63.83 },
     { station: 'Production Way–University', x: 63.2, y: 63.83 },
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.83 },
-    {},
-    { station: 'Burquitlam', x: 70.75, y: 70.55 },
-    {},
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.83 },{},
+    { station: 'Burquitlam', x: 70.75, y: 70.55 },{},
     { station: 'Moody Centre', x: 73.64, y: 77.05},
-    { station: 'Inlet Centre', x: 77.15, y: 77.05},
-    {},
-    { station: 'Coquitlam Central', x: 80.5, y: 78},
-    {},
+    { station: 'Inlet Centre', x: 77.15, y: 77.05},{},
+    { station: 'Coquitlam Central', x: 80.5, y: 78},{},
     { station: 'Lincoln', x: 81, y: 83.65},
     { station: 'Lafarge Lake–Douglas', x: 81, y: 90.3}],
+    
   pathing:[
     { station: '1', x: 29.85, y: 66.55 },
     { station: '2', x: 30.96, y: 66.55 },
@@ -283,7 +277,7 @@ const routes = [{
     { station: '14', x: 80.5, y: 78.05},
     { station: '14', x: 81, y: 78.55},
     { station: '14', x: 81, y: 83.65}]
-  },
+  }
 ]
 const connectors = [
   { station: 'Commercial–Broadway', x: 33.8, y: 63.83}, 
@@ -342,9 +336,50 @@ const icons = [{
   data: [
     { icon: 'train.png', angle: 180, station: 'Waterfront', x: 24.5, y: 84.25},{},
     { icon: 'train.png', angle: 90, station: 'Moody Centre', x: 73.64, y: 78.05},{},
-    { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. },{},
-
+    { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. },{}]
+  },{
+  type: 'zoneIcon',
+  color: am4core.color('#00000000'),
+  data: [
+    { icon: 'zoneQuay.png', angle: 0, x: 24.5, y: 88.4},{},
+    { icon: 'zoneLougheed.png', angle: 45, x: 68.2, y: 66.75 }, {},
+    { icon: 'zoneColumbia.png', angle: 135, x: 67.5, y: 48.05 }, {},
+    { icon: 'zoneBridgeport.png', angle: 0, x: 20.26, y: 33.65 }, {},
+    { icon: 'zoneJoyce.png', angle: 135, x: 42.45, y: 48.55}, {},
+    { icon: 'zoneRupert.png', angle: 90, x: 43.1, y: 66/* .83 */}
   ]
-}]
+  }
+]
+const zones = [{
+  name:'Waterfront/Lonsdale Quay',
+  color:  am4core.color('#808080'),
+ /*  color:  am4core.color('#fff'), */
+  data:[
+    { x: 24, y: 88.4, dash: "1,2" },
+    { x: 30, y: 88.4 }, {},
 
-export { routes, connectors, icons  }
+    { x: 71.7, y: 62, dash: "1,2" },
+    { x: 67.7, y: 67.4 }, {}, //need to fix
+
+/*     { dash: "1,2", x: 67.7, y: 48.5 }, */
+    { x: 64.4, y:43.9, dash: "1,2"}, 
+    { x: 68, y: 48.7}, {},
+
+/*     { x: 39.875, y: 48.5 },
+    { x: 39.875, y: 48.5 },{}, */
+
+    { x: 19.625, y: 33.65, dash: "1,2" },
+    { x: 25.625, y: 33.65},{},
+    
+    { x: 43.1, y: 60.83, dash: "1,2" },
+    { x: 43.1, y: 66.83 },{},
+    
+    { x: 39.35, y: 44.4, dash: "1,2" },
+    { x: 42.95, y: 49.2 },{},
+  ],
+  },{
+
+  }
+]
+
+export { routes, connectors, icons, zones  }

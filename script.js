@@ -1,4 +1,4 @@
-import { routes, connectors, icons  } from './data.js'
+import { routes, connectors, icons, zones  } from './data.js'
 
 am4core.ready(function() {
   /*   am4core.useTheme(am4themes_animated);
@@ -42,10 +42,10 @@ am4core.ready(function() {
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
-    bullet.circle.radius = 4;
+    bullet.circle.radius = 1;
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#000");
-    bullet.circle.strokeWidth = 2;
+    bullet.circle.strokeWidth = 1;
     bullet.circle.tooltipText = "{station}";
   }
   function createPathingLine(name, color, data) {
@@ -58,6 +58,19 @@ am4core.ready(function() {
 
     series.stroke = color;
     series.strokeWidth = 6;
+    series.connect = false;
+    
+    series.propertyFields.strokeDasharray = "dash";
+  }
+  function createZoneLine(color, data) {
+    let series = chart.series.push(new am4charts.LineSeries());
+    series.data = data;
+
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+
+    series.stroke = color;
+    series.strokeWidth =6;
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
@@ -99,6 +112,7 @@ am4core.ready(function() {
     let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
     icon.locationX = 1;
     icon.stroke = am4core.color("#fff");
+    icon.stroke = am4core.color("#00000000");
     icon.background.fill = color
     icon.background.radius=12
     icon.background.pointerBaseWidth=10
@@ -121,6 +135,9 @@ const buildRoutes = (routes) => {
   });
   icons.forEach(icon => {
       createIconPin(icon.type, icon.color, icon.data)
+  })
+  zones.forEach(zone => {
+    createZoneLine(zone.color, zone.data)
   })
   createConnector(connectors)
 
