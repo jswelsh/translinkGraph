@@ -5,6 +5,7 @@ am4core.ready(function() {
  */
   let chart = am4core.create("chartdiv", am4charts.XYChart);
   chart.padding(0, 0, 0, 0);
+  chart.background.fill = am4core.color("#dee3eeff");
 
   let title = chart.tooltipContainer.createChild(am4core.Label);
 /*   title.text = "TransLink"; */
@@ -164,7 +165,7 @@ const buildRoutes = (routes) => {
     route.main && createLine(route.name, route.color, route.main, route.icon)
   });
   icons.forEach(icon => {
-      createIconPin(icon.type, icon.color, icon.data, icon.radius)
+    createIconPin(icon.type, icon.color, icon.data, icon.radius)
   })
   zones.forEach(zone => {
     createZoneLine(zone.color, zone.data)
@@ -177,6 +178,7 @@ buildRoutes(routes)
   chart.legend.position = "right";
   chart.legend.useDefaultMarker = true;
   chart.legend.labels.template.text = "[bold ]{name}[/]";//{color}
+  chart.legend.background.fill = am4core.color("#dee3eeff");
   let marker = chart.legend.markers.template;
   marker.disposeChildren();
   marker.width = 20;
