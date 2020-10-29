@@ -63,6 +63,7 @@ am4core.ready(function() {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
     series.name = name;
+    series.hiddenInLegend = true;
 
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
@@ -76,6 +77,7 @@ am4core.ready(function() {
   function createZoneLine(color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
+    series.hiddenInLegend = true;
 
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
@@ -111,7 +113,7 @@ am4core.ready(function() {
 
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.autoTextColor = false;
-    series.tooltip.fontFamily = 'Arial '
+    series.tooltip.fontFamily = 'Arial'
     series.tooltip.fontWeight = 'bold'
     series.tooltip.dy = -7.5
     series.tooltip.getFillFromObject = false;
@@ -125,6 +127,7 @@ am4core.ready(function() {
     series.data = data;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
+    series.hiddenInLegend = true;
 
     series.stroke = color
     series.strokeWidth = 1;
