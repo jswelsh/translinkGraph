@@ -1,5 +1,6 @@
 const routes = [{
   name: 'R1 King George Blvd.....',
+  icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main:[
     { station: 'Guildford Exchange', x: 88.35, y: 30.95 },
@@ -21,6 +22,7 @@ const routes = [{
     { station: 'Surrey Central', x: 72.5, y: 29.9 }]
   },{ 
   name: 'R2 Marine Dr',
+  icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main: [
     { station: 'Park Royal', x: 14.4, y: 94.65 },
@@ -42,6 +44,7 @@ const routes = [{
   ]
   },{
   name: 'R3 Lougheed Hwy',
+  icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main: [
     { station: 'Coquitlam Central', x: 80.5, y: 78 },
@@ -59,6 +62,7 @@ const routes = [{
     { station: '3', x: 93.7, y: 62.925 }]
   },{
   name: "R4 41st Ave",
+  icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main: [
     { station: 'UBC Exchange', x: 2.75, y: 61.8},
@@ -90,6 +94,7 @@ const routes = [{
     { station: '7', x: 9.85, y: 48.625 }]
   },{
   name: "R5 Hastings St",
+  icon: 'busR.png',
   color: am4core.color('#f36617ff'),
   main: [
     { station: 'Burrard', x: 21.46833, y: 84.25 },
@@ -111,6 +116,7 @@ const routes = [{
   pathing: null
   },{
   name: "99 B-Line",
+  icon: 'bus99.png',
   color: am4core.color('#f36617ff'),
   main: [
     { station: 'UBC Exchange', x: 2.75, y: 61.8},
@@ -129,6 +135,7 @@ const routes = [{
   pathing: null
   },{
   name: "Sea Bus",
+  icon: 'seaBus.png',
   color: am4core.color('#7f685cff'),
   main: [
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },
@@ -136,6 +143,7 @@ const routes = [{
   pathing: null
   },{
   name: "Expo Line",
+  icon: 'skyTrainExpo.png',
   color: am4core.color('#1c59ae'),
   main: [
     { station: 'Waterfront', x: 23.75, y: 84.25},
@@ -204,6 +212,7 @@ const routes = [{
     {station: '28', x: 71.95, y: 36.15 }]//Gateway 
   },{
   name: "Canada Line",
+  icon: 'skyTrainCanada.png',
   color: am4core.color('#0097c7'),
   main:[
     { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
@@ -229,6 +238,7 @@ const routes = [{
     { station: '5', x: 19.35, y: 78.25}], //bend in route
   },{
   name: "Canada Line-YVR",
+  icon: 'skyTrainCanada.png',
   color: am4core.color('#0097c7'),
   main:[
     { station:'YVR Airport' , x: 8.7, y: 26.8 },
@@ -239,6 +249,7 @@ const routes = [{
     { station: '2', x: 22.65, y: 26.8 }]      
   },{
   name: 'Millennium Line',
+  icon: 'skyTrainMillenium.png',
   color: am4core.color("#facf05ff"), 
   main: [
     { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},

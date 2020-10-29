@@ -27,13 +27,17 @@ am4core.ready(function() {
   createAxis(chart.xAxes);
   createAxis(chart.yAxes);
 
-  function createLine(name, color, data) {
+  function createLine(name, color, data, icon) {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
     series.name = name;
 
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
+
+    series.dummyData = {
+      icon : icon
+    }
 
     series.stroke = color;
     series.strokeWidth =6;
@@ -156,7 +160,7 @@ const buildRoutes = (routes) => {
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
     createPathingLine(route.name, route.color, route.pathing)
-    route.main && createLine(route.name, route.color, route.main)
+    route.main && createLine(route.name, route.color, route.main, route.icon)
   });
   icons.forEach(icon => {
       createIconPin(icon.type, icon.color, icon.data, icon.radius)
@@ -171,9 +175,28 @@ buildRoutes(routes)
 
   chart.legend = new am4charts.Legend();
   chart.legend.position = "right";
- /*  chart.legend.useDefaultMarker = true; */
+  let marker = chart.legend.markers.template;
+  chart.legend.useDefaultMarker = true;
+  marker.disposeChildren();
+  /*  chart.legend.useDefaultMarker = true; */
+  let seaBus = marker.createChild(am4core.Image);
+  seaBus.width = 20;
+  seaBus.height = 20;
+  seaBus.verticalCenter = "top";
+  seaBus.horizontalCenter = "left";
+/*   seaBus.href = 'seaBus.png'; */
+  
+  seaBus.adapter.add("href", function(href, target) {
+  if (target.dataItem && target.dataItem.dataContext && target.dataItem.dataContext.dummyData) {
+    return target.dataItem.dataContext.dummyData.icon;
+  }
+  else {
+    return href;
+  }
+});
 
-  var bg = chart.plotContainer.createChild(am4core.Image);
+
+  let bg = chart.plotContainer.createChild(am4core.Image);
   bg.width = am4core.percent(100);
   bg.height = am4core.percent(100);
 
