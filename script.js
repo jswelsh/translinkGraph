@@ -172,14 +172,22 @@ const buildRoutes = (routes) => {
     /* pathing line is needed for any bend  in the 
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
-
-
     seriesMap[route.name] = []
+    seriesMap[route.name].push(createLine(route.name, route.color, route.main, route.icon))
     seriesMap[route.name].push(createPathingLine(route.name, route.color, route.pathing))
-    seriesMap[route.name].push(route.main && createLine(route.name, route.color, route.main, route.icon))
-    console.log(seriesMap[route.name])
+    
+  console.log(seriesMap[route.name][0])
+    seriesMap[route.name][0].events.on('hidden', () => {
+      seriesMap[route.name][1].hide();
+    });
+    seriesMap[route.name][0].events.on("shown", () => {
+      seriesMap[route.name][1].show();
+    });
+
+
   });
-  console.log(seriesMap)
+
+  console.log(seriesMap['Millennium Line'])
   icons.forEach(icon => {
     createIconPin(icon.type, icon.color, icon.data, icon.radius)
   })
