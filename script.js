@@ -156,38 +156,57 @@ am4core.ready(function() {
     icon.image.scale = .7;
     icon.circle.radius = am4core.percent(100);
   }
-/*   function toggle() {
-    let series = chart.series.getIndex(0);
-    if (series.isHiding || series.isHidden) {
-      series.show();
-    }
-    else {
-      series.hide();
-    }
-  } */
 
-let seriesMap = {};
 const buildRoutes = (routes) => {
+  let seriesMap = {};
+  let masterSeries = createLine('Toggle All', null, null, 'walking.png')
+
   routes.forEach(route => {
+    let [name, color, main, icon, pathing] = [
+      route.name, 
+      route.color, 
+      route.main, 
+      route.icon, 
+      route.pathing
+    ]
+  seriesMap[name] = []
+
     /* pathing line is needed for any bend  in the 
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
-    seriesMap[route.name] = []
-    seriesMap[route.name].push(createLine(route.name, route.color, route.main, route.icon))
-    seriesMap[route.name].push(createPathingLine(route.name, route.color, route.pathing))
-    
-  console.log(seriesMap[route.name][0])
-    seriesMap[route.name][0].events.on('hidden', () => {
-      seriesMap[route.name][1].hide();
-    });
-    seriesMap[route.name][0].events.on("shown", () => {
-      seriesMap[route.name][1].show();
-    });
 
+    /* pairing the pathing line with the main route so that 
+    the user can toggle both lines from a single button in the 
+    legend */
+    seriesMap[name].push(createLine(name, color, main, icon))
+    seriesMap[name].push(createPathingLine(name, color, pathing))
 
+    masterSeries.events.on('hidden', () => {
+      seriesMap[name][0].hide();      
+    })
+    masterSeries.events.on('shown', () => {
+      seriesMap[name][0].show();      
+    })
+
+    seriesMap[name][0].events.on('hidden', () => {
+      seriesMap[name][1].hide();
+    });
+    seriesMap[name][0].events.on('shown', () => {
+      seriesMap[name][1].show();
+    });
   });
+/* 
+  let masterSeries = createLine('Toggle All', null, null, 'walking.png')
+  Object.entries(seriesMap).forEach(
+    ([key, value]) => {
+      masterSeries.events.on('hidden', () => {
+        value[0].show();
+      });
+      masterSeries.events.on('shown', () => {
+        value[0].show();
+      });
+    }) */
 
-  console.log(seriesMap['Millennium Line'])
   icons.forEach(icon => {
     createIconPin(icon.type, icon.color, icon.data, icon.radius)
   })
