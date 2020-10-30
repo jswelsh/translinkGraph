@@ -63,6 +63,7 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
     bullet.circle.tooltipText = "{station}";
     bullet.circle.strokeOpacity = .8;
+    return series
   }
   function createPathingLine(name, color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
@@ -78,6 +79,7 @@ am4core.ready(function() {
     series.connect = false;
     
     series.propertyFields.strokeDasharray = "dash";
+    return series
   }
   function createZoneLine(color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
@@ -154,16 +156,30 @@ am4core.ready(function() {
     icon.image.scale = .7;
     icon.circle.radius = am4core.percent(100);
   }
+/*   function toggle() {
+    let series = chart.series.getIndex(0);
+    if (series.isHiding || series.isHidden) {
+      series.show();
+    }
+    else {
+      series.hide();
+    }
+  } */
 
+let seriesMap = {};
 const buildRoutes = (routes) => {
   routes.forEach(route => {
     /* pathing line is needed for any bend  in the 
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
-    console.log(route.icon)
-    createPathingLine(route.name, route.color, route.pathing)
-    route.main && createLine(route.name, route.color, route.main, route.icon)
+
+
+    seriesMap[route.name] = []
+    seriesMap[route.name].push(createPathingLine(route.name, route.color, route.pathing))
+    seriesMap[route.name].push(route.main && createLine(route.name, route.color, route.main, route.icon))
+    console.log(seriesMap[route.name])
   });
+  console.log(seriesMap)
   icons.forEach(icon => {
     createIconPin(icon.type, icon.color, icon.data, icon.radius)
   })
