@@ -161,7 +161,10 @@ am4core.ready(function() {
     return series
   }
   function createBullet(label){
-    const [shape, size, icon, data] = [label.shape, label.size, label.icon, label.data]
+    const [ size,  data,  element] = [
+      label.size, 
+      label.data, 
+      label.element]
     
     let series = chart.series.push(new am4charts.LineSeries());
 
@@ -169,12 +172,15 @@ am4core.ready(function() {
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
     series.hiddenInLegend = true;
-    
-    let bullet = series.bullets.push(new am4plugins_bullets.ShapeBullet());
-    bullet.strokeWidth = 2;
-    bullet.shape = shape;
-    bullet.size = size
-    bullet.image = icon
+
+    let bullet = series.bullets.push(new am4charts.Bullet());
+    let routeLabel = bullet.createChild(am4core.Image);
+
+    routeLabel.width = size;
+    routeLabel.height = size;
+    routeLabel.horizontalCenter = 'middle';
+    routeLabel.verticalCenter = 'bottom';
+    routeLabel.href = element;
     return series
   }
 
@@ -191,8 +197,8 @@ const buildRoutes = (routes) => {
       route.pathing,
       route.connectors,
       route.icons,
-      route.label
-    ]
+      route.label]
+
   seriesMap[name] = []
     /* pathing line is needed for any bend  in the 
     line that doesnt have a station/stop while create
@@ -203,7 +209,11 @@ const buildRoutes = (routes) => {
     legend */
     seriesMap[name].push(createLine(name, color, main, icon))
     seriesMap[name].push(createPathingLine(name, color, pathing))
-    if(label !== null) { seriesMap[name].push(createBullet(label)) }
+    if(label !== null) {
+      console.log(label)
+      seriesMap[name].push(createBullet(label))
+    }
+
     if(connectors !== undefined) { seriesMap[name].push(createConnector(connectors))}
     if(icons !== null) { 
       icons.forEach(icon => {
