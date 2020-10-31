@@ -1,4 +1,4 @@
-import { routes, connectors, icons, zones  } from './data.js'
+import { routes, icons, zones  } from './data.js'
 
 am4core.ready(function() {
     am4core.useTheme(am4themes_animated);
@@ -163,7 +163,7 @@ am4core.ready(function() {
 
 const buildRoutes = (routes) => {
   let seriesMap = {};
-  let masterSeries = createLine('Toggle All', null, null, 'walking.png')
+  let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
 
   routes.forEach(route => {
     const [name, color, main, icon, pathing, connectors, icons] = [
@@ -200,46 +200,26 @@ const buildRoutes = (routes) => {
     masterSeries.events.on('shown', () => {
       seriesMap[name][0].show();
     })
-    console.log(seriesMap[name][2])
-    /* pair pathing series with main series, so toggling
-    the main series will toggle both shown or hidden */
-/*     seriesMap[name][0].events.on('hidden', () => {
-      seriesMap[name].forEach(element => {
-        element.hide()
-      });
-      seriesMap[name][1] && seriesMap[name][1].hide();
-      seriesMap[name][2] && seriesMap[name][2].hide()
-      seriesMap[name][3] && seriesMap[name][3].hide()
-      seriesMap[name][4] && seriesMap[name][4].hide()
-
-    });
-    seriesMap[name][0].events.on('shown', () => {
-      seriesMap[name][1] && seriesMap[name][1].show();
-      seriesMap[name][2] && seriesMap[name][2].show()
-      seriesMap[name][3] && seriesMap[name][3].show()
-      seriesMap[name][4] && seriesMap[name][4].show()
-
-    }); */
-
+    //merge functionality for each route with all pathing and icons
     seriesMap[name][0].events.on('hidden', () => {
-      seriesMap[name].forEach(element => {
-        element.hide()
+      seriesMap[name].forEach(series => {
+        series.hide()
       });
     });
     seriesMap[name][0].events.on('shown', () => {
-      seriesMap[name].forEach(element => {
-        element.show()
+      seriesMap[name].forEach(series => {
+        series.show()
       });
     });
   });
 
-/*   icons.forEach(icon => {
-    createIconPin(icon.type, icon.color, icon.data, icon.radius)
-  }) */
+  icons.forEach(icon => {
+    createIconPin( icon.color, icon.data, icon.radius)
+  })
   zones.forEach(zone => {
     createZoneLine(zone.color, zone.data)
   })
-  createConnector(connectors)
+/*   createConnector(connectors) */
 }
 buildRoutes(routes)
 
