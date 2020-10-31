@@ -25,7 +25,8 @@ const routes = [{
     { station: 'Guildford Exchange', x: 88.35, y: 30.95 },{},
     { station: 'King George', x: 72.225, y: 23.15 },{},
     { station: 'Surrey Central', x: 72.225, y: 29.9 },{}],
-    icons:null
+    icons:null,
+    label:null,
   },{ 
   name: 'R2 Marine Dr',
   icon: 'busR.png',
@@ -58,7 +59,8 @@ const routes = [{
     data: [
       { icon: 'ferry.png', angle: 45, station: 'Park Royal', x: 13.7, y: 95.3 }],
     radius: 12
-  }]
+  }],
+    label:null,
   },{
   name: 'R3 Lougheed Hwy',
   icon: 'busR.png',
@@ -85,7 +87,8 @@ const routes = [{
     color: am4core.color('#701c8aff'),
     data: [
       { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. }],
-    radius: 12}]
+    radius: 12}],
+    label:null,
   },{
   name: "R4 41st Ave",
   icon: 'busR.png',
@@ -123,7 +126,13 @@ const routes = [{
       { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},{},
       { station: 'UBC Exchange', x: 2.75, y: 61.8},{},
       { station: 'Dunbar Loop', x: 9.85, y: 48.625 },{},],
-    icons:null
+    icons:null,
+    label:{
+      shape:'square',
+      size:50,
+      icon: 'r4Square.png',
+      data: [{x: 8, y: 48.625 }],
+    }
   },{
   name: "R5 Hastings St",
   icon: 'bus99.png',
@@ -150,7 +159,8 @@ const routes = [{
     { station: 'Burrard', x: 21.46833, y: 84.25 },{},
     { station: 'Kootenay Loop', x: 40.65, y: 81.75 },{},
     { station: 'SFU Exchange', x: 63.2, y: 81.75 },{}],
-    icons:null
+    icons:null,
+    label:null,
   },{
   name: "99 B-Line",
   icon: 'bus99.png',
@@ -174,7 +184,8 @@ const routes = [{
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },{},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},{},
     { station: 'UBC Exchange', x: 2.75, y: 61.8},{}],
-    icons:null
+    icons:null,
+    label:null,
   },{
   name: "Sea Bus",
   icon: 'seaBus.png',
@@ -187,7 +198,8 @@ const routes = [{
     { station: 'Lonsdale Quay', x: 30, y: 92.55 },{},
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
     { station: 'Waterfront', x: 23.75, y: 84.25}],
-    icons:null
+    icons:null,
+    label:null,
   },{
   name: "Expo Line",
   icon: 'skyTrainExpo.png',
@@ -284,7 +296,8 @@ const routes = [{
     data: [
       { icon: 'train.png', angle: 180, station: 'Waterfront', x: 24.5, y: 84.25}],
     radius: 12
-    }]
+    }],
+    label:null,
   },{
   name: "Canada Line",
   icon: 'skyTrainCanada.png',
@@ -328,7 +341,8 @@ const routes = [{
     data: [
       { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}],
     radius: 12
-    }]
+    }],
+    label:null,
   },{
   name: 'Canada Line-YVR',
   icon: 'skyTrainCanada.png',
@@ -353,7 +367,8 @@ const routes = [{
     color: am4core.color('#709abd'),
     data: [
       { icon: 'plane.png', angle: 45,  station:'YVR Airport' , x: 8.35, y:  27.25 }],
-    radius: 20}]
+    radius: 20}],
+    label:null,
   },{
   name: 'Millennium Line',
   icon: 'skyTrainMillenium.png',
@@ -408,7 +423,8 @@ const routes = [{
     data: [
       { icon: 'train.png', angle: 90, station: 'Moody Centre', x: 73.64, y: 78.05},{},
       { icon: 'train.png', angle: 160, station: 'Coquitlam Central', x: 81.25, y: 78. },{}],
-    radius: 12}]
+    radius: 12}],
+    label:null,
   }
 ]
 

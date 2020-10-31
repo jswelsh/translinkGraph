@@ -146,8 +146,8 @@ am4core.ready(function() {
 
     let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
     icon.locationX = 1;
-    icon.stroke = am4core.color("#fff");
-    icon.stroke = am4core.color("#00000000");
+/*     icon.stroke = am4core.color('#fff'); */
+    icon.stroke = am4core.color('#00000000');
     icon.background.fill = color
     icon.background.radius = radius
     icon.background.pointerBaseWidth = 10
@@ -160,20 +160,38 @@ am4core.ready(function() {
     icon.circle.radius = am4core.percent(100);
     return series
   }
+  function createBullet(label){
+    const [shape, size, icon, data] = [label.shape, label.size, label.icon, label.data]
+    
+    let series = chart.series.push(new am4charts.LineSeries());
+
+    series.data = data;
+    series.dataFields.valueX = "x";
+    series.dataFields.valueY = "y";
+    series.hiddenInLegend = true;
+    
+    let bullet = series.bullets.push(new am4plugins_bullets.ShapeBullet());
+    bullet.strokeWidth = 2;
+    bullet.shape = shape;
+    bullet.size = size
+    bullet.image = icon
+    return series
+  }
 
 const buildRoutes = (routes) => {
   let seriesMap = {};
   let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
 
   routes.forEach(route => {
-    const [name, color, main, icon, pathing, connectors, icons] = [
+    const [name, color, main, icon, pathing, connectors, icons, label] = [
       route.name, 
       route.color, 
       route.main, 
       route.icon, 
       route.pathing,
       route.connectors,
-      route.icons
+      route.icons,
+      route.label
     ]
   seriesMap[name] = []
     /* pathing line is needed for any bend  in the 
@@ -185,6 +203,7 @@ const buildRoutes = (routes) => {
     legend */
     seriesMap[name].push(createLine(name, color, main, icon))
     seriesMap[name].push(createPathingLine(name, color, pathing))
+    if(label !== null) { seriesMap[name].push(createBullet(label)) }
     if(connectors !== undefined) { seriesMap[name].push(createConnector(connectors))}
     if(icons !== null) { 
       icons.forEach(icon => {
@@ -214,6 +233,7 @@ const buildRoutes = (routes) => {
   });
 
   icons.forEach(icon => {
+    icon
     createIconPin( icon.color, icon.data, icon.radius)
   })
   zones.forEach(zone => {
