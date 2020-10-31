@@ -1,8 +1,8 @@
 import { routes, connectors, icons, zones  } from './data.js'
 
 am4core.ready(function() {
-  /*   am4core.useTheme(am4themes_animated);
- */
+    am4core.useTheme(am4themes_animated);
+
   let chart = am4core.create("chartdiv", am4charts.XYChart);
   chart.padding(0, 0, 0, 0);
   chart.background.fill = am4core.color("#dee3eeff");
@@ -127,10 +127,12 @@ am4core.ready(function() {
     series.tooltip.background.fill = am4core.color("#052e51ff")
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text
-
+    return series
   }
-  function createIconPin(type, color, data, radius) {
+
+  function createIconPin(color, data, radius) {
     let series = chart.series.push(new am4charts.LineSeries());
+
     series.data = data;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
@@ -141,6 +143,7 @@ am4core.ready(function() {
     series.connect = false;
 
     series.propertyFields.strokeDasharray = "dash";
+
     let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
     icon.locationX = 1;
     icon.stroke = am4core.color("#fff");
@@ -155,6 +158,7 @@ am4core.ready(function() {
     icon.image.propertyFields.href = 'icon'
     icon.image.scale = .7;
     icon.circle.radius = am4core.percent(100);
+    return series
   }
 
 const buildRoutes = (routes) => {
@@ -162,15 +166,16 @@ const buildRoutes = (routes) => {
   let masterSeries = createLine('Toggle All', null, null, 'walking.png')
 
   routes.forEach(route => {
-    let [name, color, main, icon, pathing] = [
+    const [name, color, main, icon, pathing, connectors, icons] = [
       route.name, 
       route.color, 
       route.main, 
       route.icon, 
-      route.pathing
+      route.pathing,
+      route.connectors,
+      route.icons
     ]
   seriesMap[name] = []
-
     /* pathing line is needed for any bend  in the 
     line that doesnt have a station/stop while create
     line is the main route with bullets for stations */
@@ -180,36 +185,57 @@ const buildRoutes = (routes) => {
     legend */
     seriesMap[name].push(createLine(name, color, main, icon))
     seriesMap[name].push(createPathingLine(name, color, pathing))
+    if(connectors !== undefined) { seriesMap[name].push(createConnector(connectors))}
+    if(icons !== null) { 
+      icons.forEach(icon => {
+        seriesMap[name].push(createIconPin( icon.color, icon.data, icon.radius))
+      })
+    }
 
+    
+    //create a master toggle button
     masterSeries.events.on('hidden', () => {
-      seriesMap[name][0].hide();      
+      seriesMap[name][0].hide();
     })
     masterSeries.events.on('shown', () => {
-      seriesMap[name][0].show();      
+      seriesMap[name][0].show();
     })
+    console.log(seriesMap[name][2])
+    /* pair pathing series with main series, so toggling
+    the main series will toggle both shown or hidden */
+/*     seriesMap[name][0].events.on('hidden', () => {
+      seriesMap[name].forEach(element => {
+        element.hide()
+      });
+      seriesMap[name][1] && seriesMap[name][1].hide();
+      seriesMap[name][2] && seriesMap[name][2].hide()
+      seriesMap[name][3] && seriesMap[name][3].hide()
+      seriesMap[name][4] && seriesMap[name][4].hide()
 
-    seriesMap[name][0].events.on('hidden', () => {
-      seriesMap[name][1].hide();
     });
     seriesMap[name][0].events.on('shown', () => {
-      seriesMap[name][1].show();
+      seriesMap[name][1] && seriesMap[name][1].show();
+      seriesMap[name][2] && seriesMap[name][2].show()
+      seriesMap[name][3] && seriesMap[name][3].show()
+      seriesMap[name][4] && seriesMap[name][4].show()
+
+    }); */
+
+    seriesMap[name][0].events.on('hidden', () => {
+      seriesMap[name].forEach(element => {
+        element.hide()
+      });
+    });
+    seriesMap[name][0].events.on('shown', () => {
+      seriesMap[name].forEach(element => {
+        element.show()
+      });
     });
   });
-/* 
-  let masterSeries = createLine('Toggle All', null, null, 'walking.png')
-  Object.entries(seriesMap).forEach(
-    ([key, value]) => {
-      masterSeries.events.on('hidden', () => {
-        value[0].show();
-      });
-      masterSeries.events.on('shown', () => {
-        value[0].show();
-      });
-    }) */
 
-  icons.forEach(icon => {
+/*   icons.forEach(icon => {
     createIconPin(icon.type, icon.color, icon.data, icon.radius)
-  })
+  }) */
   zones.forEach(zone => {
     createZoneLine(zone.color, zone.data)
   })
