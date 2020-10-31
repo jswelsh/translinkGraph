@@ -161,9 +161,10 @@ am4core.ready(function() {
     return series
   }
   function createBullet(label){
-    const [ size,  data,  element] = [
+    const [ size,  data, angle,  element] = [
       label.size, 
       label.data, 
+      label.angle,
       label.element]
     
     let series = chart.series.push(new am4charts.LineSeries());
@@ -180,6 +181,7 @@ am4core.ready(function() {
     routeLabel.height = size;
     routeLabel.horizontalCenter = 'middle';
     routeLabel.verticalCenter = 'bottom';
+    routeLabel.rotation = angle;
     routeLabel.href = element;
     return series
   }
@@ -207,12 +209,13 @@ const buildRoutes = (routes) => {
     /* pairing the pathing line with the main route so that 
     the user can toggle both lines from a single button in the 
     legend */
-    seriesMap[name].push(createLine(name, color, main, icon))
-    seriesMap[name].push(createPathingLine(name, color, pathing))
-    if(label !== null) {
+        if(label !== null) {
       console.log(label)
       seriesMap[name].push(createBullet(label))
     }
+    seriesMap[name].push(createLine(name, color, main, icon))
+    seriesMap[name].push(createPathingLine(name, color, pathing))
+
 
     if(connectors !== undefined) { seriesMap[name].push(createConnector(connectors))}
     if(icons !== null) { 
