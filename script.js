@@ -39,7 +39,6 @@ am4core.ready(function() {
     series.dummyData = {
       icon : icon
     }
-
     series.stroke = color;
     series.strokeWidth =6;
     series.connect = false;
@@ -160,16 +159,12 @@ am4core.ready(function() {
     icon.circle.radius = am4core.percent(100);
     return series
   }
-  function createBullet(label/* size,  data, angle, icon */){
-/*     const [ size,  data, angle, icon] = [
-      label.size, 
-      label.data, 
-      label.angle,
-      label.icon
-    ] */
-    const { size,  data, angle, icon } = {...label}
-    let series = chart.series.push(new am4charts.LineSeries());
+  function createBullet(label){
 
+    let series = chart.series.push(new am4charts.LineSeries());
+    let { size,  data, angle, align, icon } = {...label}
+    let [horizontal, vertical] = [align[0], align[1]]
+    console.table(horizontal)
     series.data = data;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
@@ -180,8 +175,8 @@ am4core.ready(function() {
 
     routeLabel.width = size;
     routeLabel.height = size;
-    routeLabel.horizontalCenter = 'middle';
-    routeLabel.verticalCenter = 'bottom';
+    routeLabel.horizontalCenter = horizontal;
+    routeLabel.verticalCenter = vertical;
     routeLabel.rotation = angle;
     routeLabel.href = icon;
 
@@ -191,13 +186,6 @@ am4core.ready(function() {
 const buildRoutes = (routes) => {
   let seriesMap = {};
   let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
-
-  createBullet({
-    size:25,
-    data: [{ x: 20.55, y: 61.755 }],
-    angle: 0,
-    element:'train.png'})
-
 
   routes.forEach(route => {
     const [name, color, main, icon, pathing, connectors, icons, label] = [
@@ -219,7 +207,7 @@ const buildRoutes = (routes) => {
     the user can toggle both lines from a single button in the 
     legend */
    // label !== undefined &&  seriesMap[name].push(createBullet( label.size, label.data, label.angle, label.icon))
-    label !== undefined &&  seriesMap[name].push(createBullet( label))
+    label !== undefined && seriesMap[name].push(createBullet( label))
   
     
     seriesMap[name].push(createLine(name, color, main, icon))

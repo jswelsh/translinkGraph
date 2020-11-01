@@ -30,6 +30,7 @@ const routes = [{
       size:25,
       data: [{ x: 74.45, y: 30.95 }],
       angle: 0,
+      align: ['middle', 'bottom'],
       //this is the same as r4square.svg but converted
       icon:'r1Square.svg'
     },
@@ -70,6 +71,7 @@ const routes = [{
       size:25,
       data: [ { x: 39.75, y: 92.55 }],
       angle: 0,
+      align: ['middle', 'bottom'],
       //this is the same as r4square.svg but converted
       icon:'r2Square.svg'
     },
@@ -102,9 +104,9 @@ const routes = [{
     radius: 12}],
     label:{
       size:25,
-      icon:'seaBus.png',
       data: [{x:	86.6382, y:	69.7662 }],
       angle: 45,
+      align: ['middle', 'bottom'],
       //this is the same as r4square.svg but converted
       icon:'r3Square.svg'
     },
@@ -150,6 +152,7 @@ const routes = [{
       size:25,
       data: [{x: 8, y: 48.625 }],
       angle: 0,
+      align: ['middle', 'bottom'],
       //this is the same as r4square.svg but converted
       icon:'r4Square.svg'
     }
@@ -184,6 +187,7 @@ const routes = [{
       size:25,
       data: [{ x: 42.28, y: 81.75 }],
       angle: 0,
+      align: ['middle', 'bottom'], 
       //this is the same as r4square.svg but converted
       icon:'r5Square.svg'
     },
@@ -216,6 +220,7 @@ const routes = [{
     //data: [{x: 85.45, y: 71.375 }],
     data: [{ x: 26.55, y: 61.755 }],
     angle: 0,
+    align: ['middle', 'bottom'],
     //this is the same as r4square.svg but converted
     icon:'99Square.svg'
   },
@@ -232,7 +237,6 @@ const routes = [{
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
     { station: 'Waterfront', x: 23.75, y: 84.25}],
     icons:null,
-    label:null,
   },{
   name: "Expo Line",
   icon: 'skyTrainExpo.png',
@@ -334,8 +338,9 @@ const routes = [{
       size:25,
       data: [ { x: 37.85, y: 51.2 } ],
       angle: 45,
+      align: ['middle', 'bottom'],
       //this is the same as r4square.svg but converted
-      icon:'exSquare.svg'
+      icon:'expSquare.svg'
     },
   },{
   name: "Canada Line",
@@ -382,7 +387,6 @@ const routes = [{
     radius: 12,
 
     }],
-  label:null
   },{
   name: 'Canada Line-YVR',
   icon: 'skyTrainCanada.png',
@@ -410,10 +414,11 @@ const routes = [{
     radius: 20}],
     label:{
       size:25,
-      data: [ { x: 22.625, y: 50.625 } ],
+      data: [ { x: 16.94, y: 26.8 } ],
       angle: 0,
+      align: ['left', 'bottom'],
       //this is the same as r4square.svg but converted
-      icon:'caSquare.svg'
+      icon:'canSquare.svg'
     },
   },{
   name: 'Millennium Line',
@@ -474,8 +479,9 @@ const routes = [{
     size:25,
     data: [{ x: 39.35, y: 63.83 }],
     angle: 0,
+    align: ['middle', 'bottom'],
     //this is the same as r4square.svg but converted  
-    icon: 'miSquare.svg'
+    icon: 'milSquare.svg'
   }
   }]
 const icons = [{
