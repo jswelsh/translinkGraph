@@ -160,13 +160,14 @@ am4core.ready(function() {
     icon.circle.radius = am4core.percent(100);
     return series
   }
-  function createBullet(label){
-    const [ size,  data, angle,  element] = [
+  function createBullet(label/* size,  data, angle, icon */){
+/*     const [ size,  data, angle, icon] = [
       label.size, 
       label.data, 
       label.angle,
-      label.element]
-    
+      label.icon
+    ] */
+    const { size,  data, angle, icon } = {...label}
     let series = chart.series.push(new am4charts.LineSeries());
 
     series.data = data;
@@ -182,13 +183,21 @@ am4core.ready(function() {
     routeLabel.horizontalCenter = 'middle';
     routeLabel.verticalCenter = 'bottom';
     routeLabel.rotation = angle;
-    routeLabel.href = element;
+    routeLabel.href = icon;
+
     return series
   }
 
 const buildRoutes = (routes) => {
   let seriesMap = {};
   let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
+
+  createBullet({
+    size:25,
+    data: [{ x: 20.55, y: 61.755 }],
+    angle: 0,
+    element:'train.png'})
+
 
   routes.forEach(route => {
     const [name, color, main, icon, pathing, connectors, icons, label] = [
@@ -209,10 +218,10 @@ const buildRoutes = (routes) => {
     /* pairing the pathing line with the main route so that 
     the user can toggle both lines from a single button in the 
     legend */
-        if(label !== null) {
-      console.log(label)
-      seriesMap[name].push(createBullet(label))
-    }
+   // label !== undefined &&  seriesMap[name].push(createBullet( label.size, label.data, label.angle, label.icon))
+    label !== undefined &&  seriesMap[name].push(createBullet( label))
+  
+    
     seriesMap[name].push(createLine(name, color, main, icon))
     seriesMap[name].push(createPathingLine(name, color, pathing))
 
