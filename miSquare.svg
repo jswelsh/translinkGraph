@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="192"
+   height="192"
+   viewBox="0 0 192 192"
+   version="1.1"
+   id="svg30357"
+   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
+   sodipodi:docname="miSquare.svg"
+   inkscape:export-filename="/home/ody7/Pictures/design/development/r5Square.png"
+   inkscape:export-xdpi="201"
+   inkscape:export-ydpi="201">
+  <defs
+     id="defs30351">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 96 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="192 : 96 : 1"
+       inkscape:persp3d-origin="96 : 64 : 1"
+       id="perspective15846" />
+    <rect
+       x="-38.218371"
+       y="267.4129"
+       width="160.18513"
+       height="78.161295"
+       id="rect49220" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath25713">
+      <g
+         inkscape:label="Clip"
+         id="use25715">
+        <g
+           style="display:inline;fill:#052e51;fill-opacity:1"
+           id="g25737"
+           transform="matrix(5.6403052,0,0,5.6403052,-858.87664,-14902.852)">
+          <g
+             id="g25735"
+             transform="translate(158.6946,2666.6472)">
+            <path
+               style="stroke:none"
+               d="m 15.890625,0 -1.28125,-14.453125 h -3.1875 l -2.28125,8.234375 c -0.265625,1 -0.453125,1.984375 -0.515625,2.421875 -0.09375,-0.4375 -0.21875,-1.25 -0.546875,-2.46875 l -2.21875,-8.1875 h -3.1875 L 1.359375,0 H 3.71875 l 0.625,-8.71875 C 4.40625,-9.625 4.484375,-11 4.484375,-11.484375 4.578125,-11 4.84375,-9.703125 5.109375,-8.75 L 7.515625,0 H 9.5625 l 2.625,-9.140625 c 0.28125,-0.921875 0.46875,-1.84375 0.5625,-2.3125 0,0.4375 0.04687,1.578125 0.109375,2.5 L 13.53125,0 Z m 0,0"
+               id="path25733" />
+          </g>
+        </g>
+        <path
+           style="display:inline;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:3.77277"
+           d="M 146.79438,137.85273 V 97.059602 l -8.72455,1.59164 v 39.201488 z m 1.41479,-51.521957 c 0,-3.301178 -2.59379,-5.836011 -5.65917,-5.836011 -3.24223,0 -5.77706,2.593783 -5.77706,5.836011 0,3.183279 2.47588,5.777062 5.60021,5.777062 3.24223,0 5.83602,-2.593783 5.83602,-5.777062 z m 0,0"
+           id="path25739" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath25971">
+      <g
+         inkscape:label="Clip"
+         id="use25973"
+         inkscape:export-xdpi="201"
+         inkscape:export-ydpi="201"
+         style="fill:#facf05;fill-opacity:1">
+        <rect
+           style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#facf05;fill-opacity:1;fill-rule:evenodd;stroke:#facf05;stroke-width:0.947302;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+           id="rect49366"
+           width="191.0527"
+           height="191.0527"
+           x="0.47365099"
+           y="0.47365099"
+           inkscape:export-xdpi="96"
+           inkscape:export-ydpi="96" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath30471">
+      <g
+         inkscape:label="Clip"
+         id="use30473">
+        <g
+           style="display:inline;fill:#052e51;fill-opacity:1"
+           id="g30496"
+           transform="matrix(7.6890188,0,0,7.6890188,-1211.3693,-20350.483)">
+          <g
+             id="g30494"
+             transform="translate(158.6946,2666.6472)">
+            <path
+               style="stroke:none"
+               d="m 15.890625,0 -1.28125,-14.453125 h -3.1875 l -2.28125,8.234375 c -0.265625,1 -0.453125,1.984375 -0.515625,2.421875 -0.09375,-0.4375 -0.21875,-1.25 -0.546875,-2.46875 l -2.21875,-8.1875 h -3.1875 L 1.359375,0 H 3.71875 l 0.625,-8.71875 C 4.40625,-9.625 4.484375,-11 4.484375,-11.484375 4.578125,-11 4.84375,-9.703125 5.109375,-8.75 L 7.515625,0 H 9.5625 l 2.625,-9.140625 c 0.28125,-0.921875 0.46875,-1.84375 0.5625,-2.3125 0,0.4375 0.04687,1.578125 0.109375,2.5 L 13.53125,0 Z m 0,0"
+               id="path30492" />
+          </g>
+        </g>
+        <g
+           id="g30500"
+           style="fill:#052e51;fill-opacity:1"
+           transform="matrix(7.6890188,0,0,7.6890188,140.50354,153.41903)">
+          <path
+             style="stroke:none;stroke-width:0.654071"
+             d="M 1.841496,-1.4230287e-4 V -7.0722863 L 0.32895656,-6.79635 V -1.4230287e-4 Z M 2.0867727,-8.9323013 c 0,-0.572312 -0.4496739,-1.011766 -0.9811067,-1.011766 -0.56209234,0 -1.00154644,0.449674 -1.00154644,1.011766 0,0.551873 0.4292342,1.001547 0.97088684,1.001547 0.5620924,0 1.0117663,-0.449674 1.0117663,-1.001547 z m 0,0"
+             id="path30498" />
+        </g>
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath30471-6">
+      <g
+         inkscape:label="Clip"
+         id="use30473-7"
+         style="fill:#000000;fill-opacity:1">
+        <g
+           style="display:inline;fill:#000000;fill-opacity:1"
+           id="g49093"
+           transform="matrix(7.6890188,0,0,7.6890188,-1211.3693,-20350.483)">
+          <g
+             id="g49091"
+             transform="translate(158.6946,2666.6472)"
+             style="fill:#000000;fill-opacity:1">
+            <path
+               style="fill:#000000;fill-opacity:1;stroke:none"
+               d="m 15.890625,0 -1.28125,-14.453125 h -3.1875 l -2.28125,8.234375 c -0.265625,1 -0.453125,1.984375 -0.515625,2.421875 -0.09375,-0.4375 -0.21875,-1.25 -0.546875,-2.46875 l -2.21875,-8.1875 h -3.1875 L 1.359375,0 H 3.71875 l 0.625,-8.71875 C 4.40625,-9.625 4.484375,-11 4.484375,-11.484375 4.578125,-11 4.84375,-9.703125 5.109375,-8.75 L 7.515625,0 H 9.5625 l 2.625,-9.140625 c 0.28125,-0.921875 0.46875,-1.84375 0.5625,-2.3125 0,0.4375 0.04687,1.578125 0.109375,2.5 L 13.53125,0 Z m 0,0"
+               id="path49089" />
+          </g>
+        </g>
+        <g
+           id="g49097"
+           style="fill:#000000;fill-opacity:1"
+           transform="matrix(7.6890188,0,0,7.6890188,140.50354,153.41903)">
+          <path
+             style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.654071"
+             d="M 1.841496,-1.4230287e-4 V -7.0722863 L 0.32895656,-6.79635 V -1.4230287e-4 Z M 2.0867727,-8.9323013 c 0,-0.572312 -0.4496739,-1.011766 -0.9811067,-1.011766 -0.56209234,0 -1.00154644,0.449674 -1.00154644,1.011766 0,0.551873 0.4292342,1.001547 0.97088684,1.001547 0.5620924,0 1.0117663,-0.449674 1.0117663,-1.001547 z m 0,0"
+             id="path49095" />
+        </g>
+      </g>
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.5694606"
+     inkscape:cx="93.706873"
+     inkscape:cy="63.754219"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     width="49px"
+     scale-x="1"
+     viewbox-width="192"
+     inkscape:window-width="1848"
+     inkscape:window-height="1016"
+     inkscape:window-x="72"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     showguides="true" />
+  <metadata
+     id="metadata30354">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       style="display:inline;fill:#052e51;fill-opacity:1"
+       id="g14011"
+       transform="matrix(3.772775,0,0,3.772775,-531.73425,-9923.1028)">
+      <g
+         id="use14009"
+         transform="translate(175.81865,2666.6472)" />
+    </g>
+    <text
+       xml:space="preserve"
+       id="text49218"
+       style="line-height:1.25;font-family:sans-serif;font-size:17.33333333px;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px;white-space:pre;shape-inside:url(#rect49220);" />
+    <text
+       xml:space="preserve"
+       style="font-size:17.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';letter-spacing:0px"
+       x="-126.99496"
+       y="273.4021"
+       id="text49226"><tspan
+         sodipodi:role="line"
+         id="tspan49224"
+         x="-126.99496"
+         y="273.4021" /></text>
+    <rect
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#facf05;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:0.951999;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+       id="rect49370"
+       width="192"
+       height="192"
+       x="0"
+       y="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.9753;stroke-opacity:1"
+       x="10.344318"
+       y="160.56979"
+       id="text15756"><tspan
+         sodipodi:role="line"
+         id="tspan15754"
+         x="10.344318"
+         y="160.56979"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1.9753;stroke-opacity:1">M</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.83717;stroke-opacity:1"
+       x="141.99033"
+       y="161.62849"
+       id="text15760"><tspan
+         sodipodi:role="line"
+         id="tspan15758"
+         x="141.99033"
+         y="161.62849"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.83717;stroke-opacity:1">i</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#ffffff"
+       x="-158.55757"
+       y="181.36537"
+       id="text15840"><tspan
+         sodipodi:role="line"
+         id="tspan15838"
+         x="-158.55757"
+         y="181.36537">C</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#ffffff"
+       x="-87.73584"
+       y="40.963734"
+       id="text15844"><tspan
+         sodipodi:role="line"
+         id="tspan15842"
+         x="-87.73584"
+         y="40.963734">a</tspan></text>
+  </g>
+</svg>
