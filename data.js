@@ -1,3 +1,5 @@
+import { stationData  } from './sationData.js'
+
 const routes = [{
   name: 'R1 King George Blvd.....',
   icon: 'busR.png',
@@ -16,7 +18,7 @@ const routes = [{
     { station: '80th Ave–King George Blvd', x: 72.5, y: 10.4 },
     { station: '76th Ave–King George Blvd', x: 72.5, y: 6.45 },
     { station: 'Newton Exchange', x: 72.5, y: 2.45 }],
-  pathing: [   
+  pathing:[
     { station: 'Whalley Blvd–104th Ave', x: 76.45, y: 30.95 },
     { station: '1', x: 72.5, y: 30.95 },
     { station: 'Surrey Central', x: 72.5, y: 29.9 }],
@@ -25,7 +27,6 @@ const routes = [{
     { station: 'Guildford Exchange', x: 88.35, y: 30.95 },{},
     { station: 'King George', x: 72.225, y: 23.15 },{},
     { station: 'Surrey Central', x: 72.225, y: 29.9 },{}],
-    icons:null,
     label:{
       size:25,
       data: [{ x: 74.45, y: 30.95 }],
@@ -50,7 +51,7 @@ const routes = [{
     { station: 'Ridgeway Ave–E 3rd St', x: 35.47, y: 92.55 },
     { station: 'Brooksbank Ave–Main St', x: 38.3, y: 92.55 },
     { station: 'Phibbs Exchange', x: 41.53, y: 92.55 },],
-  pathing: [
+  pathing:[
     { station: '1', x: 25.75, y: 94.65 },
     { station: '2', x: 27.4, y: 94.65 },
     { station: '3', x: 29, y: 92.55 },
@@ -147,7 +148,6 @@ const routes = [{
       { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},{},
       { station: 'UBC Exchange', x: 2.75, y: 61.8},{},
       { station: 'Dunbar Loop', x: 9.85, y: 48.625 },{},],
-    icons:null,
     label:{
       size:25,
       data: [{x: 8, y: 48.625 }],
@@ -177,12 +177,11 @@ const routes = [{
     { station: 'Duthie Ave–Hastings St', x: 57.7, y: 81.75 }, 
     { station: 'SFU Transportation Centre', x: 60.9, y: 81.75 }, 
     { station: 'SFU Exchange', x: 63.2, y: 81.75 }],
-  pathing: null,
+
   connectors:[
     { station: 'Burrard', x: 21.46833, y: 84.25 },{},
     { station: 'Kootenay Loop', x: 40.65, y: 81.75 },{},
     { station: 'SFU Exchange', x: 63.2, y: 81.75 },{}],
-    icons:null,
     label:{
       size:25,
       data: [{ x: 42.28, y: 81.75 }],
@@ -204,17 +203,14 @@ const routes = [{
     { station: 'Arbutus St–W Broadway', x: 15.3, y: 61.8},
     { station: 'Granville St–W Broadway', x: 17.7, y: 61.8},
     { station: 'Willow St–W Broadway', x: 20.7, y: 61.8},
-  /*     { station: 'Broadway–City Hall', x: 22.625, y: 61.755}, */
     { station: 'Main St–E Broadway', x: 25.175, y: 61.8},
     { station: 'Fraser St–E Broadway', x: 27.95, y: 61.8},
     { station: 'Clark Dr–E Broadway', x: 30.6, y: 61.8},
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8}],
-  pathing: null,
   connectors: [
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },{},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},{},
     { station: 'UBC Exchange', x: 2.75, y: 61.8},{}],
-  icons:null,
   label:{
     size:25,
     //data: [{x: 85.45, y: 71.375 }],
@@ -231,12 +227,10 @@ const routes = [{
   main: [
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },
     { station: 'Waterfront', x: 23.75, y: 84.25}],
-  pathing: null,
   connectors:[
     { station: 'Lonsdale Quay', x: 30, y: 92.55 },{},
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
     { station: 'Waterfront', x: 23.75, y: 84.25}],
-    icons:null,
   },{
   name: "Expo Line",
   icon: 'skyTrainExpo.png',
@@ -483,7 +477,17 @@ const routes = [{
     //this is the same as r4square.svg but converted  
     icon: 'milSquare.svg'
   }
-  }]
+  },{
+  name: 'Accesibility',
+  icon: 'accessible.svg',
+  color: am4core.color("#052e51ff"), 
+  main:[
+    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
+    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
+
+  ]
+  }
+]
 const icons = [{
   type: 'zoneIcon',
   color: am4core.color('#00000000'),

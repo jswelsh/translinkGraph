@@ -207,21 +207,15 @@ const buildRoutes = (routes) => {
     the user can toggle both lines from a single button in the 
     legend */
    // label !== undefined &&  seriesMap[name].push(createBullet( label.size, label.data, label.angle, label.icon))
-    label !== undefined && seriesMap[name].push(createBullet( label))
+    
   
     
     seriesMap[name].push(createLine(name, color, main, icon))
     seriesMap[name].push(createPathingLine(name, color, pathing))
 
-
-    if(connectors !== undefined) { seriesMap[name].push(createConnector(connectors))}
-    if(icons !== null) { 
-      icons.forEach(icon => {
-        seriesMap[name].push(createIconPin( icon.color, icon.data, icon.radius))
-      })
-    }
-
-    
+    label !== undefined && seriesMap[name].push(createBullet( label))
+    connectors !== undefined && seriesMap[name].push(createConnector(connectors))
+    icons !== undefined && icons.forEach(icon => { seriesMap[name].push(createIconPin( icon.color, icon.data, icon.radius)) })
     //create a master toggle button
     masterSeries.events.on('hidden', () => {
       seriesMap[name][0].hide();
@@ -282,7 +276,5 @@ buildRoutes(routes)
   let bg = chart.plotContainer.createChild(am4core.Image);
   bg.width = am4core.percent(100);
   bg.height = am4core.percent(100);
-
   bg.href = 'transitMapCleaned2.svg'
- /*  bg.href = 'transitMap.png' */
 }); 
