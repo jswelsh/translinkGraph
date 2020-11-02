@@ -33,16 +33,16 @@ am4core.ready(function() {
 <hr />
 <table>
 <tr>
-  <th align="left">Tracks: </th>
-  <td>{tracks}</td>
-</tr>
-<tr>
-  <th align="left">elevation:</th>
-  <td>{elevation}</td>
+  <th align="left"> disabled Access: </th>
+  <td>{disabledAccess}</td>
 </tr>
 <tr>
   <th align="left">parking:</th>
   <td>{parking}</td>
+</tr>
+<tr>
+<th align="left">bicycle Facilities:</th>
+<td>{bicycleFacilities}</td>
 </tr>
 </table>
 <hr />
@@ -82,20 +82,18 @@ am4core.ready(function() {
     /* bullet.circle.fill = am4core.color("#052e51ff"); */
     bullet.circle.stroke = am4core.color("#fff");
     bullet.circle.strokeWidth = 2;
-    bullet.tooltipHTML = tooltipHTML
-   /*  bullet.circle.tooltipText = `{station} 
-    Tracks: {tracks}
-    elevation: {elevation}
+    /* need to set both tooltiptext and tooltiphtml,
+    the tooltiphtml isnt compatable with older browsers
+    so tooltiptext is fallback  */
+    bullet.circle.tooltipText = `{station} 
+    disabled Access: {disabledAccess},
     parking: {parking},
     bicycle Facilities: {bicycleFacilities},
-    disabled Access: {disabledAccess},
-    station Code: {stationCode},
     fare Zone: {fareZone},
-    opened: {opened},
-    2019 volume: {perAnnumVolume},
     volume rank: {rank}
-    
-    `; */
+    station Code: {stationCode},
+    `; 
+    bullet.tooltipHTML = tooltipHTML
     bullet.circle.strokeOpacity = .8;
     return series
   }
