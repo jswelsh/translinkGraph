@@ -71,9 +71,7 @@ am4core.ready(function() {
     series.tooltip.background.fill = am4core.color("#052e51ff");//background border
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text
-    series.tooltip.label.stroke = am4core.color("#73f");//text
-
-
+    
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
