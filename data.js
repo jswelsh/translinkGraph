@@ -1,10 +1,10 @@
-import { stationData  } from './sationData.js'
+import { stationData } from './stationData.js'
 
 const routes = [{
   name: 'R1 King George Blvd.....',
   icon: 'busR.png',
   color: am4core.color('#149e42ff'),
-  main:[
+  main:[ 
     { station: 'Guildford Exchange', x: 88.35, y: 30.95 },
     { station: '148th St–104th Ave', x: 85.35, y: 30.95 },
     { station: '144th St–104th Ave', x: 82.4, y: 30.95 },
@@ -341,21 +341,21 @@ const routes = [{
   icon: 'skyTrainCanada.png',
   color: am4core.color('#0097c7'),
   main:[
-    { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
-    { station: 'Lansdowne', x: 22.625, y: 15.75 }, 
-    { station: 'Aberdeen', x: 22.625, y: 22.3 },
-    { station: 'Bridgeport', x: 22.625, y: 28.9 }, 
-    { station: 'Marine Drive', x: 22.625, y: 35.45},
-    { station: 'Langara–49th Avenue', x: 22.625, y: 42.},
+    { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15, ... stationData.RB },
+    { station: 'Lansdowne', x: 22.625, y: 15.75, ... stationData.LD }, 
+    { station: 'Aberdeen', x: 22.625, y: 22.3, ... stationData.AB },
+    { station: 'Bridgeport', x: 22.625, y: 28.9, ... stationData.BR }, 
+    { station: 'Marine Drive', x: 22.625, y: 35.45, ... stationData.MD},
+    { station: 'Langara–49th Avenue', x: 22.625, y: 42, ... stationData.LG},
     /*{ station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625}, */
-    { station: 'King Edward', x: 22.625, y: 55.2},
-    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
-    { station: 'Olympic Village', x: 22.625, y: 66.5},
+    { station: 'King Edward', x: 22.625, y: 55.2,... stationData.KE},
+    { station: 'Broadway–City Hall', x: 22.625, y: 61.755,... stationData.BC},
+    { station: 'Olympic Village', x: 22.625, y: 66.5,... stationData.OV},
     { station: 'bend in route'},
-    { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645},
+    { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645,... stationData.YT},
     { station: 'bend in route'},
-    { station: 'Vancouver City Centre', x: 19.35, y: 78.25},
-    { station: 'Waterfront', x: 23.75, y: 84.25}],
+    { station: 'Vancouver City Centre', x: 19.35, y: 78.25,... stationData.VC},
+    { station: 'Waterfront', x: 23.75, y: 84.25,... stationData.WF}],
   pathing:[
     { station: '1', x: 22.625, y: 66.5}, //'Olympic Village'
     { station: '2', x: 22.625, y: 69.40}, //bend in route
@@ -363,7 +363,7 @@ const routes = [{
     { station: '4', x: 17.75, y: 76.1}, //Yaletown–Roundhouse 
     { station: '5', x: 19.35, y: 78.25}], //bend in route
   connectors:[
-    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},{}, 
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625,... stationData.OK},{}, 
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755},{},
     { station: 'Waterfront', x: 23.75, y: 84.25},{},
     { station: 'Bridgeport', x: 22.625, y: 28.9 },{},],

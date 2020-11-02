@@ -28,14 +28,34 @@ am4core.ready(function() {
   createAxis(chart.xAxes);
   createAxis(chart.yAxes);
 
-  function createLine(name, color, data, icon) {
+  function createLine(name, color, main, icon) {
+    var tooltipHTML = `<center><strong>YEAR {station}</strong></center>
+<hr />
+<table>
+<tr>
+  <th align="left">Tracks: </th>
+  <td>{tracks}</td>
+</tr>
+<tr>
+  <th align="left">elevation:</th>
+  <td>{elevation}</td>
+</tr>
+<tr>
+  <th align="left">parking:</th>
+  <td>{parking}</td>
+</tr>
+</table>
+<hr />
+<center><input type="button" value="More info" onclick="alert('You clicked on {categoryX}')" /></center>`;
     let series = chart.series.push(new am4charts.LineSeries());
-    series.data = data;
+    series.data = main;
     series.name = name;
     series.color = color;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
-
+    if (main){
+      console.log(main)
+    }
     series.dummyData = {
       icon : icon
     }
@@ -51,6 +71,8 @@ am4core.ready(function() {
     series.tooltip.background.fill = am4core.color("#052e51ff");//background border
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text
+    series.tooltip.label.stroke = am4core.color("#73f");//text
+
 
     series.propertyFields.strokeDasharray = "dash";
 
@@ -60,7 +82,20 @@ am4core.ready(function() {
     /* bullet.circle.fill = am4core.color("#052e51ff"); */
     bullet.circle.stroke = am4core.color("#fff");
     bullet.circle.strokeWidth = 2;
-    bullet.circle.tooltipText = "{station}";
+    bullet.tooltipHTML = tooltipHTML
+   /*  bullet.circle.tooltipText = `{station} 
+    Tracks: {tracks}
+    elevation: {elevation}
+    parking: {parking},
+    bicycle Facilities: {bicycleFacilities},
+    disabled Access: {disabledAccess},
+    station Code: {stationCode},
+    fare Zone: {fareZone},
+    opened: {opened},
+    2019 volume: {perAnnumVolume},
+    volume rank: {rank}
+    
+    `; */
     bullet.circle.strokeOpacity = .8;
     return series
   }
@@ -164,7 +199,6 @@ am4core.ready(function() {
     let series = chart.series.push(new am4charts.LineSeries());
     let { size,  data, angle, align, icon } = {...label}
     let [horizontal, vertical] = [align[0], align[1]]
-    console.table(horizontal)
     series.data = data;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
@@ -184,9 +218,9 @@ am4core.ready(function() {
   }
 
 const buildRoutes = (routes) => {
+  
   let seriesMap = {};
   let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
-
   routes.forEach(route => {
     const [name, color, main, icon, pathing, connectors, icons, label] = [
       route.name, 
@@ -197,6 +231,7 @@ const buildRoutes = (routes) => {
       route.connectors,
       route.icons,
       route.label]
+
 
   seriesMap[name] = []
     /* pathing line is needed for any bend  in the 
