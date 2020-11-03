@@ -88,10 +88,12 @@ am4core.ready(function() {
     /* bullet.circle.fill = am4core.color("#052e51ff"); */
     bullet.circle.stroke = am4core.color("#fff");
     bullet.circle.strokeWidth = 2;
+
+    /* need to check if there is data for tooltip to render */
+    if(series.data[0] && series.data[0].stationCode !== undefined){
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-    if(series.data[0] && series.data[0].stationCode !== undefined){
       bullet.circle.tooltipText = tooltipText; 
       bullet.tooltipHTML = tooltipHTML
     } else {
