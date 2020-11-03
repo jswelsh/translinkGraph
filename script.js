@@ -29,39 +29,47 @@ am4core.ready(function() {
   createAxis(chart.yAxes);
 
   function createLine(name, color, main, icon) {
-    var tooltipHTML = `<center><strong>YEAR {station}</strong></center>
-<hr />
-<table>
-<tr>
-  <th align="left"> disabled Access: </th>
-  <td>{disabledAccess}</td>
-</tr>
-<tr>
-  <th align="left">parking:</th>
-  <td>{parking}</td>
-</tr>
-<tr>
-<th align="left">bicycle Facilities:</th>
-<td>{bicycleFacilities}</td>
-</tr>
-</table>
-<hr />
-<center><input type="button" value="More info" onclick="alert('You clicked on {categoryX}')" /></center>`;
+    let tooltipText = 
+    `{station} 
+    disabled Access: {disabledAccess},
+    parking: {parking},
+    bicycle Facilities: {bicycleFacilities},
+    fare Zone: {fareZone},
+    volume rank: {rank}
+    station Code: {stationCode},
+    `
+    let tooltipHTML = 
+    `<center><strong> {station}</strong></center>
+    <hr />
+    <table>
+      <tr>
+        <th style='color:#fff;' align="left"> disability Access: </th>
+        <td style='color:#fff;'>{disabledAccess}</td>
+      </tr>
+      <tr>
+        <th style='color:#fff;' align="left">bicycle Lockers:</th>
+        <td style='color:#fff;'>{bicycleFacilities}</td>
+      </tr>
+      <tr>
+        <th style='color:#fff;' align="left">Fare Zone:</th>
+        <td style='color:#fff;'>{fareZone}</td>
+      </tr>
+    </table>
+    <hr />`;
+    //    <center><input type="button" value="More info" onclick="alert('You clicked on {categoryX}')" /></center>
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = main;
     series.name = name;
     series.color = color;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
-    if (main){
-      console.log(main)
-    }
     series.dummyData = {
       icon : icon
     }
-    series.stroke = color;
     series.strokeWidth =6;
     series.connect = false;
+    series.stroke = color;
+    
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.autoTextColor = false;
     series.tooltip.fontFamily = 'Arial '
@@ -83,14 +91,7 @@ am4core.ready(function() {
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-    bullet.circle.tooltipText = `{station} 
-    disabled Access: {disabledAccess},
-    parking: {parking},
-    bicycle Facilities: {bicycleFacilities},
-    fare Zone: {fareZone},
-    volume rank: {rank}
-    station Code: {stationCode},
-    `; 
+    bullet.circle.tooltipText = tooltipText; 
     bullet.tooltipHTML = tooltipHTML
     bullet.circle.strokeOpacity = .8;
     return series
@@ -126,6 +127,33 @@ am4core.ready(function() {
     series.propertyFields.strokeDasharray = "dash";
   }
   function createConnector(data) {
+        let tooltipText = 
+    `{station} 
+    disabled Access: {disabledAccess},
+    parking: {parking},
+    bicycle Facilities: {bicycleFacilities},
+    fare Zone: {fareZone},
+    volume rank: {rank}
+    station Code: {stationCode},
+    `
+    let tooltipHTML = 
+    `<center><strong> {station}</strong></center>
+    <hr />
+    <table>
+      <tr>
+        <th style='color:#fff;' align="left"> disability Access: </th>
+        <td style='color:#fff;'>{disabledAccess}</td>
+      </tr>
+      <tr>
+        <th style='color:#fff;' align="left">bicycle Lockers:</th>
+        <td style='color:#fff;'>{bicycleFacilities}</td>
+      </tr>
+      <tr>
+        <th style='color:#fff;' align="left">Fare Zone:</th>
+        <td style='color:#fff;'>{fareZone}</td>
+      </tr>
+    </table>
+    <hr />`;
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -146,7 +174,22 @@ am4core.ready(function() {
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#999");
     bullet.circle.strokeWidth = 2;
-    bullet.circle.tooltipText = "{station}";
+    series.tooltip.pointerOrientation = "vertical";
+    series.tooltip.autoTextColor = false;
+    series.tooltip.fontFamily = 'Arial '
+    series.tooltip.fontWeight = 'bold'
+    series.tooltip.dy = -7.5
+    series.tooltip.getFillFromObject = false;
+    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
+    series.tooltip.label.fill = am4core.color("#fff");//text
+    /* need to set both tooltiptext and tooltiphtml,
+    the tooltiphtml isnt compatable with older browsers
+    so tooltiptext is fallback  */
+    bullet.circle.tooltipText = tooltipText; 
+    bullet.tooltipHTML = tooltipHTML
+    bullet.circle.strokeOpacity = .8;
+/*     bullet.circle.tooltipText = "{station}";
 
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.autoTextColor = false;
@@ -156,7 +199,7 @@ am4core.ready(function() {
     series.tooltip.getFillFromObject = false;
     series.tooltip.background.fill = am4core.color("#052e51ff")
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-    series.tooltip.label.fill = am4core.color("#fff");//text
+    series.tooltip.label.fill = am4core.color("#fff");//text */
     return series
   }
 
@@ -227,7 +270,6 @@ const buildRoutes = (routes) => {
       route.connectors,
       route.icons,
       route.label]
-
 
   seriesMap[name] = []
     /* pathing line is needed for any bend  in the 
