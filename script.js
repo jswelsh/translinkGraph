@@ -91,8 +91,13 @@ am4core.ready(function() {
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-    bullet.circle.tooltipText = tooltipText; 
-    bullet.tooltipHTML = tooltipHTML
+    if(series.data[0] && series.data[0].stationCode !== undefined){
+      bullet.circle.tooltipText = tooltipText; 
+      bullet.tooltipHTML = tooltipHTML
+    } else {
+      bullet.circle.tooltipText = '{station}'
+    }
+  
     bullet.circle.strokeOpacity = .8;
     return series
   }

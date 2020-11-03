@@ -241,8 +241,8 @@ const routes = [{
     { station: 'Burrard', x: 21.46833, y: 84.25, ...stationData.BU },
     { station: 'bend in route'},
     { dash: "3,3", station: 'Granville', x: 23.8125, y: 78.25, ...stationData.GR },
-    { station: 'Vancouver City Centre', x: 19.35, y: 78.25, ...stationData. },{},
-    { station: 'Granville', x: 23.8125, y: 78.25, ...stationData. }, 
+    { station: 'Vancouver City Centre', x: 19.35, y: 78.25, ...stationData.VS },{},
+    { station: 'Granville', x: 23.8125, y: 78.25, ...stationData.GR }, 
     { station: 'Stadium-Chinatown', x: 26.25, y: 75, ...stationData.ST }, 
     { station: 'Main Street–Science World', x: 28.5, y: 72, ...stationData.MN }, 
     { station: 'bend in route'},
@@ -264,8 +264,8 @@ const routes = [{
     { station: 'bend in route'},
     { station: 'Braid', x: 70.7 ,y: 57.2, ...stationData.BD },
     { station: 'bend in route'},
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2, ...stationData.LH }, {},
-    { station: 'Production Way–University', x: 63.2, y: 63.2, ...stationData.PW }, 
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2, ...stationData.LH },
+    { station: 'Production Way–University', x: 63.2, y: 63.2, ...stationData.PW },{}, 
     { station: 'Scott Road', x: 69.025, y:42.3, ...stationData.SR },{},
     { station: 'Gateway', x: 71.95, y: 36.15, ...stationData.GW },
     { station: 'Surrey Central', x: 71.95, y: 29.9, ...stationData.SC },
@@ -477,7 +477,7 @@ const routes = [{
     //this is the same as r4square.svg but converted  
     icon: 'milSquare.svg'
   }
-  },{
+  },/* {
   name: 'Accesibility',
   icon: 'accessible.svg',
   color: am4core.color("#052e51ff"), 
@@ -486,7 +486,7 @@ const routes = [{
     { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
 
   ]
-  }
+  } */
 ]
 const icons = [{
   type: 'zoneIcon',
