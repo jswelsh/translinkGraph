@@ -135,9 +135,16 @@ am4core.ready(function() {
     series.tooltip.fontWeight = 'bold'
     series.tooltip.dy = -7.5
     series.tooltip.getFillFromObject = false;
-    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
-    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-    series.tooltip.label.fill = am4core.color("#fff");//text
+    series.tooltip.background.strokeWidth = 0
+    series.tooltip.label.paddingTop = 0
+    series.tooltip.label.paddingBottom = 0
+    series.tooltip.label.paddingLeft = 0
+    series.tooltip.label.paddingRight = 0
+
+
+   // series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+
+   // series.tooltip.label.fill = am4core.color("#fff");//text
 
     /* need to check if there is data for tooltip to render */
     if(series.data[0] && series.data[0].stationCode !== undefined){

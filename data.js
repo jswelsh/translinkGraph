@@ -23,7 +23,7 @@ const routes = [{
     { station: '1', x: 72.5, y: 30.95 },
     { station: 'Surrey Central', x: 72.5, y: 29.9 }],
   connectors:[
-    { station: 'Newton Exchange', x: 72.5, y: 2.45, ...stationData.NWT },{},
+    { station: 'Newton Exchange', x: 72.5, y: 2.45, ...stationData.NWT, color: '#149e42', },{},
     { station: 'Guildford Exchange', x: 88.35, y: 30.95, ...stationData.GLF },{},
     { station: 'King George', x: 72.225, y: 23.15, ...stationData.KG },{},
     { station: 'Surrey Central', x: 72.225, y: 29.9, ...stationData.SC },{}],
