@@ -116,7 +116,7 @@ const routes = [{
   icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main: [
-    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8 },
     {},
     { station: 'Agronomy Rd–Wesbrook Mall', x: 4.1, y: 58.519},
     { station: 'W 16th Ave–Wesbrook Mall', x: 5.6, y: 56.5 },
@@ -193,7 +193,7 @@ const routes = [{
   icon: 'bus99.png',
   color: am4core.color('#f36617ff'),
   main: [
-    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8 },
     { station: 'Allison Rd–University Blvd', x: 5.1, y: 61.8},
     { station: 'Sasamat St–W 10th Ave', x: 7.5, y: 61.8},
     { station: 'Alma St–W Broadway', x: 9.85, y: 61.8},
