@@ -1,4 +1,5 @@
 import { routes, icons, zones  } from './data.js'
+import { tooltip } from './tooltip.mjs'
 
 am4core.ready(function() {
     am4core.useTheme(am4themes_animated);
@@ -28,20 +29,21 @@ am4core.ready(function() {
   createAxis(chart.xAxes);
   createAxis(chart.yAxes);
 
-  function createLine(name, color, data, icon) {
+  function createLine(name, color, main, icon) {
+
     let series = chart.series.push(new am4charts.LineSeries());
-    series.data = data;
+    series.data = main;
     series.name = name;
     series.color = color;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
-
     series.dummyData = {
       icon : icon
     }
-    series.stroke = color;
     series.strokeWidth =6;
     series.connect = false;
+    series.stroke = color;
+    
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.autoTextColor = false;
     series.tooltip.fontFamily = 'Arial '
@@ -51,7 +53,7 @@ am4core.ready(function() {
     series.tooltip.background.fill = am4core.color("#052e51ff");//background border
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text
-
+    
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
@@ -60,7 +62,18 @@ am4core.ready(function() {
     /* bullet.circle.fill = am4core.color("#052e51ff"); */
     bullet.circle.stroke = am4core.color("#fff");
     bullet.circle.strokeWidth = 2;
-    bullet.circle.tooltipText = "{station}";
+
+    /* need to check if there is data for tooltip to render */
+    if(series.data[0] && series.data[0].stationCode !== undefined){
+    /* need to set both tooltiptext and tooltiphtml,
+    the tooltiphtml isnt compatable with older browsers
+    so tooltiptext is fallback  */
+      bullet.circle.tooltipText = tooltip.text; 
+      bullet.tooltipHTML = tooltip.html
+    } else {
+      bullet.circle.tooltipText = '{station}'
+    }
+  
     bullet.circle.strokeOpacity = .8;
     return series
   }
@@ -95,6 +108,7 @@ am4core.ready(function() {
     series.propertyFields.strokeDasharray = "dash";
   }
   function createConnector(data) {
+      
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -115,20 +129,37 @@ am4core.ready(function() {
     bullet.circle.fill = am4core.color("#fff");
     bullet.circle.stroke = am4core.color("#999");
     bullet.circle.strokeWidth = 2;
-    bullet.circle.tooltipText = "{station}";
-
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.autoTextColor = false;
-    series.tooltip.fontFamily = 'Arial'
+    series.tooltip.fontFamily = 'Arial '
     series.tooltip.fontWeight = 'bold'
     series.tooltip.dy = -7.5
     series.tooltip.getFillFromObject = false;
-    series.tooltip.background.fill = am4core.color("#052e51ff")
-    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-    series.tooltip.label.fill = am4core.color("#fff");//text
+    series.tooltip.background.strokeWidth = 0
+    series.tooltip.label.paddingTop = 0
+    series.tooltip.label.paddingBottom = 0
+    series.tooltip.label.paddingLeft = 0
+    series.tooltip.label.paddingRight = 0
+
+
+   // series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+
+   // series.tooltip.label.fill = am4core.color("#fff");//text
+
+    /* need to check if there is data for tooltip to render */
+    if(series.data[0] && series.data[0].stationCode !== undefined){
+    /* need to set both tooltiptext and tooltiphtml,
+    the tooltiphtml isnt compatable with older browsers
+    so tooltiptext is fallback  */
+      bullet.circle.tooltipText = tooltip.text; 
+      bullet.tooltipHTML = tooltip.html
+    } else {
+      bullet.circle.tooltipText = '{station}'
+    }
+  
+    bullet.circle.strokeOpacity = .8;
     return series
   }
-
   function createIconPin(color, data, radius) {
     let series = chart.series.push(new am4charts.LineSeries());
 
@@ -164,7 +195,6 @@ am4core.ready(function() {
     let series = chart.series.push(new am4charts.LineSeries());
     let { size,  data, angle, align, icon } = {...label}
     let [horizontal, vertical] = [align[0], align[1]]
-    console.table(horizontal)
     series.data = data;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
@@ -184,9 +214,9 @@ am4core.ready(function() {
   }
 
 const buildRoutes = (routes) => {
+  
   let seriesMap = {};
   let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
-
   routes.forEach(route => {
     const [name, color, main, icon, pathing, connectors, icons, label] = [
       route.name, 

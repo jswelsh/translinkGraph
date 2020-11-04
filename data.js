@@ -1,10 +1,10 @@
-import { stationData  } from './sationData.js'
+import { stationData } from './stationData.js'
 
 const routes = [{
   name: 'R1 King George Blvd.....',
   icon: 'busR.png',
   color: am4core.color('#149e42ff'),
-  main:[
+  main:[ 
     { station: 'Guildford Exchange', x: 88.35, y: 30.95 },
     { station: '148th St–104th Ave', x: 85.35, y: 30.95 },
     { station: '144th St–104th Ave', x: 82.4, y: 30.95 },
@@ -23,10 +23,10 @@ const routes = [{
     { station: '1', x: 72.5, y: 30.95 },
     { station: 'Surrey Central', x: 72.5, y: 29.9 }],
   connectors:[
-    { station: 'Newton Exchange', x: 72.5, y: 2.45 },{},
-    { station: 'Guildford Exchange', x: 88.35, y: 30.95 },{},
-    { station: 'King George', x: 72.225, y: 23.15 },{},
-    { station: 'Surrey Central', x: 72.225, y: 29.9 },{}],
+    { station: 'Newton Exchange', x: 72.5, y: 2.45, ...stationData.NWT, color: '#149e42', },{},
+    { station: 'Guildford Exchange', x: 88.35, y: 30.95, ...stationData.GLF },{},
+    { station: 'King George', x: 72.225, y: 23.15, ...stationData.KG },{},
+    { station: 'Surrey Central', x: 72.225, y: 29.9, ...stationData.SC },{}],
     label:{
       size:25,
       data: [{ x: 74.45, y: 30.95 }],
@@ -57,10 +57,10 @@ const routes = [{
     { station: '3', x: 29, y: 92.55 },
     { station: '4', x: 32.63, y: 92.55 }],
   connectors:[
-    { station: 'Park Royal', x: 14.4, y: 94.65 },{},
-    { station: 'Lonsdale Quay', x: 30, y: 92.55 },
-    { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
-    { station: 'Phibbs Exchange', x: 41.53, y: 92.55 }],
+    { station: 'Park Royal', x: 14.4, y: 94.65, ...stationData.PRK },{},
+    { station: 'Lonsdale Quay', x: 30, y: 92.55, ...stationData.LQL },
+    { station: 'Lonsdale Quay', x: 28.6, y: 90.6, ...stationData.LQB },{},
+    { station: 'Phibbs Exchange', x: 41.53, y: 92.55, ...stationData.PHI }],
   icons: [{
     type: 'horseshoeFerry',
     color: am4core.color('#C562E3'),
@@ -94,10 +94,10 @@ const routes = [{
     { station: '1', x: 89.925, y: 65.4 },
     { station: '2', x: 91.82, y: 62.925 },
     { station: '3', x: 93.7, y: 62.925 }],    
-    connectors: [
-      { station: 'Coquitlam Central', x: 80.5, y: 78 },{},
-      { station: 'Haney Place', x: 97.525, y: 62.925 },{}],
-    icons: [{
+  connectors: [
+    { station: 'Coquitlam Central', x: 80.5, y: 78, ...stationData.CC },{},
+    { station: 'Haney Place', x: 97.525, y: 62.925, ...stationData.HNY },{}],
+  icons: [{
     type: 'trainIcon',
     color: am4core.color('#701c8aff'),
     data: [
@@ -116,7 +116,7 @@ const routes = [{
   icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main: [
-    { station: 'UBC Exchange', x: 2.75, y: 61.8},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8 },
     {},
     { station: 'Agronomy Rd–Wesbrook Mall', x: 4.1, y: 58.519},
     { station: 'W 16th Ave–Wesbrook Mall', x: 5.6, y: 56.5 },
@@ -143,18 +143,17 @@ const routes = [{
     { station: '5', x: 6.9, y: 54.75 },
     { station: '6', x: 6.9, y: 48.625 },
     { station: '7', x: 9.85, y: 48.625 }],
-    connectors:[
-      { station: 'Joyce–Collingwood', x: 39.9, y: 48.625 },{},
-      { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},{},
-      { station: 'UBC Exchange', x: 2.75, y: 61.8},{},
-      { station: 'Dunbar Loop', x: 9.85, y: 48.625 },{},],
-    label:{
-      size:25,
-      data: [{x: 8, y: 48.625 }],
-      angle: 0,
-      align: ['middle', 'bottom'],
-      //this is the same as r4square.svg but converted
-      icon:'r4Square.svg'
+  connectors:[
+    { station: 'Joyce–Collingwood', x: 39.9, y: 48.625, ...stationData.JY },{},
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625, ...stationData.OK},{},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},{},
+    { station: 'Dunbar Loop', x: 9.85, y: 48.625, ...stationData.DUN}],
+  label:{
+    size:25,
+    data: [{x: 8, y: 48.625 }],
+    angle: 0,
+    align: ['middle', 'bottom'],
+    icon:'r4Square.svg'
     }
   },{
   name: 'R5 Hastings St',
@@ -179,23 +178,22 @@ const routes = [{
     { station: 'SFU Exchange', x: 63.2, y: 81.75 }],
 
   connectors:[
-    { station: 'Burrard', x: 21.46833, y: 84.25 },{},
-    { station: 'Kootenay Loop', x: 40.65, y: 81.75 },{},
-    { station: 'SFU Exchange', x: 63.2, y: 81.75 },{}],
-    label:{
-      size:25,
-      data: [{ x: 42.28, y: 81.75 }],
-      angle: 0,
-      align: ['middle', 'bottom'], 
-      //this is the same as r4square.svg but converted
-      icon:'r5Square.svg'
+    { station: 'Burrard', x: 21.46833, y: 84.25, ...stationData.BU },{},
+    { station: 'Kootenay Loop', x: 40.65, y: 81.75, ...stationData.KOO },{},
+    { station: 'SFU Exchange', x: 63.2, y: 81.75, ...stationData.SFU },{}],
+  label:{
+    size:25,
+    data: [{ x: 42.28, y: 81.75 }],
+    angle: 0,
+    align: ['middle', 'bottom'], 
+    icon:'r5Square.svg'
     },
   },{
   name: "99 B-Line",
   icon: 'bus99.png',
   color: am4core.color('#f36617ff'),
   main: [
-    { station: 'UBC Exchange', x: 2.75, y: 61.8},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8 },
     { station: 'Allison Rd–University Blvd', x: 5.1, y: 61.8},
     { station: 'Sasamat St–W 10th Ave', x: 7.5, y: 61.8},
     { station: 'Alma St–W Broadway', x: 9.85, y: 61.8},
@@ -208,9 +206,10 @@ const routes = [{
     { station: 'Clark Dr–E Broadway', x: 30.6, y: 61.8},
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8}],
   connectors: [
-    { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },{},
-    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},{},
-    { station: 'UBC Exchange', x: 2.75, y: 61.8},{}],
+    { station: 'Commercial–Broadway', x: 33.8, y: 63.83, ...stationData.CM },
+    { station: 'Commercial–Broadway', x: 32.4, y: 61.8, ...stationData.BW },{},
+    { station: 'Broadway–City Hall', x: 22.625, y: 61.755, ...stationData.BC},{},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},{}],
   label:{
     size:25,
     //data: [{x: 85.45, y: 71.375 }],
@@ -228,51 +227,51 @@ const routes = [{
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },
     { station: 'Waterfront', x: 23.75, y: 84.25}],
   connectors:[
-    { station: 'Lonsdale Quay', x: 30, y: 92.55 },{},
-    { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
-    { station: 'Waterfront', x: 23.75, y: 84.25}],
+    { station: 'Lonsdale Quay', x: 30, y: 92.55, ...stationData.LQL },
+    { station: 'Lonsdale Quay', x: 28.6, y: 90.6, ...stationData.LQB },{},
+    { station: 'Waterfront', x: 23.75, y: 84.25, ...stationData.WF}],
   },{
   name: "Expo Line",
   icon: 'skyTrainExpo.png',
   color: am4core.color('#1c59ae'),
   main: [
-    { station: 'Waterfront', x: 23.75, y: 84.25},
+    { station: 'Waterfront', x: 23.75, y: 84.25,...stationData.WF },
     { station: 'bend in route'},
-    { station: 'Burrard', x: 21.46833, y: 84.25 },
+    { station: 'Burrard', x: 21.46833, y: 84.25, ...stationData.BU },
     { station: 'bend in route'},
-    { dash: "3,3", station: 'Granville', x: 23.8125, y: 78.25 },
-    { station: 'Vancouver City Centre', x: 19.35, y: 78.25},{},
-    { station: 'Granville', x: 23.8125, y: 78.25 }, 
-    { station: 'Stadium-Chinatown', x: 26.25, y: 75 }, 
-    { station: 'Main Street–Science World', x: 28.5, y: 72 }, 
+    { dash: "3,3", station: 'Granville', x: 23.8125, y: 78.25, ...stationData.GR },
+    { station: 'Vancouver City Centre', x: 19.35, y: 78.25, ...stationData.VS },{},
+    { station: 'Granville', x: 23.8125, y: 78.25, ...stationData.GR }, 
+    { station: 'Stadium-Chinatown', x: 26.25, y: 75, ...stationData.ST }, 
+    { station: 'Main Street–Science World', x: 28.5, y: 72, ...stationData.MN }, 
     { station: 'bend in route'},
-    /*     { station: 'Commercial-Broadway', x: 32.4, y: 61.8}, */
+    { station: 'Commercial-Broadway', x: 32.4, y: 61.8, ...stationData.BW },
     { station: 'bend in route'},
-    { station: 'Nanaimo', x: 34.25, y: 56 },  //35,55 base
-    { station: '29th Avenue', x: 36.65, y: 52.8}, 
-    { station: 'Joyce–Collingwood', x: 39.875, y: 48.5 }, 
-    { station: 'Patterson', x: 42.35, y: 45.2 }, 
-    { station: 'Metrotown', x: 44.75,  y: 42 }, 
-    { station: 'Royal Oak', x: 47.1875, y: 38.75 }, 
-    { station: 'Edmonds', x: 49.6625, y: 35.45 }, 
+    { station: 'Nanaimo', x: 34.25, y: 56, ...stationData.NA },  //35,55 base
+    { station: '29th Avenue', x: 36.65, y: 52.8, ...stationData.TN }, 
+    { station: 'Joyce–Collingwood', x: 39.875, y: 48.5, ...stationData.JY }, 
+    { station: 'Patterson', x: 42.35, y: 45.2, ...stationData.PT }, 
+    { station: 'Metrotown', x: 44.75,  y: 42, ...stationData.MT }, 
+    { station: 'Royal Oak', x: 47.1875, y: 38.75, ...stationData.RO }, 
+    { station: 'Edmonds', x: 49.6625, y: 35.45, ...stationData.ED }, 
     { station: 'bend in route'},
-    { station: '22nd Street', x: 52.6625, y: 34.45 },
+    { station: '22nd Street', x: 52.6625, y: 34.45, ...stationData.TS },
     { station: 'bend in route'}, 
-    { station: 'New Westminster', x: 58.91235 , y:40  }, 
-    { station: 'Columbia', x: 62.66235, y: 45 }, 
-    { station: 'Sapperton', x: 68.13735, y: 52.3 }, 
+    { station: 'New Westminster', x: 58.91235 , y:40, ...stationData.NW }, 
+    { station: 'Columbia', x: 62.66235, y: 45, ...stationData.CO }, 
+    { station: 'Sapperton', x: 68.13735, y: 52.3, ...stationData.SA}, 
     { station: 'bend in route'},
-    { station: 'Braid', x: 70.7 ,y: 57.2 },
+    { station: 'Braid', x: 70.7 ,y: 57.2, ...stationData.BD },
     { station: 'bend in route'},
-    { station: 'Production Way–University', x: 63.2, y: 63.2 }, 
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2 }, {},
-    { station: 'Scott Road', x: 69.025, y:42.3},{},
-    { station: 'Gateway', x: 71.95, y: 36.15 },
-    { station: 'Surrey Central', x: 71.95, y: 29.9 },
-    { station: 'King George', x: 71.95, y: 23.15 },],
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.2, ...stationData.LH },
+    { station: 'Production Way–University', x: 63.2, y: 63.2, ...stationData.PW },{}, 
+    { station: 'Scott Road', x: 69.025, y:42.3, ...stationData.SR },{},
+    { station: 'Gateway', x: 71.95, y: 36.15, ...stationData.GW },
+    { station: 'Surrey Central', x: 71.95, y: 29.9, ...stationData.SC },
+    { station: 'King George', x: 71.95, y: 23.15, ...stationData.KG },],
   pathing: [
     /* { station: 'Granville', x: 21.5, y: 84.66667 },  */
-    {station: '1', x: 23.75, y: 84.25},//Waterfront 
+    {station: '1', x: 23.75, y: 84.25 },//Waterfront 
     {station: '2', x: 22.65, y: 85.8255 }, 
     // {station: '4', x: 21.46833, y: 84.25 },
     {station: '5', x: 20.45, y: 82.73333 },
@@ -301,15 +300,15 @@ const routes = [{
     {station: '27', x: 71.95, y: 38.4 },//bend after scottcRoad
     {station: '28', x: 71.95, y: 36.15 }],//Gateway 
   connectors:[
-    { station: 'King George', x: 72.225, y: 23.15 },{},
-    { station: 'Surrey Central', x: 72.225, y: 29.9 },{},
-    { station: 'Commercial–Broadway', x: 33.8, y: 63.83},
-    { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },{},
-    { station: 'Production Way–University', x: 63.2, y: 63.515 },{},
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.515 },{},
-    { station: 'Joyce–Collingwood', x: 39.9, y: 48.625 },{},
-    { station: 'Waterfront', x: 23.75, y: 84.25},{},
-    { station: 'Burrard', x: 21.46833, y: 84.25 },{},],
+    { station: 'King George', x: 72.225, y: 23.15, ...stationData.KG },{},
+    { station: 'Surrey Central', x: 72.225, y: 29.9, ...stationData.SC },{},
+    { station: 'Commercial–Broadway', x: 33.8, y: 63.83, ...stationData.CM},
+    { station: 'Commercial–Broadway', x: 32.4, y: 61.8, ...stationData.BW},{},
+    { station: 'Production Way–University', x: 63.2, y: 63.515, ...stationData.PW },{},
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.515, ...stationData.LH },{},
+    { station: 'Joyce–Collingwood', x: 39.9, y: 48.625, ...stationData.JY },{},
+    { station: 'Waterfront', x: 23.75, y: 84.25, ...stationData.WF},{},
+    { station: 'Burrard', x: 21.46833, y: 84.25, ...stationData.BU },{},],
   icons: [{
     type: 'horseshoeFerry',
     color: am4core.color('#C562E3'),
@@ -341,21 +340,21 @@ const routes = [{
   icon: 'skyTrainCanada.png',
   color: am4core.color('#0097c7'),
   main:[
-    { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15 }, 
-    { station: 'Lansdowne', x: 22.625, y: 15.75 }, 
-    { station: 'Aberdeen', x: 22.625, y: 22.3 },
-    { station: 'Bridgeport', x: 22.625, y: 28.9 }, 
-    { station: 'Marine Drive', x: 22.625, y: 35.45},
-    { station: 'Langara–49th Avenue', x: 22.625, y: 42.},
+    { station: 'Richmond-Brighhouse', x: 22.625, y: 9.15, ...stationData.RB },
+    { station: 'Lansdowne', x: 22.625, y: 15.75, ...stationData.LD }, 
+    { station: 'Aberdeen', x: 22.625, y: 22.3, ...stationData.AB },
+    { station: 'Bridgeport', x: 22.625, y: 28.9, ...stationData.BR }, 
+    { station: 'Marine Drive', x: 22.625, y: 35.45, ...stationData.MD},
+    { station: 'Langara–49th Avenue', x: 22.625, y: 42, ...stationData.LG},
     /*{ station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625}, */
-    { station: 'King Edward', x: 22.625, y: 55.2},
-    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},
-    { station: 'Olympic Village', x: 22.625, y: 66.5},
+    { station: 'King Edward', x: 22.625, y: 55.2,...stationData.KE},
+    { station: 'Broadway–City Hall', x: 22.625, y: 61.755,...stationData.BC},
+    { station: 'Olympic Village', x: 22.625, y: 66.5,...stationData.OV},
     { station: 'bend in route'},
-    { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645},
+    { station: 'Yaletown–Roundhouse', x: 20.25, y: 72.645,...stationData.YT},
     { station: 'bend in route'},
-    { station: 'Vancouver City Centre', x: 19.35, y: 78.25},
-    { station: 'Waterfront', x: 23.75, y: 84.25}],
+    { station: 'Vancouver City Centre', x: 19.35, y: 78.25,...stationData.VS},
+    { station: 'Waterfront', x: 23.75, y: 84.25,...stationData.WF}],
   pathing:[
     { station: '1', x: 22.625, y: 66.5}, //'Olympic Village'
     { station: '2', x: 22.625, y: 69.40}, //bend in route
@@ -363,24 +362,21 @@ const routes = [{
     { station: '4', x: 17.75, y: 76.1}, //Yaletown–Roundhouse 
     { station: '5', x: 19.35, y: 78.25}], //bend in route
   connectors:[
-    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625},{}, 
-    { station: 'Broadway–City Hall', x: 22.625, y: 61.755},{},
-    { station: 'Waterfront', x: 23.75, y: 84.25},{},
-    { station: 'Bridgeport', x: 22.625, y: 28.9 },{},],
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625,...stationData.OK},{}, 
+    { station: 'Broadway–City Hall', x: 22.625, y: 61.755, ...stationData.BC},{},
+    { station: 'Waterfront', x: 23.75, y: 84.25, ...stationData.WF},{},
+    { station: 'Bridgeport', x: 22.625, y: 28.9, ...stationData.BR },{},],
   icons: [{
     type: 'horseshoeFerry',
     color: am4core.color('#C562E3'),
-    data: [
-        { icon: 'ferry.png', angle: 0, station: 'Vancouver City Centre', x: 19, y: 78.5}, {}],
-    radius: 12},
-    {
+    data: [{ 
+      icon: 'ferry.png', angle: 0, station: 'Vancouver City Centre', x: 19, y: 78.5}, {}],
+    radius: 12},{
     type: 'Tsawwassen Ferry',
     color: am4core.color('#7556E3'),
     data: [
       { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}],
-    radius: 12,
-
-    }],
+    radius: 12,}],
   },{
   name: 'Canada Line-YVR',
   icon: 'skyTrainCanada.png',
@@ -394,7 +390,7 @@ const routes = [{
     { station: '2', x: 22.65, y: 26.8 },
     { station: '3', x: 22.65, y: 28.9 }],
   connectors:[
-    { station: 'Bridgeport', x: 22.625, y: 28.9 }],
+    { station: 'Bridgeport', x: 22.625, y: 28.9, ...stationData.BR }],
   icons: [{
     type: 'Tsawwassen Ferry',
     color: am4core.color('#7556E3'),
@@ -419,23 +415,23 @@ const routes = [{
   icon: 'skyTrainMillenium.png',
   color: am4core.color("#facf05ff"), 
   main: [
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
-    { station: 'Commercial–Broadway', x: 33.8, y: 63.83 },
-    { station: 'Renfrew', x: 37.5, y: 63.83 },
-    { station: 'Rupert', x: 41.15, y: 63.83 },
-    { station: 'Gilmore', x: 44.75, y: 63.83 },
-    { station: 'Brentwood Town Centre', x: 48.2, y: 63.83 },
-    { station: 'Holdom', x: 51.9, y: 63.83 },
-    { station: 'Sperling–Burnaby Lake', x: 55.65, y: 63.83 },
-    { station: 'Lake City Way', x: 59.4, y: 63.83 },
-    { station: 'Production Way–University', x: 63.2, y: 63.83 },
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.83 },{},
-    { station: 'Burquitlam', x: 70.75, y: 70.55 },{},
-    { station: 'Moody Centre', x: 73.64, y: 77.05},
-    { station: 'Inlet Centre', x: 77.15, y: 77.05},{},
-    { station: 'Coquitlam Central', x: 80.5, y: 78},{},
-    { station: 'Lincoln', x: 81, y: 83.65},
-    { station: 'Lafarge Lake–Douglas', x: 81, y: 90.3}],
+    { station: 'VCC–Clark', x: 29.85, y: 66.55, ...stationData.VC },{},
+    { station: 'Commercial–Broadway', x: 33.8, y: 63.83, ...stationData.CM },
+    { station: 'Renfrew', x: 37.5, y: 63.83, ...stationData.RE },
+    { station: 'Rupert', x: 41.15, y: 63.83, ...stationData.RU },
+    { station: 'Gilmore', x: 44.75, y: 63.83, ...stationData.GM },
+    { station: 'Brentwood Town Centre', x: 48.2, y: 63.83, ...stationData.BR },
+    { station: 'Holdom', x: 51.9, y: 63.83, ...stationData.HO },
+    { station: 'Sperling–Burnaby Lake', x: 55.65, y: 63.83, ...stationData.SP },
+    { station: 'Lake City Way', x: 59.4, y: 63.83, ...stationData.LC },
+    { station: 'Production Way–University', x: 63.2, y: 63.83, ...stationData.PW },
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.83, ...stationData.LH },{},
+    { station: 'Burquitlam', x: 70.75, y: 70.55, ...stationData.BQ },{},
+    { station: 'Moody Centre', x: 73.64, y: 77.05, ...stationData.MC },
+    { station: 'Inlet Centre', x: 77.15, y: 77.05, ...stationData.IC },{},
+    { station: 'Coquitlam Central', x: 80.5, y: 78, ...stationData.CC },{},
+    { station: 'Lincoln', x: 81, y: 83.65, ...stationData.LN },
+    { station: 'Lafarge Lake–Douglas', x: 81, y: 90.3, ...stationData.LL }],
   pathing:[
     { station: '1', x: 29.85, y: 66.55 },
     { station: '2', x: 30.96, y: 66.55 },
@@ -455,13 +451,13 @@ const routes = [{
     { station: '14', x: 81, y: 78.55},
     { station: '14', x: 81, y: 83.65}],
   connectors:[
-    { station: 'Commercial–Broadway', x: 33.8, y: 63.83},
-    { station: 'Commercial–Broadway', x: 32.4, y: 61.8 },{},
-    { station: 'Production Way–University', x: 63.2, y: 63.515 },{},
-    { station: 'Lougheed Town Centre', x: 66.85, y: 63.515 },{},
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
-    { station: 'Moody Centre', x: 73.64, y: 77.05},{},
-    { station: 'Coquitlam Central', x: 80.5, y: 78 },{},],
+    { station: 'Commercial–Broadway', x: 33.8, y: 63.83, ...stationData.CM },
+    { station: 'Commercial–Broadway', x: 32.4, y: 61.8, ...stationData.BW },{},
+    { station: 'Production Way–University', x: 63.2, y: 63.515, ...stationData.PW },{},
+    { station: 'Lougheed Town Centre', x: 66.85, y: 63.515, ...stationData.LH },{},
+    { station: 'VCC–Clark', x: 29.85, y: 66.55, ...stationData.VC },{},
+    { station: 'Moody Centre', x: 73.64, y: 77.05, ...stationData.MC },{},
+    { station: 'Coquitlam Central', x: 80.5, y: 78, ...stationData.CC },{},],
   icons:[{
     type: 'trainIcon',
     color: am4core.color('#701c8aff'),
@@ -475,18 +471,7 @@ const routes = [{
     angle: 0,
     align: ['middle', 'bottom'],
     //this is the same as r4square.svg but converted  
-    icon: 'milSquare.svg'
-  }
-  },{
-  name: 'Accesibility',
-  icon: 'accessible.svg',
-  color: am4core.color("#052e51ff"), 
-  main:[
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
-
-  ]
-  }
+    icon: 'milSquare.svg'}}
 ]
 const icons = [{
   type: 'zoneIcon',
