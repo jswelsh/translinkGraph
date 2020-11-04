@@ -190,21 +190,21 @@ am4core.ready(function() {
     series.tooltip.background.fill = am4core.color("#052e51ff");//background border
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text
-    ///series.tooltip.label.adapter.add('text', test)
+
+    /* need to check if there is data for tooltip to render */
+    if(series.data[0] && series.data[0].stationCode !== undefined){
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-
-    /* need to check if there is data for tooltip to render */
-
-
-   //   bullet.circle.tooltipText = '{station}'
-
-      bullet.circle.strokeOpacity = .8;
-
+      bullet.circle.tooltipText = tooltipText; 
+      bullet.tooltipHTML = tooltipHTML
+    } else {
+      bullet.circle.tooltipText = '{station}'
+    }
+  
+    bullet.circle.strokeOpacity = .8;
     return series
   }
-
   function createIconPin(color, data, radius) {
     let series = chart.series.push(new am4charts.LineSeries());
 
