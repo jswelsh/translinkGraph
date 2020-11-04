@@ -1,4 +1,5 @@
 import { routes, icons, zones  } from './data.js'
+import { tooltip } from './tooltip.mjs'
 
 am4core.ready(function() {
     am4core.useTheme(am4themes_animated);
@@ -29,34 +30,7 @@ am4core.ready(function() {
   createAxis(chart.yAxes);
 
   function createLine(name, color, main, icon) {
-    let tooltipText = 
-    `{station} 
-    disabled Access: {disabledAccess},
-    parking: {parking},
-    bicycle Facilities: {bicycleFacilities},
-    fare Zone: {fareZone},
-    volume rank: {rank}
-    station Code: {stationCode},
-    `
-    let tooltipHTML = 
-    `<center><strong> {station}</strong></center>
-    <hr />
-    <table>
-      <tr>
-        <th style='color:#fff;' align="left"> disability Access: </th>
-        <td style='color:#fff;'>{disabledAccess}</td>
-      </tr>
-      <tr>
-        <th style='color:#fff;' align="left">bicycle Lockers:</th>
-        <td style='color:#fff;'>{bicycleFacilities}</td>
-      </tr>
-      <tr>
-        <th style='color:#fff;' align="left">Fare Zone:</th>
-        <td style='color:#fff;'>{fareZone}</td>
-      </tr>
-    </table>
-    <hr />`;
-    //    <center><input type="button" value="More info" onclick="alert('You clicked on {categoryX}')" /></center>
+
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = main;
     series.name = name;
@@ -94,8 +68,8 @@ am4core.ready(function() {
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-      bullet.circle.tooltipText = tooltipText; 
-      bullet.tooltipHTML = tooltipHTML
+      bullet.circle.tooltipText = tooltip.text; 
+      bullet.tooltipHTML = tooltip.html
     } else {
       bullet.circle.tooltipText = '{station}'
     }
@@ -134,33 +108,7 @@ am4core.ready(function() {
     series.propertyFields.strokeDasharray = "dash";
   }
   function createConnector(data) {
-        let tooltipText = 
-    `{station} 
-    disabled Access: {disabledAccess},
-    parking: {parking},
-    bicycle Facilities: {bicycleFacilities},
-    fare Zone: {fareZone},
-    volume rank: {rank}
-    station Code: {stationCode},
-    `
-    let tooltipHTML = 
-    `<center><strong> {station}</strong></center>
-    <hr />
-    <table>
-      <tr>
-        <th style='color:#fff;' align="left"> disability Access: </th>
-        <td style='color:#fff;'>{disabledAccess}</td>
-      </tr>
-      <tr>
-        <th style='color:#fff;' align="left">bicycle Lockers:</th>
-        <td style='color:#fff;'>{bicycleFacilities}</td>
-      </tr>
-      <tr>
-        <th style='color:#fff;' align="left">Fare Zone:</th>
-        <td style='color:#fff;'>{fareZone}</td>
-      </tr>
-    </table>
-    <hr />`;
+      
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -196,8 +144,8 @@ am4core.ready(function() {
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-      bullet.circle.tooltipText = tooltipText; 
-      bullet.tooltipHTML = tooltipHTML
+      bullet.circle.tooltipText = tooltip.text; 
+      bullet.tooltipHTML = tooltip.html
     } else {
       bullet.circle.tooltipText = '{station}'
     }

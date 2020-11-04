@@ -23,8 +23,8 @@ const routes = [{
     { station: '1', x: 72.5, y: 30.95 },
     { station: 'Surrey Central', x: 72.5, y: 29.9 }],
   connectors:[
-    { station: 'Newton Exchange', x: 72.5, y: 2.45 },{},
-    { station: 'Guildford Exchange', x: 88.35, y: 30.95 },{},
+    { station: 'Newton Exchange', x: 72.5, y: 2.45, ...stationData.NWT },{},
+    { station: 'Guildford Exchange', x: 88.35, y: 30.95, ...stationData.GLF },{},
     { station: 'King George', x: 72.225, y: 23.15, ...stationData.KG },{},
     { station: 'Surrey Central', x: 72.225, y: 29.9, ...stationData.SC },{}],
     label:{
@@ -57,10 +57,10 @@ const routes = [{
     { station: '3', x: 29, y: 92.55 },
     { station: '4', x: 32.63, y: 92.55 }],
   connectors:[
-    { station: 'Park Royal', x: 14.4, y: 94.65 },{},
-    { station: 'Lonsdale Quay', x: 30, y: 92.55 },
-    { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
-    { station: 'Phibbs Exchange', x: 41.53, y: 92.55 }],
+    { station: 'Park Royal', x: 14.4, y: 94.65, ...stationData.PRK },{},
+    { station: 'Lonsdale Quay', x: 30, y: 92.55, ...stationData.LQL },
+    { station: 'Lonsdale Quay', x: 28.6, y: 90.6, ...stationData.LQB },{},
+    { station: 'Phibbs Exchange', x: 41.53, y: 92.55, ...stationData.PHI }],
   icons: [{
     type: 'horseshoeFerry',
     color: am4core.color('#C562E3'),
@@ -94,10 +94,10 @@ const routes = [{
     { station: '1', x: 89.925, y: 65.4 },
     { station: '2', x: 91.82, y: 62.925 },
     { station: '3', x: 93.7, y: 62.925 }],    
-    connectors: [
-      { station: 'Coquitlam Central', x: 80.5, y: 78, ...stationData.CC },{},
-      { station: 'Haney Place', x: 97.525, y: 62.925 },{}],
-    icons: [{
+  connectors: [
+    { station: 'Coquitlam Central', x: 80.5, y: 78, ...stationData.CC },{},
+    { station: 'Haney Place', x: 97.525, y: 62.925, ...stationData.HNY },{}],
+  icons: [{
     type: 'trainIcon',
     color: am4core.color('#701c8aff'),
     data: [
@@ -116,7 +116,7 @@ const routes = [{
   icon: 'busR.png',
   color: am4core.color('#149e42ff'),
   main: [
-    { station: 'UBC Exchange', x: 2.75, y: 61.8},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},
     {},
     { station: 'Agronomy Rd–Wesbrook Mall', x: 4.1, y: 58.519},
     { station: 'W 16th Ave–Wesbrook Mall', x: 5.6, y: 56.5 },
@@ -143,18 +143,17 @@ const routes = [{
     { station: '5', x: 6.9, y: 54.75 },
     { station: '6', x: 6.9, y: 48.625 },
     { station: '7', x: 9.85, y: 48.625 }],
-    connectors:[
-      { station: 'Joyce–Collingwood', x: 39.9, y: 48.625, ...stationData.JY },{},
-      { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625, ...stationData.OK},{},
-      { station: 'UBC Exchange', x: 2.75, y: 61.8},{},
-      { station: 'Dunbar Loop', x: 9.85, y: 48.625 },{},],
-    label:{
-      size:25,
-      data: [{x: 8, y: 48.625 }],
-      angle: 0,
-      align: ['middle', 'bottom'],
-      //this is the same as r4square.svg but converted
-      icon:'r4Square.svg'
+  connectors:[
+    { station: 'Joyce–Collingwood', x: 39.9, y: 48.625, ...stationData.JY },{},
+    { station: 'Oakridge–41st Avenue', x: 22.625, y: 48.625, ...stationData.OK},{},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},{},
+    { station: 'Dunbar Loop', x: 9.85, y: 48.625, ...stationData.DUN}],
+  label:{
+    size:25,
+    data: [{x: 8, y: 48.625 }],
+    angle: 0,
+    align: ['middle', 'bottom'],
+    icon:'r4Square.svg'
     }
   },{
   name: 'R5 Hastings St',
@@ -180,22 +179,21 @@ const routes = [{
 
   connectors:[
     { station: 'Burrard', x: 21.46833, y: 84.25, ...stationData.BU },{},
-    { station: 'Kootenay Loop', x: 40.65, y: 81.75 },{},
-    { station: 'SFU Exchange', x: 63.2, y: 81.75 },{}],
-    label:{
-      size:25,
-      data: [{ x: 42.28, y: 81.75 }],
-      angle: 0,
-      align: ['middle', 'bottom'], 
-      //this is the same as r4square.svg but converted
-      icon:'r5Square.svg'
+    { station: 'Kootenay Loop', x: 40.65, y: 81.75, ...stationData.KOO },{},
+    { station: 'SFU Exchange', x: 63.2, y: 81.75, ...stationData.SFU },{}],
+  label:{
+    size:25,
+    data: [{ x: 42.28, y: 81.75 }],
+    angle: 0,
+    align: ['middle', 'bottom'], 
+    icon:'r5Square.svg'
     },
   },{
   name: "99 B-Line",
   icon: 'bus99.png',
   color: am4core.color('#f36617ff'),
   main: [
-    { station: 'UBC Exchange', x: 2.75, y: 61.8},
+    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},
     { station: 'Allison Rd–University Blvd', x: 5.1, y: 61.8},
     { station: 'Sasamat St–W 10th Ave', x: 7.5, y: 61.8},
     { station: 'Alma St–W Broadway', x: 9.85, y: 61.8},
@@ -211,7 +209,7 @@ const routes = [{
     { station: 'Commercial–Broadway', x: 33.8, y: 63.83, ...stationData.CM },
     { station: 'Commercial–Broadway', x: 32.4, y: 61.8, ...stationData.BW },{},
     { station: 'Broadway–City Hall', x: 22.625, y: 61.755, ...stationData.BC},{},
-    { station: 'UBC Exchange', x: 2.75, y: 61.8},{}],
+    { station: 'UBC Exchange', x: 2.75, y: 61.8, ...stationData.UBC},{}],
   label:{
     size:25,
     //data: [{x: 85.45, y: 71.375 }],
@@ -229,8 +227,8 @@ const routes = [{
     { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },
     { station: 'Waterfront', x: 23.75, y: 84.25}],
   connectors:[
-    { station: 'Lonsdale Quay', x: 30, y: 92.55 },
-    { station: 'Lonsdale Quay', x: 28.6, y: 90.6 },{},
+    { station: 'Lonsdale Quay', x: 30, y: 92.55, ...stationData.LQL },
+    { station: 'Lonsdale Quay', x: 28.6, y: 90.6, ...stationData.LQB },{},
     { station: 'Waterfront', x: 23.75, y: 84.25, ...stationData.WF}],
   },{
   name: "Expo Line",

@@ -1,7 +1,7 @@
 const stationData ={
   RB: {
     tracks: 1,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -13,7 +13,7 @@ const stationData ={
   },
   LD: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -25,7 +25,7 @@ const stationData ={
   },
   AB: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -38,7 +38,7 @@ const stationData ={
   },
   BR: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: 1512,
     bicycleFacilities: 45,
     disabledAccess: "Yes",
@@ -50,7 +50,7 @@ const stationData ={
   },
   MD: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -62,7 +62,7 @@ const stationData ={
   },
   LG: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -74,7 +74,7 @@ const stationData ={
   },
   OK: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -86,7 +86,7 @@ const stationData ={
   },
   KE: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: 26,
     disabledAccess: "Yes",
@@ -98,7 +98,7 @@ const stationData ={
   },
   BC: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -111,7 +111,7 @@ const stationData ={
   },
   OV: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -123,7 +123,7 @@ const stationData ={
   },
   YT: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -135,7 +135,7 @@ const stationData ={
   },
   VS: {
     tracks: 2,
-    elevation: "Yes",
+    structureType: "Yes",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -148,7 +148,7 @@ const stationData ={
   },
   WF: {
     tracks: 6,
-    elevation: "At-grade and underground",
+    structureType: "At-grade and underground",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -160,7 +160,7 @@ const stationData ={
   },
   VC: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -172,7 +172,7 @@ const stationData ={
   },
   CM: {
     tracks: 4,
-    elevation: "Below-grade and elevated\n",
+    structureType: "Below-grade and elevated\n",
     parking: "No",
     bicycleFacilities: 42,
     disabledAccess: "Yes",
@@ -184,7 +184,7 @@ const stationData ={
   },
   RE: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -196,7 +196,7 @@ const stationData ={
   },
   RU: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -208,7 +208,7 @@ const stationData ={
   },
   GM: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -220,7 +220,7 @@ const stationData ={
   },
   BR: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -232,7 +232,7 @@ const stationData ={
   },
   HO: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -244,7 +244,7 @@ const stationData ={
   },
   SP: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -256,7 +256,7 @@ const stationData ={
   },
   LC: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -268,7 +268,7 @@ const stationData ={
   },
   PW: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: 220,
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -280,7 +280,7 @@ const stationData ={
   },
   LH: {
     tracks: 3,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -292,7 +292,7 @@ const stationData ={
   },
   BQ: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: 45,
     disabledAccess: "Yes",
@@ -304,7 +304,7 @@ const stationData ={
   },
   MC: {
     tracks: 2,
-    elevation: "At-grade and underground",
+    structureType: "At-grade and underground",
     parking: 393,
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -316,7 +316,7 @@ const stationData ={
   },
   IC: {
     tracks: 2,
-    elevation: "Below grade, enclosed",
+    structureType: "Below grade, enclosed",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -328,7 +328,7 @@ const stationData ={
   },
   CC: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: 1129,
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -340,7 +340,7 @@ const stationData ={
   },
   LN: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: 109,
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -352,7 +352,7 @@ const stationData ={
   },
   LL: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: 45,
     disabledAccess: "Yes",
@@ -364,7 +364,7 @@ const stationData ={
   },
   WF: {
     tracks: 6,
-    elevation: "At-grade and underground",
+    structureType: "At-grade and underground",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -376,7 +376,7 @@ const stationData ={
     },
   BU: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -388,7 +388,7 @@ const stationData ={
     },
   GR: {
     tracks: 2,
-    elevation: "Subway",
+    structureType: "Subway",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -400,7 +400,7 @@ const stationData ={
     },
   ST: {
     tracks: 3,
-    elevation: "Elevated and partially at-grade",
+    structureType: "Elevated and partially at-grade",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -412,7 +412,7 @@ const stationData ={
     },
   MN: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: 86,
     disabledAccess: "Yes",
@@ -424,7 +424,7 @@ const stationData ={
     },
   BW: {
     tracks: 5,
-    elevation: "Elevated and at-grade",
+    structureType: "Elevated and at-grade",
     parking: "No",
     bicycleFacilities: 42,
     disabledAccess: "Yes",
@@ -436,7 +436,7 @@ const stationData ={
     },
   NA: {
     tracks: 2,
-    elevation: "Elevated and partially at-grade",
+    structureType: "Elevated and partially at-grade",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -448,7 +448,7 @@ const stationData ={
     },
   TN: {
     tracks: 2,
-    elevation: "At-grade",
+    structureType: "At-grade",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -460,7 +460,7 @@ const stationData ={
     },
   JY: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: 50,
     disabledAccess: "Yes",
@@ -472,7 +472,7 @@ const stationData ={
     },
   PT: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -484,7 +484,7 @@ const stationData ={
     },
   MT: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: 26,
     disabledAccess: "Yes",
@@ -496,7 +496,7 @@ const stationData ={
     },
   RO: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -508,7 +508,7 @@ const stationData ={
     },
   ED: {
     tracks: 2,
-    elevation: "At-grade",
+    structureType: "At-grade",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -520,7 +520,7 @@ const stationData ={
     },
   TS: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -532,7 +532,7 @@ const stationData ={
     },
   NW: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -544,7 +544,7 @@ const stationData ={
     },
   CO: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -556,7 +556,7 @@ const stationData ={
     },
   SA: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -568,7 +568,7 @@ const stationData ={
     },
   BD: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -580,7 +580,7 @@ const stationData ={
     },
   LH: {
     tracks: 3,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "Yes",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -592,7 +592,7 @@ const stationData ={
     },
   PW: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -604,7 +604,7 @@ const stationData ={
     },
   SR: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: 2400,
     bicycleFacilities: "yes",
     disabledAccess: "Yes",
@@ -616,7 +616,7 @@ const stationData ={
     },
   GW: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "No",
     disabledAccess: "Yes",
@@ -628,7 +628,7 @@ const stationData ={
     },
   SC: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: "Yes",
     disabledAccess: "Yes",
@@ -640,7 +640,7 @@ const stationData ={
     },
   KG: {
     tracks: 2,
-    elevation: "Elevated",
+    structureType: "Elevated",
     parking: "No",
     bicycleFacilities: 70,
     disabledAccess: "Yes",
@@ -649,6 +649,138 @@ const stationData ={
     opened: "1994-03-28T08:00:00.000Z",
     perAnnumVolume: 4722200,
     rank: 12
-    }
+  },
+  UBC: {
+      bays: 13,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "UBC",
+      fareZone: 1,
+      opened: "1945-09-01T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  DUN: {
+      bays: 7,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "DUN",
+      fareZone: 1,
+      opened: "1950-05-22T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  PRK: {
+      bays: 7,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "PRK",
+      fareZone: 2,
+      opened: "1959-10-16T08:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  LQL:{
+    bays: 8,
+    structureType: "Bus Station",
+    parking: "No",
+    bicycleFacilities: "No",
+    disabledAccess: "Yes",
+    stationCode: "LQY",
+    fareZone: 2,
+    opened: "1977-06-17T08:00:00.000Z",
+    perAnnumVolume: "Unknown",
+    rank: "Unknown"
+  },
+  LQB:{
+    bays: 4,
+    structureType: "SeaBus Berth",
+    parking: "No",
+    bicycleFacilities: "No",
+    disabledAccess: "Yes",
+    stationCode: "LQY",
+    fareZone: 2,
+    opened: "1977-06-17T08:00:00.000Z",
+    perAnnumVolume: "Unknown",
+    rank: "Unknown"
+  },
+  PHI: {
+      bays: 12,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "Yes",
+      disabledAccess: "Yes",
+      stationCode: "PHI",
+      fareZone: 2,
+      opened: "1973-10-19T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  KOO: {
+      bays: 8,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "KOO",
+      fareZone: 1,
+      opened: "1950-08-20T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  SFU: {
+      bays: 4,
+      structureType: "Bus Station",
+      parking: "Yes",
+      bicycleFacilities: "Yes",
+      disabledAccess: "Yes",
+      stationCode: "SFU",
+      fareZone: 2,
+      opened: "1965-09-03T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  HNY: {
+      bays: 8,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "HNY",
+      fareZone: 3,
+      opened: "2008-08-27T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  GLF: {
+      bays: 4,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "GLF",
+      fareZone: 3,
+      opened: "1975-05-30T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  },
+  NWT: {
+      bays: 11,
+      structureType: "Bus Station",
+      parking: "No",
+      bicycleFacilities: "No",
+      disabledAccess: "Yes",
+      stationCode: "NWT",
+      fareZone: 3,
+      opened: "1975-05-30T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown"
+  }
 }
 export {stationData}
