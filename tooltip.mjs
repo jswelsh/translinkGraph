@@ -24,7 +24,22 @@
         <th style='color:#fff;' align="left">Fare Zone:</th>
         <td style='color:#fff;'>{fareZone}</td>
       </tr>
+      <tr>
+        <th style='color:#fff;' align="left">structure Type: </th>
+        <td style='color:#fff;'>{structureType}</td>
+      </tr>
+      <tr>
+        <th style='color:#fff;' align="left">per Annum Volume: </th>
+        <td style='color:#fff;'>{perAnnumVolume}</td>
+      </tr>
     </table>
     <hr />`}
     //    <center><input type="button" value="More info" onclick="alert('You clicked on {categoryX}')" /></center>
     export { tooltip }
+/*       bays: 7,
+
+      stationCode: "DUN",
+      fareZone: 1,
+      opened: "1950-05-22T07:00:00.000Z",
+      perAnnumVolume: "Unknown",
+      rank: "Unknown" */

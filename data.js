@@ -369,17 +369,14 @@ const routes = [{
   icons: [{
     type: 'horseshoeFerry',
     color: am4core.color('#C562E3'),
-    data: [
-        { icon: 'ferry.png', angle: 0, station: 'Vancouver City Centre', x: 19, y: 78.5}, {}],
-    radius: 12},
-    {
+    data: [{ 
+      icon: 'ferry.png', angle: 0, station: 'Vancouver City Centre', x: 19, y: 78.5}, {}],
+    radius: 12},{
     type: 'Tsawwassen Ferry',
     color: am4core.color('#7556E3'),
     data: [
       { icon: 'ferry.png', angle: 45,  station:'Bridgeport' , x: 21.9, y:  29.45 }, {}],
-    radius: 12,
-
-    }],
+    radius: 12,}],
   },{
   name: 'Canada Line-YVR',
   icon: 'skyTrainCanada.png',
@@ -474,18 +471,7 @@ const routes = [{
     angle: 0,
     align: ['middle', 'bottom'],
     //this is the same as r4square.svg but converted  
-    icon: 'milSquare.svg'
-  }
-  },/* {
-  name: 'Accesibility',
-  icon: 'accessible.svg',
-  color: am4core.color("#052e51ff"), 
-  main:[
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
-    { station: 'VCC–Clark', x: 29.85, y: 66.55 },{},
-
-  ]
-  } */
+    icon: 'milSquare.svg'}}
 ]
 const icons = [{
   type: 'zoneIcon',
