@@ -190,23 +190,18 @@ am4core.ready(function() {
     series.tooltip.background.fill = am4core.color("#052e51ff");//background border
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text
+    ///series.tooltip.label.adapter.add('text', test)
     /* need to set both tooltiptext and tooltiphtml,
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
-    bullet.circle.tooltipText = tooltipText; 
-    bullet.tooltipHTML = tooltipHTML
-    bullet.circle.strokeOpacity = .8;
-/*     bullet.circle.tooltipText = "{station}";
 
-    series.tooltip.pointerOrientation = "vertical";
-    series.tooltip.autoTextColor = false;
-    series.tooltip.fontFamily = 'Arial'
-    series.tooltip.fontWeight = 'bold'
-    series.tooltip.dy = -7.5
-    series.tooltip.getFillFromObject = false;
-    series.tooltip.background.fill = am4core.color("#052e51ff")
-    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-    series.tooltip.label.fill = am4core.color("#fff");//text */
+    /* need to check if there is data for tooltip to render */
+
+
+   //   bullet.circle.tooltipText = '{station}'
+
+      bullet.circle.strokeOpacity = .8;
+
     return series
   }
 
