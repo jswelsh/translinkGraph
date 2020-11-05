@@ -50,9 +50,14 @@ am4core.ready(function() {
     series.tooltip.fontWeight = 'bold'
     series.tooltip.dy = -7.5
     series.tooltip.getFillFromObject = false;
-    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+    series.tooltip.background.strokeWidth = 0
+    series.tooltip.label.paddingTop = 0
+    series.tooltip.label.paddingBottom = 0
+    series.tooltip.label.paddingLeft = 0
+    series.tooltip.label.paddingRight = 0
+ /*    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-    series.tooltip.label.fill = am4core.color("#fff");//text
+    series.tooltip.label.fill = am4core.color("#fff");//text */
     
     series.propertyFields.strokeDasharray = "dash";
 
@@ -69,9 +74,9 @@ am4core.ready(function() {
     the tooltiphtml isnt compatable with older browsers
     so tooltiptext is fallback  */
       bullet.circle.tooltipText = tooltip.text; 
-      bullet.tooltipHTML = tooltip.html
+      bullet.tooltipHTML = tooltip.html;
     } else {
-      bullet.circle.tooltipText = '{station}'
+      bullet.tooltipHTML = tooltip.htmlBasic;
     }
   
     bullet.circle.strokeOpacity = .8;
