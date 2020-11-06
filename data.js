@@ -480,7 +480,7 @@ const icons = [{
     { icon: 'zoneQuay.png', angle: 0, x: 24.5, y: 88.4},{},
     { icon: 'zoneLougheed.png', angle: 45, x: 68.2, y: 66.75 }, {},
     { icon: 'zoneColumbia.png', angle: 135, x: 67.5, y: 48.05 }, {},
-    { icon: 'zoneBridgeport.png', angle: 0, x: 20.26, y: 33.1 }, {},
+    { icon: 'zoneBridgeport.png', angle: 0, x: 20.26, y: 33.42 }, {},
     { icon: 'zoneJoyce.png', angle: 135, x: 42.45, y: 48.55}, {},
     { icon: 'zoneRupert.png', angle: 90, x: 43.1, y: 66/* .83 */}
   ],
@@ -501,8 +501,8 @@ const zones = [{
     { x: 64.4, y:43.9, dash: "1,2"}, 
     { x: 68, y: 48.7}, {},
 
-    { x: 19.625, y: 33.1, dash: "1,2" },
-    { x: 25.625, y: 33.1},{},
+    { x: 19.625, y: 33.36, dash: "1,2" },
+    { x: 25.625, y: 33.36},{},
     
     { x: 43.1, y: 60.83, dash: "1,2" },
     { x: 43.1, y: 66.83 },{},

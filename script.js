@@ -1,15 +1,21 @@
-import { routes, icons, zones  } from './data.js'
-import { tooltip } from './tooltip.mjs'
+import {
+  routes,
+  icons,
+  zones
+} from './data.js'
+import {
+  tooltip
+} from './tooltip.mjs'
 
-am4core.ready(function() {
-    am4core.useTheme(am4themes_animated);
+am4core.ready(function () {
+  am4core.useTheme(am4themes_animated);
 
   let chart = am4core.create("chartdiv", am4charts.XYChart);
   chart.padding(0, 0, 0, 0);
   chart.background.fill = am4core.color("#dee3eeff");
 
   let title = chart.tooltipContainer.createChild(am4core.Label);
-/*   title.text = "TransLink"; */
+  /*   title.text = "TransLink"; */
   title.fill = am4core.color("#00254b");
   title.fontSize = 25;
   title.width = am4core.percent(100);
@@ -38,12 +44,12 @@ am4core.ready(function() {
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
     series.dummyData = {
-      icon : icon
+      icon: icon
     }
-    series.strokeWidth =6;
+    series.strokeWidth = 6;
     series.connect = false;
     series.stroke = color;
-    
+
     series.tooltip.pointerOrientation = "vertical";
     series.tooltip.autoTextColor = false;
     series.tooltip.fontFamily = 'Arial '
@@ -55,10 +61,10 @@ am4core.ready(function() {
     series.tooltip.label.paddingBottom = 0
     series.tooltip.label.paddingLeft = 0
     series.tooltip.label.paddingRight = 0
- /*    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
-    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-    series.tooltip.label.fill = am4core.color("#fff");//text */
-    
+    /*    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+       series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
+       series.tooltip.label.fill = am4core.color("#fff");//text */
+
     series.propertyFields.strokeDasharray = "dash";
 
     let bullet = series.bullets.push(new am4charts.CircleBullet());
@@ -69,19 +75,20 @@ am4core.ready(function() {
     bullet.circle.strokeWidth = 2;
 
     /* need to check if there is data for tooltip to render */
-    if(series.data[0] && series.data[0].stationCode !== undefined){
-    /* need to set both tooltiptext and tooltiphtml,
-    the tooltiphtml isnt compatable with older browsers
-    so tooltiptext is fallback  */
-      bullet.circle.tooltipText = tooltip.text; 
+    if (series.data[0] && series.data[0].stationCode !== undefined) {
+      /* need to set both tooltiptext and tooltiphtml,
+      the tooltiphtml isnt compatable with older browsers
+      so tooltiptext is fallback  */
+      bullet.circle.tooltipText = tooltip.text;
       bullet.tooltipHTML = tooltip.html;
     } else {
       bullet.tooltipHTML = tooltip.htmlBasic;
     }
-  
+
     bullet.circle.strokeOpacity = .8;
     return series
   }
+
   function createPathingLine(name, color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -94,10 +101,11 @@ am4core.ready(function() {
     series.stroke = color;
     series.strokeWidth = 6;
     series.connect = false;
-    
+
     series.propertyFields.strokeDasharray = "dash";
     return series
   }
+
   function createZoneLine(color, data) {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -107,13 +115,14 @@ am4core.ready(function() {
     series.dataFields.valueY = "y";
 
     series.stroke = color;
-    series.strokeWidth =6;
+    series.strokeWidth = 6;
     series.connect = false;
-    
+
     series.propertyFields.strokeDasharray = "dash";
   }
+
   function createConnector(data) {
-      
+
     // Create series
     var series = chart.series.push(new am4charts.LineSeries());
     series.data = data;
@@ -147,24 +156,25 @@ am4core.ready(function() {
     series.tooltip.label.paddingRight = 0
 
 
-   // series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+    // series.tooltip.background.fill = am4core.color("#052e51ff");//background border
 
-   // series.tooltip.label.fill = am4core.color("#fff");//text
+    // series.tooltip.label.fill = am4core.color("#fff");//text
 
     /* need to check if there is data for tooltip to render */
-    if(series.data[0] && series.data[0].stationCode !== undefined){
-    /* need to set both tooltiptext and tooltiphtml,
-    the tooltiphtml isnt compatable with older browsers
-    so tooltiptext is fallback  */
-      bullet.circle.tooltipText = tooltip.text; 
+    if (series.data[0] && series.data[0].stationCode !== undefined) {
+      /* need to set both tooltiptext and tooltiphtml,
+      the tooltiphtml isnt compatable with older browsers
+      so tooltiptext is fallback  */
+      bullet.circle.tooltipText = tooltip.text;
       bullet.tooltipHTML = tooltip.html
     } else {
       bullet.circle.tooltipText = '{station}'
     }
-  
+
     bullet.circle.strokeOpacity = .8;
     return series
   }
+
   function createIconPin(color, data, radius) {
     let series = chart.series.push(new am4charts.LineSeries());
 
@@ -181,13 +191,13 @@ am4core.ready(function() {
 
     let icon = series.bullets.push(new am4plugins_bullets.PinBullet());
     icon.locationX = 1;
-/*     icon.stroke = am4core.color('#fff'); */
+    /*     icon.stroke = am4core.color('#fff'); */
     icon.stroke = am4core.color('#00000000');
     icon.background.fill = color
     icon.background.radius = radius
     icon.background.pointerBaseWidth = 10
     icon.background.pointerLength = 10
-    icon.background.propertyFields.pointerAngle='angle'
+    icon.background.propertyFields.pointerAngle = 'angle'
 
     icon.image = new am4core.Image();
     icon.image.propertyFields.href = 'icon'
@@ -195,10 +205,19 @@ am4core.ready(function() {
     icon.circle.radius = am4core.percent(100);
     return series
   }
-  function createBullet(label){
+
+  function createBullet(label) {
 
     let series = chart.series.push(new am4charts.LineSeries());
-    let { size,  data, angle, align, icon } = {...label}
+    let {
+      size,
+      data,
+      angle,
+      align,
+      icon
+    } = {
+      ...label
+    }
     let [horizontal, vertical] = [align[0], align[1]]
     series.data = data;
     series.dataFields.valueX = "x";
@@ -218,98 +237,100 @@ am4core.ready(function() {
     return series
   }
 
-const buildRoutes = (routes) => {
-  
-  let seriesMap = {};
-  let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
-  routes.forEach(route => {
-    const [name, color, main, icon, pathing, connectors, icons, label] = [
-      route.name, 
-      route.color, 
-      route.main, 
-      route.icon, 
-      route.pathing,
-      route.connectors,
-      route.icons,
-      route.label]
+  const buildRoutes = (routes) => {
 
-  seriesMap[name] = []
-    /* pathing line is needed for any bend  in the 
-    line that doesnt have a station/stop while create
-    line is the main route with bullets for stations */
+    let seriesMap = {};
+    let masterSeries = createLine('Toggle All', null, null, 'cycle.png')
+    routes.forEach(route => {
+      const [name, color, main, icon, pathing, connectors, icons, label] = [
+        route.name,
+        route.color,
+        route.main,
+        route.icon,
+        route.pathing,
+        route.connectors,
+        route.icons,
+        route.label
+      ]
 
-    /* pairing the pathing line with the main route so that 
-    the user can toggle both lines from a single button in the 
-    legend */
-   // label !== undefined &&  seriesMap[name].push(createBullet( label.size, label.data, label.angle, label.icon))
-    
-  
-    
-    seriesMap[name].push(createLine(name, color, main, icon))
-    seriesMap[name].push(createPathingLine(name, color, pathing))
+      seriesMap[name] = []
+      /* pathing line is needed for any bend  in the 
+      line that doesnt have a station/stop while create
+      line is the main route with bullets for stations */
 
-    label !== undefined && seriesMap[name].push(createBullet( label))
-    connectors !== undefined && seriesMap[name].push(createConnector(connectors))
-    icons !== undefined && icons.forEach(icon => { seriesMap[name].push(createIconPin( icon.color, icon.data, icon.radius)) })
-    //create a master toggle button
-    masterSeries.events.on('hidden', () => {
-      seriesMap[name][0].hide();
-    })
-    masterSeries.events.on('shown', () => {
-      seriesMap[name][0].show();
-    })
-    //merge functionality for each route with all pathing and icons
-    seriesMap[name][0].events.on('hidden', () => {
-      seriesMap[name].forEach(series => {
-        series.hide()
+      /* pairing the pathing line with the main route so that 
+      the user can toggle both lines from a single button in the 
+      legend */
+      // label !== undefined &&  seriesMap[name].push(createBullet( label.size, label.data, label.angle, label.icon))
+
+
+
+      seriesMap[name].push(createLine(name, color, main, icon))
+      seriesMap[name].push(createPathingLine(name, color, pathing))
+
+      label !== undefined && seriesMap[name].push(createBullet(label))
+      connectors !== undefined && seriesMap[name].push(createConnector(connectors))
+      icons !== undefined && icons.forEach(icon => {
+        seriesMap[name].push(createIconPin(icon.color, icon.data, icon.radius))
+      })
+      //create a master toggle button
+      masterSeries.events.on('hidden', () => {
+        seriesMap[name][0].hide();
+      })
+      masterSeries.events.on('shown', () => {
+        seriesMap[name][0].show();
+      })
+      //merge functionality for each route with all pathing and icons
+      seriesMap[name][0].events.on('hidden', () => {
+        seriesMap[name].forEach(series => {
+          series.hide()
+        });
+      });
+      seriesMap[name][0].events.on('shown', () => {
+        seriesMap[name].forEach(series => {
+          series.show()
+        });
       });
     });
-    seriesMap[name][0].events.on('shown', () => {
-      seriesMap[name].forEach(series => {
-        series.show()
-      });
-    });
-  });
 
-  icons.forEach(icon => {
-    icon
-    createIconPin( icon.color, icon.data, icon.radius)
-  })
-  zones.forEach(zone => {
-    createZoneLine(zone.color, zone.data)
-  })
-/*   createConnector(connectors) */
-}
-buildRoutes(routes)
+    icons.forEach(icon => {
+      icon
+      createIconPin(icon.color, icon.data, icon.radius)
+    })
+    zones.forEach(zone => {
+      createZoneLine(zone.color, zone.data)
+    })
+    /*   createConnector(connectors) */
+  }
+  buildRoutes(routes)
 
   chart.legend = new am4charts.Legend();
   chart.legend.position = "right";
   chart.legend.useDefaultMarker = true;
-  chart.legend.labels.template.text = "[bold ]{name}[/]";//{color}
+  chart.legend.labels.template.text = "[bold ]{name}[/]"; //{color}
   chart.legend.background.fill = am4core.color("#dee3eeff");
   let marker = chart.legend.markers.template;
   marker.disposeChildren();
   marker.width = 20;
   marker.height = 20;
-  
+
   let icon = marker.createChild(am4core.Image);
   icon.width = 20;
   icon.height = 20;
 
-  icon.adapter.add("href", function(href, target) {
-  if (
-    target.dataItem && 
-    target.dataItem.dataContext && 
-    target.dataItem.dataContext.dummyData) {
+  icon.adapter.add("href", function (href, target) {
+    if (
+      target.dataItem &&
+      target.dataItem.dataContext &&
+      target.dataItem.dataContext.dummyData) {
       return target.dataItem.dataContext.dummyData.icon;
-  }
-  else {
-    return href;
-  }
-});
+    } else {
+      return href;
+    }
+  });
 
   let bg = chart.plotContainer.createChild(am4core.Image);
   bg.width = am4core.percent(100);
   bg.height = am4core.percent(100);
   bg.href = 'transitMapCleaned2.svg'
-}); 
+});
