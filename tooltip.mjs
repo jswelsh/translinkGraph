@@ -1,12 +1,13 @@
 const rowConstructor = (rows) => {
   let builtString ='';
   for (const row of rows) {
-    builtString.concat(`
+    builtString = builtString.concat(`
     <tr>
       <th style='color:#052e51ff;' align="left">${row.label}</th>
       <td style='color:#052e51ff;'>{${row.value}}</td>
     </tr>`)
   }
+  console.log(builtString)
   return builtString
 }
 

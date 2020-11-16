@@ -68,8 +68,8 @@ am4core.ready(function () {
     series.tooltip.label.paddingTop = 0
     series.tooltip.label.paddingBottom = 0
     series.tooltip.label.paddingLeft = 0
-    series.tooltip.label.paddingRight = 0/* 
     series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+    series.tooltip.label.paddingRight = 0/* 
     series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
     series.tooltip.label.fill = am4core.color("#fff");//text */
 
