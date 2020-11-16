@@ -1,3 +1,25 @@
+const rowConstructor = (rows) => {
+  let builtString ='';
+  for (const row of rows) {
+    builtString.concat(`
+    <tr>
+      <th style='color:#052e51ff;' align="left">${row.label}</th>
+      <td style='color:#052e51ff;'>{${row.value}}</td>
+    </tr>`)
+  }
+  return builtString
+}
+
+const table =[{
+  label: 'disability Access',
+  value: 'disabledAccess'},{
+  label: 'bicycle Lockers',
+  value: 'disabledAccess'},{
+  label: 'structure Type',
+  value: 'structureType'},{
+  label: 'per Annum Volume',
+  value: 'perAnnumVolume'}]
+
 const tooltip = {
   text:
     `{station} 
@@ -15,22 +37,7 @@ const tooltip = {
       <div class="label-body">
     <hr />
         <table>
-          <tr>
-            <th style='color:#052e51ff;' align="left"> disability Access: </th>
-            <td style='color:#052e51ff;'>{disabledAccess}</td>
-          </tr>
-          <tr>
-            <th style='color:#052e51ff;' align="left">bicycle Lockers:</th>
-            <td style='color:#052e51ff;'>{bicycleFacilities}</td>
-          </tr>
-          <tr>
-            <th style='color:#052e51ff;' align="left">structure Type: </th>
-            <td style='color:#052e51ff;'>{structureType}</td>
-          </tr>
-          <tr>
-            <th style='color:#052e51ff;' align="left">per Annum Volume: </th>
-            <td style='color:#052e51ff;'>{perAnnumVolume}</td>
-          </tr>
+          ${rowConstructor(table)}
         </table>
         <hr />
       </div>
@@ -46,3 +53,20 @@ const tooltip = {
     </div>`
 }
 export { tooltip }
+
+/*         <tr>
+            <th style='color:#052e51ff;' align="left">disability Access: </th>
+            <td style='color:#052e51ff;'>{disabledAccess}</td>
+          </tr>
+          <tr>
+            <th style='color:#052e51ff;' align="left">bicycle Lockers:</th>
+            <td style='color:#052e51ff;'>{bicycleFacilities}</td>
+          </tr>
+          <tr>
+            <th style='color:#052e51ff;' align="left">structure Type: </th>
+            <td style='color:#052e51ff;'>{structureType}</td>
+          </tr>
+          <tr>
+            <th style='color:#052e51ff;' align="left">per Annum Volume: </th>
+            <td style='color:#052e51ff;'>{perAnnumVolume}</td>
+          </tr> */
