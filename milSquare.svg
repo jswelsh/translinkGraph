@@ -5,27 +5,13 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="230"
    height="192"
    viewBox="0 0 230 192"
    version="1.1"
-   id="svg30357"
-   inkscape:version="1.0.1 (0767f8302a, 2020-10-17)"
-   sodipodi:docname="milSquare.svg"
-   inkscape:export-filename="/home/ody7/Pictures/design/development/r5Square.png"
-   inkscape:export-xdpi="201"
-   inkscape:export-ydpi="201">
+   id="svg30357">
   <defs
      id="defs30351">
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="0 : 96 : 1"
-       inkscape:vp_y="0 : 1000 : 0"
-       inkscape:vp_z="192 : 96 : 1"
-       inkscape:persp3d-origin="96 : 64 : 1"
-       id="perspective15846" />
     <rect
        x="-38.218372"
        y="267.4129"
@@ -36,7 +22,6 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath25713">
       <g
-         inkscape:label="Clip"
          id="use25715">
         <g
            style="display:inline;fill:#052e51;fill-opacity:1"
@@ -61,10 +46,7 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath25971">
       <g
-         inkscape:label="Clip"
          id="use25973"
-         inkscape:export-xdpi="201"
-         inkscape:export-ydpi="201"
          style="fill:#facf05;fill-opacity:1">
         <rect
            style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#facf05;fill-opacity:1;fill-rule:evenodd;stroke:#facf05;stroke-width:0.947302;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
@@ -72,16 +54,13 @@
            width="191.0527"
            height="191.0527"
            x="0.47365099"
-           y="0.47365099"
-           inkscape:export-xdpi="96"
-           inkscape:export-ydpi="96" />
+           y="0.47365099" />
       </g>
     </clipPath>
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath30471">
       <g
-         inkscape:label="Clip"
          id="use30473">
         <g
            style="display:inline;fill:#052e51;fill-opacity:1"
@@ -111,7 +90,6 @@
        clipPathUnits="userSpaceOnUse"
        id="clipPath30471-6">
       <g
-         inkscape:label="Clip"
          id="use30473-7"
          style="fill:#000000;fill-opacity:1">
         <g
@@ -140,30 +118,6 @@
       </g>
     </clipPath>
   </defs>
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="82.63856"
-     inkscape:cy="83.562883"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     units="px"
-     width="49px"
-     scale-x="1"
-     viewbox-width="192"
-     inkscape:window-width="1848"
-     inkscape:window-height="1016"
-     inkscape:window-x="72"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     showguides="true" />
   <metadata
      id="metadata30354">
     <rdf:RDF>
@@ -177,8 +131,6 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
      id="layer1">
     <g
        style="display:inline;fill:#052e51;fill-opacity:1"
@@ -198,59 +150,35 @@
        x="-126.99496"
        y="273.4021"
        id="text49226"><tspan
-         sodipodi:role="line"
          id="tspan49224"
          x="-126.99496"
          y="273.4021" /></text>
-    <rect
-       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#facf05;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.04196;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+    <path
        id="rect49370"
-       width="230"
-       height="192"
-       x="0.7439748"
-       y="0.17677669" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:1.9753;stroke-opacity:1;"
-       x="9.0782509"
-       y="158.22765"
-       id="text15756"><tspan
-         sodipodi:role="line"
-         id="tspan15754"
-         x="9.0782509"
-         y="158.22765"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:1.9753;stroke-opacity:1;">M</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:118.025px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:0.741054;stroke-opacity:1;"
-       x="120.05333"
-       y="171.87846"
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#facf05;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1.04196;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:stroke markers fill;stop-color:#000000;stop-opacity:1"
+       d="M 0.7439748,0.17677669 H 230.74397 V 192.17678 H 0.7439748 Z" />
+    <g
+       aria-label="M"
+       id="text15756"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:1.9753;stroke-opacity:1">
+      <path
+         d="M 121.93825,28.987646 H 90.078251 l -19.08,102.600004 -19.44,-102.600004 h -32.22 V 158.22765 h 20.52 V 48.607646 l 19.62,109.620004 h 21.78 L 101.41825,48.607646 V 158.22765 h 20.52 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:1.9753;stroke-opacity:1"
+         id="path900" />
+    </g>
+    <g
+       aria-label="IL"
+       transform="scale(1.0819892,0.92422365)"
        id="text15760"
-       transform="scale(1.0819892,0.92422365)"><tspan
-         sodipodi:role="line"
-         id="tspan15758"
-         x="120.05333"
-         y="171.87846"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:118.025px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:0.741054;stroke-opacity:1;">IL</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:180px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#ffffff"
-       x="-158.55757"
-       y="181.36537"
-       id="text15840"><tspan
-         sodipodi:role="line"
-         id="tspan15838"
-         x="-158.55757"
-         y="181.36537">C</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:133.333px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#ffffff"
-       x="-87.73584"
-       y="40.963734"
-       id="text15844"><tspan
-         sodipodi:role="line"
-         id="tspan15842"
-         x="-87.73584"
-         y="40.963734">a</tspan></text>
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:118.025px;line-height:1.25;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:0.741054;stroke-opacity:1">
+      <path
+         d="M 140.7077,87.136513 H 126.19063 V 171.87846 H 140.7077 Z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:118.025px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:0.741054;stroke-opacity:1"
+         id="path903" />
+      <path
+         d="m 168.85851,87.136513 h -14.51707 v 84.741947 h 49.0984 v -15.34325 h -34.58133 z"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:118.025px;font-family:'Nimbus Sans Narrow';-inkscape-font-specification:'Nimbus Sans Narrow, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#052e51;fill-opacity:1;stroke:none;stroke-width:0.741054;stroke-opacity:1"
+         id="path905" />
+    </g>
   </g>
 </svg>
