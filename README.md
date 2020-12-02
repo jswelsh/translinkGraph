@@ -6,10 +6,9 @@
 TransLink Map is an interactive web app that was inspired by their static ['Fast and Frequent Transit Network'](http://infomaps.translink.ca/System_Maps/171/Fast_and_Frequent_Transit_Map.pdf) map. It started out as just a simple XY-graph built off of amCharts but is slowly growing in scale as features are added. Inkscape and gimp were two graphic tools I used to modify pre-existing assets as well as built custom ones.
 
 # Technologies
+![css](Images/css_badgev1.svg)![js](Images/js_badgev1.svg)![html](Images/html_badgev1.svg)![amcharts](Images/amcharts_badgev2.svg)![inkscape](Images/inkscape_badgev1.svg)
 
- - CSS
- - JS
- - amCharts
+  
 
 ## App Screenshots
 - [Station label popup](https://github.com/jswelsh/translinkGraph/blob/master/public/transitScreenShot.png)

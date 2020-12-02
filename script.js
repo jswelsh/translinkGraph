@@ -5,12 +5,20 @@ import {
 } from './data.js'
 import {
   tooltip
-} from './tooltip.mjs'
+}/* from '  ./tooltip.esm.js' */ from './tooltip.mjs'
 
+/* import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import * as am4core from '@amcharts/amcharts4/core';
+import * as am4charts from '@amcharts/amcharts4/charts';
+import * as am4plugins_bullets from '@amcharts/amcharts4/plugins/bullets'; 
+
+import am4themes_animated from '@amcharts/amcharts4/themes/animated';
+ */
 am4core.ready(function () {
   am4core.useTheme(am4themes_animated);
 
-  let chart = am4core.create("chartdiv", am4charts.XYChart);
+  let chart = am4core.create('chartdiv', am4charts.XYChart);
   chart.padding(0, 0, 0, 0);
   chart.background.fill = am4core.color("#dee3eeff");
 
@@ -40,7 +48,7 @@ am4core.ready(function () {
     let series = chart.series.push(new am4charts.LineSeries());
     series.data = main;
     series.name = name;
-    series.color = color;
+    //series.color = color;
     series.dataFields.valueX = "x";
     series.dataFields.valueY = "y";
     series.dummyData = {
@@ -60,10 +68,10 @@ am4core.ready(function () {
     series.tooltip.label.paddingTop = 0
     series.tooltip.label.paddingBottom = 0
     series.tooltip.label.paddingLeft = 0
-    series.tooltip.label.paddingRight = 0
-    /*    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
-       series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
-       series.tooltip.label.fill = am4core.color("#fff");//text */
+    series.tooltip.background.fill = am4core.color("#052e51ff");//background border
+    series.tooltip.label.paddingRight = 0/* 
+    series.tooltip.background.stroke = am4core.color("#052e51ff");//background border
+    series.tooltip.label.fill = am4core.color("#fff");//text */
 
     series.propertyFields.strokeDasharray = "dash";
 
@@ -209,15 +217,24 @@ am4core.ready(function () {
   function createBullet(label) {
 
     let series = chart.series.push(new am4charts.LineSeries());
-    let {
+/*     let {
       size,
       data,
       angle,
       align,
       icon
     } = {
-      ...label
-    }
+      label
+    } */
+    let size = label.size
+    let data = label.data
+    let angle = label.angle
+    let align = label.align
+    let icon = label.icon
+
+
+
+
     let [horizontal, vertical] = [align[0], align[1]]
     series.data = data;
     series.dataFields.valueX = "x";
@@ -323,6 +340,8 @@ am4core.ready(function () {
       target.dataItem &&
       target.dataItem.dataContext &&
       target.dataItem.dataContext.dummyData) {
+      console.log(target.dataItem)
+
       return target.dataItem.dataContext.dummyData.icon;
     } else {
       return href;
