@@ -1,9 +1,12 @@
 
 # TransLink Map
+
+[**Demo TransLink Map here**](https://agitated-galileo-f1090b.netlify.app/)  [![Netlify Status](https://api.netlify.com/api/v1/badges/66b47330-ba63-4a63-9cf1-00eb800d57fd/deploy-status)](https://agitated-galileo-f1090b.netlify.app/)
+
 TransLink Map is an interactive web app that was inspired by their static ['Fast and Frequent Transit Network'](http://infomaps.translink.ca/System_Maps/171/Fast_and_Frequent_Transit_Map.pdf) map. It started out as just a simple XY-graph built off of amCharts but is slowly growing in scale as features are added. Inkscape and gimp were two graphic tools I used to modify pre-existing assets as well as built custom ones.
 
 # Technologies
-![css](Images/css_badgev1.svg)![js](Images/js_badgev1.svg)![html](Images/html_badgev1.svg)![amcharts](Images/amcharts_dark_long_badgev1.svg)
+![css](Images/css_badgev1.svg)![js](Images/js_badgev1.svg)![html](Images/html_badgev1.svg)![amcharts](Images/amcharts_badgev2.svg)![inkscape](Images/inkscape_badgev1.svg)
 
   
 
